@@ -37,12 +37,12 @@ DEBUG_PATH = BASE_DIR / "menu_debug.html"
 PORT = int(os.getenv("PORT", "8080"))
 REFRESH_SECONDS = max(60, int(os.getenv("REFRESH_SECONDS", "120")))
 
-# Published Harmony Commons meal window: https://www.utsc.utoronto.ca/food/harmony-commons-dining-hall
-# Staff can adjust without touching the code if opening/meal schedules change.
+# Actual meal windows shown by MyDiningHub on the live location page (Oct 14, 2026).
+# Staff can override times through environment variables when dining hours change.
 MEAL_WINDOWS = (
-    ("Breakfast", os.getenv("BREAKFAST_START", "08:00"), os.getenv("LUNCH_START", "11:00")),
-    ("Lunch", os.getenv("LUNCH_START", "11:00"), os.getenv("DINNER_START", "16:30")),
-    ("Dinner", os.getenv("DINNER_START", "16:30"), os.getenv("DINNER_END", "20:00")),
+    ("Breakfast", os.getenv("BREAKFAST_START", "07:00"), os.getenv("BREAKFAST_END", "10:30")),
+    ("Lunch", os.getenv("LUNCH_START", "11:30"), os.getenv("LUNCH_END", "15:30")),
+    ("Dinner", os.getenv("DINNER_START", "16:00"), os.getenv("DINNER_END", "20:00")),
 )
 COLORS = ("#3b82f6", "#f59e0b", "#ef4444", "#10b981", "#8b5cf6", "#ec4899", "#06b6d4")
 log = logging.getLogger("utsc-menu")
@@ -131,140 +131,140 @@ def mark_attempt(success: bool, error: str = "", fetched_at: str | None = None) 
 MEAL_CONTROLS = "button, [role=tab], [role=button], select, a[href], input[type=radio], label"
 EXTRACT_JS = r"""() => {
   const clean = s => (s || '').replace(/\s+/g, ' ').trim();
-  const visible = el => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
-  const blacklist = /^(menu|nutrition|ingredients|allergens|all|locations|find food|view menu|filter|search|today)$/i;
-  const candidates = Array.from(document.querySelectorAll(
-    '[data-testid*="station" i], [class*="station" i], [class*="menu-category" i], ' +
-    '[class*="menu-group" i], [class*="menugroup" i], [class*="category" i], [class*="menu" i], section, article'
-  ));
-  const output = [], seen = new Set();
-  for (const card of candidates) {
-    if (!visible(card)) continue;
-    const heading = card.querySelector('h2,h3,h4,[class*="station-name" i],[class*="category-title" i]');
-    if (!heading) continue;
-    const name = clean(heading.innerText);
-    if (!name || name.length > 55 || blacklist.test(name) || /^(breakfast|lunch|dinner)$/i.test(name)) continue;
-    const elems = Array.from(card.querySelectorAll(
-      '[class*="recipe" i], [class*="menu-item" i], [class*="food-item" i], ' +
-      '[class*="product-name" i], li'
-    )).filter(visible);
-    const items = [], seenItems = new Set();
-    for (const el of elems) {
-      // Prefer the smallest item element; skip wrappers with multiple nested items.
-      if (elems.some(child => child !== el && el.contains(child))) continue;
-      let raw = clean(el.innerText);
-      if (!raw || raw === name || raw.length > 220 || /^(show more|details|add to favorites)$/i.test(raw)) continue;
-      const calories = raw.match(/\b\d{1,4}\s*(?:cal|kcal|calories)\b/i);
-      const calorie = calories ? calories[0] : '';
-      raw = clean(raw.replace(/\b\d{1,4}\s*(?:cal|kcal|calories)\b/ig, '').replace(/view (?:nutrition|details)/ig, ''));
-      if (raw.length < 2 || raw.length > 100 || seenItems.has(raw.toLowerCase())) continue;
-      seenItems.add(raw.toLowerCase());
-      items.push({name:raw, cal:calorie});
+  const result = [];
+  const push = (name, items) => {
+    name = clean(name);
+    if (!name || !items.length) return;
+    if (result.some(r => r.name.toLowerCase() === name.toLowerCase())) return;
+    result.push({name, items});
+  };
+  const parseRecipe = (node) => {
+    const title = node.querySelector('h4');
+    if (!title) return null;
+    const name = clean(title.textContent);
+    if (!name || name.length > 110) return null;
+    const calorieText = clean((node.querySelector('p') || {}).textContent);
+    const match = calorieText.match(/\b(\d{1,4})\s*(?:Calories|Cal|kcal)\b/i);
+    return {name, cal: match ? match[1] + ' Cal' : ''};
+  };
+  // MyDiningHub's own print table contains ALL published dishes, including
+  // the items hidden under collapsed 'View more' panels. It is generated from
+  // the selected date and meal. Avoid generic site-navigation/card selectors.
+  const printTable = document.querySelector('.print-menu-container .print-menu table');
+  if (printTable) {
+    let name = '', items = [];
+    for (const tr of printTable.querySelectorAll('tbody > tr')) {
+      const heading = tr.querySelector('td[data-focus-heading]');
+      if (heading) {
+        push(name, items);
+        name = clean(heading.textContent);
+        items = [];
+      } else if (name) {
+        for (const recipe of tr.querySelectorAll('[role="group"][aria-label="Recipe"]')) {
+          const item = parseRecipe(recipe);
+          if (item && !items.some(x => x.name === item.name)) items.push(item);
+        }
+      }
     }
-    if (!items.length) continue;
-    const key = name.toLowerCase();
-    if (!seen.has(key)) {seen.add(key); output.push({name,items});}
+    push(name, items);
+    if (result.length) return result;
   }
-  return output;
+  // Fallback: real on-screen station sections and recipe cards. Collapsed
+  // extras may be missing here, so the print table above is preferred.
+  for (const section of document.querySelectorAll('section[data-scroll-section]')) {
+    const heading = section.querySelector('h3[data-focus-heading]');
+    if (!heading) continue;
+    const items = [];
+    for (const recipe of section.querySelectorAll('[role="group"][aria-label="Recipe"]')) {
+      const item = parseRecipe(recipe);
+      if (item && !items.some(x => x.name === item.name)) items.push(item);
+    }
+    push(heading.textContent, items);
+  }
+  return result;
 }"""
 
-
 def assert_today_in_source(frame, today: datetime, today_clicked: bool = False) -> None:
-    """Require corroboration of today's date from source calendar/date controls."""
-    if today_clicked:
-        return
+    """Verify the *selected* visible calendar heading, not today's hours card.
+
+    Source evidence from the real Oct 14 MyDiningHub page:
+    date heading: h2 "Wed, Oct 14" (inside aria-live="polite")
+    print menu: "Daily Menu Dinner - Wed 10/14" (not rendered visibly)
+    """
     iso = today.date().isoformat()
-    # React calendar widgets sometimes expose the selected date in a control.
-    dates = frame.locator('input[type="date"]')
-    if dates.count():
-        for i in range(min(4, dates.count())):
-            date_el = dates.nth(i)
-            if date_el.is_visible():
-                if date_el.input_value() != iso:
-                    date_el.fill(iso)
-                    date_el.dispatch_event("change")
-                    frame.wait_for_timeout(900)
-                if date_el.input_value() == iso:
-                    return
-    page_data = frame.evaluate("""() => {
-      const inputs = [...document.querySelectorAll('[aria-selected="true"], [aria-current="date"], [data-selected="true"], [class*="selected" i]')];
-      return inputs.filter(e => e.getClientRects().length).slice(0,80).map(e => ({text:(e.innerText||'').trim(),datetime:e.getAttribute('datetime'),date:e.getAttribute('data-date'),label:e.getAttribute('aria-label')}));
-    }""")
-    markers = (iso, today.strftime("%B %-d"), today.strftime("%b %-d"),
-               today.strftime("%a, %b %-d"), today.strftime("%m/%d/%Y"))
-    for obj in page_data:
-        value = " ".join(str(x or "") for x in obj.values())
-        if any(marker.lower() in value.lower() for marker in markers):
+    exact_heading = f"{today.strftime('%a, %b')} {today.day}"
+    headings = frame.locator('h2[class*="text-heading-4"]')
+    for i in range(headings.count()):
+        heading = headings.nth(i)
+        if not heading.is_visible():
+            continue
+        if heading.inner_text().strip() == exact_heading:
             return
-    raise RuntimeError("Source did not confirm today's selected menu date (refusing to publish)")
+    # Alternative accessible calendar widgets with an actual selected date.
+    dates = frame.locator('input[type="date"]')
+    for i in range(min(4, dates.count())):
+        date_el = dates.nth(i)
+        if date_el.is_visible() and date_el.input_value() == iso:
+            return
+    raise RuntimeError(
+        f"MyDiningHub selected date does not match {iso}; expected header '{exact_heading}'"
+    )
 
 
 def choose_today(frame) -> bool:
-    """If present, explicitly move a date-picker menu widget to today."""
-    matcher = re.compile(r"^\s*today\s*$", re.I)
-    for selector in ("button", "[role=button]", "a"):
-        options = frame.locator(selector).filter(has_text=matcher)
-        for i in range(min(options.count(), 10)):
-            button = options.nth(i)
-            try:
-                if button.is_visible() and button.is_enabled():
-                    button.click(timeout=3000)
-                    frame.wait_for_timeout(650)
-                    return True
-            except Exception:
-                pass
+    """Site defaults to today. Validation uses the selected visible date heading."""
     return False
 
 
+def source_meal_selected(frame, period: str) -> bool:
+    """Check the website's meal dropdown AND the matching rendered menu title."""
+    controls = frame.locator('button[data-testid="selectButton"]')
+    matching_control = False
+    for i in range(min(8, controls.count())):
+        control = controls.nth(i)
+        if not control.is_visible():
+            continue
+        label = re.sub(r"\s+", " ", control.inner_text()).strip()
+        if re.fullmatch(r"Meal:\s*" + re.escape(period), label, flags=re.I):
+            matching_control = True
+            break
+    if not matching_control:
+        return False
+    title = frame.locator('.print-menu-container h1')
+    if not title.count():
+        return False
+    title_text = re.sub(r"\s+", " ", title.first.inner_text()).strip()
+    return bool(re.match(r"Daily Menu\s+" + re.escape(period) + r"\s*-", title_text, re.I))
+
+
 def choose_meal(frame, period: str) -> bool:
-    """Confirm selection via active state or a changed menu, not merely a click."""
-    matcher = re.compile(r"^\s*" + re.escape(period) + r"\s*$", re.I)
-
-    def signature():
-        try:
-            return json.dumps(frame.evaluate(EXTRACT_JS), sort_keys=True)
-        except Exception:
-            return ""
-
-    def control_selected(control):
-        try:
-            state = (control.get_attribute("aria-selected") or "").lower()
-            pressed = (control.get_attribute("aria-pressed") or "").lower()
-            data = (control.get_attribute("data-state") or "").lower()
-            klass = (control.get_attribute("class") or "").lower()
-            return (state == "true" or pressed == "true" or data in ("active", "selected", "checked")
-                    or bool(re.search(r"(?:^|[\s_-])(selected|active|current)(?:$|[\s_-])", klass)))
-        except Exception:
-            return False
-
-    for selector in ('[role="tab"]', 'button', '[role="button"]', 'label', 'a'):
-        candidates = frame.locator(selector).filter(has_text=matcher)
-        try:
-            for i in range(min(candidates.count(), 12)):
-                item = candidates.nth(i)
-                if not item.is_visible() or not item.is_enabled():
-                    continue
-                before, before_url = signature(), frame.url
-                item.click(timeout=3000)
-                for _ in range(6):
-                    frame.wait_for_timeout(700)
-                    if control_selected(item) or frame.url != before_url or (before and signature() != before):
-                        return True
-        except Exception:
+    """Use the site's actual custom listbox, rather than unrelated hours links."""
+    if source_meal_selected(frame, period):
+        return True
+    controls = frame.locator('button[data-testid="selectButton"]')
+    for i in range(min(8, controls.count())):
+        control = controls.nth(i)
+        if not control.is_visible() or 'Meal:' not in control.inner_text():
             continue
-    sels = frame.locator("select")
-    for i in range(min(sels.count(), 5)):
-        sel = sels.nth(i)
-        try:
-            values = sel.locator("option").evaluate_all("els => els.map(e => ({value:e.value,text:e.textContent.trim()}))")
-            match = next((o for o in values if matcher.match(o["text"])), None)
-            if match:
-                sel.select_option(value=match["value"])
-                frame.wait_for_timeout(700)
-                if sel.input_value() == match["value"]:
-                    return True
-        except Exception:
-            continue
+        control.click(timeout=5000)
+        # DXP uses a custom accessible listbox opened by the 'Meal:' button.
+        options = frame.get_by_role('option', name=re.compile(r"^\s*" + re.escape(period) + r"\s*$", re.I))
+        if options.count():
+            options.first.click(timeout=5000)
+        else:
+            # Support alternative implementations that expose the option as text.
+            menu = frame.locator('[role="listbox"]')
+            if not menu.count():
+                return False
+            match = menu.get_by_text(period, exact=True)
+            if not match.count():
+                return False
+            match.first.click(timeout=5000)
+        for _ in range(15):
+            frame.wait_for_timeout(500)
+            if source_meal_selected(frame, period):
+                return True
+        return False
     return False
 
 
@@ -301,8 +301,10 @@ def pull_from_playwright(debug: bool = False) -> dict:
                     today_clicked = choose_today(frame)
                     assert_today_in_source(frame, started, today_clicked)
                     if not choose_meal(frame, period):
-                        errors.append("No verifiable active '" + period + "' selector in a frame")
+                        errors.append("MyDiningHub did not verify the selected '" + period + "' menu")
                         continue
+                    # The meal picker may asynchronously replace the date/recipes.
+                    assert_today_in_source(frame, started)
                     stations = frame.evaluate(EXTRACT_JS)
                     total = sum(len(s["items"]) for s in stations)
                     if not stations or total < 2:
