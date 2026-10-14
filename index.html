@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="900">
+  
   <title>UTSC Harmony Commons Dining Hall — Live Menu Signage</title>
   <style>
     /* Classic CSS compatible with older LG webOS Chromium engines (Chrome 53+) */
@@ -185,6 +185,11 @@
       padding-top: 4px;
       line-height: 1.4;
     }
+    .status-warning { background-color: #7c2d12; border-color: #f97316; color: #ffedd5; }
+    .status-closed { background-color: #1e293b; border-color: #475569; color: #cbd5e1; }
+    .empty-state { background-color: #132238; padding: 38px 24px; border: 1px solid #334155;
+      border-radius: 10px; text-align: center; font-size: 20px; line-height: 1.5; }
+    .empty-small { font-size: 14px; color: #94a3b8; margin-top: 9px; }
     /* Footer */
     .footer {
       margin-top: 10px;
@@ -234,19 +239,19 @@
     <div class="header-left">
       <div class="campus-badge">UTSC • 3300 Ellesmere Rd</div>
       <div class="title">Harmony Commons Dining Hall</div>
-      <div class="subtitle" id="hours-subtitle">Breakfast: 7:00 AM–10:30 AM &nbsp;|&nbsp; Lunch: 11:30 AM–3:30 PM &nbsp;|&nbsp; Dinner: 4:00 PM–8:00 PM</div>
+      <div class="subtitle" id="hours-subtitle">Breakfast: 8:00–11:00 AM &nbsp;|&nbsp; Lunch: 11:00 AM–4:30 PM &nbsp;|&nbsp; Dinner: 4:30–8:00 PM</div>
     </div>
     <div class="header-right">
-      <div class="clock-display" id="live-clock">10:30 AM</div>
-      <div class="status-pill" id="sync-status">● Live Menu Synced (Oct 14, 2026)</div>
+      <div class="clock-display" id="live-clock">--:--</div>
+      <div class="status-pill" id="sync-status">● Checking live menu…</div>
     </div>
   </div>
 
   <div class="controls-bar">
     <div class="periods-group">
-      <button class="btn btn-active" id="btn-page-all" onclick="setPageMode('all')">All Stations (11)</button>
-      <button class="btn" id="btn-page-1" onclick="setPageMode('page1')">Page 1: Hot &amp; Featured (1–6)</button>
-      <button class="btn" id="btn-page-2" onclick="setPageMode('page2')">Page 2: Fresh &amp; Bakery (7–11)</button>
+      <button class="btn btn-active" id="btn-page-all" onclick="setPageMode('all')">All Stations</button>
+      <button class="btn" id="btn-page-1" onclick="setPageMode('page1')">Page 1: Stations 1–6</button>
+      <button class="btn" id="btn-page-2" onclick="setPageMode('page2')">Page 2: Stations 7+</button>
     </div>
     <div class="kiosk-group">
       <button class="btn" id="btn-rotate" onclick="toggleAutoRotate()">Auto-Flip Pages (15s): OFF</button>
@@ -261,258 +266,230 @@
       Source: <a href="https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall">UTSC MyDiningHub — Harmony Commons Dining Hall</a> (ES5 Legacy-Safe Signage View)
     </div>
     <div class="footer-right" id="footer-timestamp">
-      Auto-refreshes every 15 minutes • Built for LG webOS &amp; Kiosk Displays
+      Checking for updates every minute • Toronto time
     </div>
   </div>
 
   <script>
-    // Strictly ES5 JavaScript (var, classic functions, XMLHttpRequest) so older LG webOS browsers never fail
-    var MENU_DATA = {
-      dateLabel: "Wednesday, Oct 14, 2026",
-      locationName: "Harmony Commons Dining Hall",
-      sourceUrl: "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
-      stations: [
-        {
-          name: "Home",
-          accent: "#3b82f6",
-          items: [
-            { name: "Pork Stroganoff", cal: "220 Cal" },
-            { name: "Spanakopita Pasta Bake", cal: "270 Cal" },
-            { name: "Mumbai Beef Burrito", cal: "260 Cal" },
-            { name: "Roasted Corn & Green Pepper", cal: "120 Cal" },
-            { name: "Herb White Rice", cal: "130 Cal" },
-            { name: "Potato Wedges", cal: "110 Cal" }
-          ]
-        },
-        {
-          name: "All Day Breakfast",
-          accent: "#f59e0b",
-          items: [
-            { name: "Chocolate Chip Pancakes", cal: "140 Cal" },
-            { name: "Waffle", cal: "370 Cal" },
-            { name: "Maple Syrup", cal: "" }
-          ]
-        },
-        {
-          name: "Pizza",
-          accent: "#ef4444",
-          items: [
-            { name: "Cheese Pizza", cal: "150 Cal" },
-            { name: "Pepperoni Pizza", cal: "190 Cal" },
-            { name: "Turkey Club Pizza", cal: "220 Cal" }
-          ]
-        },
-        {
-          name: "Vegan",
-          accent: "#10b981",
-          items: [
-            { name: "Teriyaki Plant Based Meatballs", cal: "210 Cal" },
-            { name: "Curry Turmeric Potato & Chickpea Burrito", cal: "230 Cal" },
-            { name: "Bean Ragout", cal: "130 Cal" },
-            { name: "Ginger Quinoa Pilaf", cal: "160 Cal" },
-            { name: "Green Beans & Shiitake Mushrooms", cal: "45 Cal" }
-          ]
-        },
-        {
-          name: "Pasta / Stir-Fry",
-          accent: "#8b5cf6",
-          items: [
-            { name: "Marinara Sauce", cal: "40 Cal" },
-            { name: "Pesto Sauce", cal: "420 Cal" },
-            { name: "Alfredo Sauce", cal: "100 Cal" }
-          ]
-        },
-        {
-          name: "Sushi / Dumpling Bar & Soup",
-          accent: "#ec4899",
-          items: [
-            { name: "Maki Roll (Sushi Bar)", cal: "15 Cal" },
-            { name: "No Gluten Turkey Noodle Soup", cal: "Soup" }
-          ]
-        },
-        {
-          name: "Deli",
-          accent: "#06b6d4",
-          items: [
-            { name: "Grilled Vegetable Wrap", cal: "210 Cal" },
-            { name: "Ploughman's Sandwich", cal: "340 Cal" },
-            { name: "Baguette (330 Cal) / Tortilla (310 Cal)", cal: "Bread" },
-            { name: "White / Whole Wheat Bread", cal: "150 Cal" },
-            { name: "Proteins & Cheeses", cal: "", note: "Turkey (30 Cal), Chicken Salad, Tuna, Cheddar, Swiss, Hummus" },
-            { name: "Toppings & Spreads", cal: "", note: "Cucumber, Iceberg Lettuce, Red Onions, Tomato, Mayo, Sriracha Mayo" }
-          ]
-        },
-        {
-          name: "Salad Bar",
-          accent: "#22c55e",
-          items: [
-            { name: "Prepared Salads", cal: "", note: "Hoisin Chow Mein Salad, Kale Apple Chickpea Salad" },
-            { name: "Greens & Veggies", cal: "0–20 Cal", note: "Baby Kale, Romaine, Spring Mix, Iceberg, Beets, Corn, Tomato, Radish" },
-            { name: "Proteins & Seeds", cal: "", note: "Black Beans, Chickpeas, Kidney Beans, Tofu, Hard Cooked Eggs, Feta, Pumpkin & Sunflower Seeds, Croutons" },
-            { name: "Dressings", cal: "170–190 Cal", note: "Balsamic, Calorie Wise Ranch, Greek Feta, Zesty Italian" }
-          ]
-        },
-        {
-          name: "Bakery",
-          accent: "#eab308",
-          items: [
-            { name: "Coffee Cake", cal: "170 Cal" },
-            { name: "S'mores Rice Krispie Square", cal: "110 Cal" },
-            { name: "Triple Chocolate Brownie", cal: "130 Cal" },
-            { name: "Double Chocolate Cookie", cal: "160 Cal" },
-            { name: "Chocolate Chip / Oatmeal Raisin Cookie", cal: "120 Cal" },
-            { name: "Apple Oatmeal / Sugar Cookie", cal: "110 Cal" }
-          ]
-        },
-        {
-          name: "Smoothie Bar",
-          accent: "#14b8a6",
-          items: [
-            { name: "Soy Milk", cal: "10 Cal" },
-            { name: "Coconut Yogurt", cal: "35 Cal" },
-            { name: "Plain / Vanilla Greek Yogurt", cal: "Base" },
-            { name: "Fresh Mix-Ins", cal: "0–5 Cal", note: "Beets (5 Cal), Celery (0 Cal), Cucumber (0 Cal)" }
-          ]
-        }
-      ]
-    };
-
+    // ES5 only for legacy LG webOS Chromium. There are NO embedded dishes.
+    var MENU_DATA = { stations: [] };
     var currentPageMode = "all";
     var autoRotateTimer = null;
     var autoRotateEnabled = false;
+    var syncInProgress = false;
+    var lastValidatedAt = 0;
+    var STALE_AFTER_MS = 15 * 60 * 1000;
+
+    // These match published Harmony Commons hours. Adjust together with server ENV if hours change.
+    var MEAL_TIMES = [
+      { name: "Breakfast", from: 800, to: 1100 },
+      { name: "Lunch", from: 1100, to: 1630 },
+      { name: "Dinner", from: 1630, to: 2000 }
+    ];
+
+    function escapeHtml(value) {
+      return String(value == null ? "" : value).replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;").replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+    }
+
+    function getTorontoNow() {
+      // Cross-time-zone even when a TV has a browser set to another locale.
+      try {
+        var fmt = new Intl.DateTimeFormat("en-US", {
+          timeZone: "America/Toronto", year: "numeric", month: "2-digit", day: "2-digit",
+          hour: "2-digit", minute: "2-digit", hour12: false
+        });
+        var parts = fmt.format(new Date());
+        var match = parts.match(/(\d{1,2})\/(\d{1,2})\/(\d{4}).*?(\d{1,2}):(\d{2})/);
+        if (!match) return null;
+        var pad = function (v) {return v.length < 2 ? "0" + v : v;};
+        var hour = parseInt(match[4], 10) % 24;
+        var minute = parseInt(match[5], 10);
+        return {
+          date: match[3] + "-" + pad(match[1]) + "-" + pad(match[2]),
+          hour: hour, minute: minute,
+          clock: (hour % 12 || 12) + ":" + pad(match[5]) + (hour < 12 ? " AM" : " PM")
+        };
+      } catch (e) { return null; }
+    }
+
+    function expectedMeal(now) {
+      if (!now) return null;
+      var hm = now.hour * 100 + now.minute;
+      for (var i = 0; i < MEAL_TIMES.length; i++) {
+        if (hm >= MEAL_TIMES[i].from && hm < MEAL_TIMES[i].to) return MEAL_TIMES[i].name;
+      }
+      return "Closed";
+    }
+
+    function setStatus(message, level) {
+      var el = document.getElementById("sync-status");
+      el.innerHTML = escapeHtml(message);
+      el.className = "status-pill" + (level === "warn" ? " status-warning" : level === "closed" ? " status-closed" : "");
+    }
+
+    function validLiveData(obj, now) {
+      if (!obj || !now || !obj.verifiedSource || obj.schemaVersion !== 2 || !obj.stations ||
+          !obj.stations.length || !obj.fetchedAt || !obj.menuDate) return false;
+      if (obj.menuDate !== now.date || obj.mealPeriod !== expectedMeal(now)) return false;
+      var created = Date.parse(obj.fetchedAt);
+      var age = new Date().getTime() - created;
+      return !isNaN(created) && age >= -120000 && age <= STALE_AFTER_MS;
+    }
 
     function renderStations() {
       var container = document.getElementById("stations-grid");
-      if (!container) return;
+      var all = MENU_DATA.stations || [];
       var html = "";
-      var stations = MENU_DATA.stations || [];
-      var visibleStations = [];
-      var i;
-
-      for (i = 0; i < stations.length; i++) {
+      var shown = [];
+      var i, j;
+      document.getElementById("btn-page-all").innerHTML = "All Stations (" + all.length + ")";
+      document.getElementById("btn-page-1").innerHTML = "Page 1 (1–" + Math.min(6, all.length) + ")";
+      document.getElementById("btn-page-2").innerHTML = "Page 2 (" + (all.length > 6 ? "7–" + all.length : "none") + ")";
+      document.getElementById("btn-page-2").disabled = all.length <= 6;
+      if (!all.length) {
+        html = '<div class="empty-state">' + escapeHtml(window.menuEmptyTitle || "Checking the current menu…") +
+          '<div class="empty-small">' + escapeHtml(window.menuEmptySub || "Connecting to the university menu source") + '</div></div>';
+        container.innerHTML = html;
+        return;
+      }
+      for (i = 0; i < all.length; i++) {
         if (currentPageMode === "page1" && i >= 6) continue;
         if (currentPageMode === "page2" && i < 6) continue;
-        visibleStations.push(stations[i]);
+        shown.push(all[i]);
       }
-
-      for (i = 0; i < visibleStations.length; i++) {
-        var st = visibleStations[i];
-        var colClasses = "station-card";
-        if ((i + 1) % 3 === 0) colClasses += " third-col";
-        if ((i + 1) % 2 === 0) colClasses += " even-col";
-
-        var borderStyle = st.accent ? ' style="border-top-color: ' + st.accent + ';"' : "";
-        html += '<div class="' + colClasses + '"' + borderStyle + '>';
-        html += '<div class="station-header">';
-        html += '<span class="station-count">' + st.items.length + ' items</span>';
-        html += '<div class="station-name">' + escapeHtml(st.name) + '</div>';
-        html += '</div>';
-        html += '<ul class="item-list">';
-
-        for (var j = 0; j < st.items.length; j++) {
-          var item = st.items[j];
-          html += '<li class="item-row">';
-          html += '<span class="item-name">' + escapeHtml(item.name) + '</span>';
-          if (item.cal) {
-            html += '<span class="item-cal">' + escapeHtml(item.cal) + '</span>';
-          }
-          if (item.note) {
-            html += '<span class="item-note">' + escapeHtml(item.note) + '</span>';
-          }
+      for (i = 0; i < shown.length; i++) {
+        var station = shown[i];
+        var accent = /^#[0-9a-fA-F]{6}$/.test(station.accent || "") ? station.accent : "#3b82f6";
+        var classes = "station-card" + ((i + 1) % 3 === 0 ? " third-col" : "") + ((i + 1) % 2 === 0 ? " even-col" : "");
+        html += '<div class="' + classes + '" style="border-top-color:' + accent + '">';
+        html += '<div class="station-header"><span class="station-count">' + station.items.length +
+          ' items</span><div class="station-name">' + escapeHtml(station.name) + '</div></div><ul class="item-list">';
+        for (j = 0; j < station.items.length; j++) {
+          var item = station.items[j];
+          html += '<li class="item-row"><span class="item-name">' + escapeHtml(item.name) + '</span>';
+          if (item.cal) html += '<span class="item-cal">' + escapeHtml(item.cal) + '</span>';
+          if (item.note) html += '<span class="item-note">' + escapeHtml(item.note) + '</span>';
           html += '</li>';
         }
-
         html += '</ul></div>';
       }
-
       container.innerHTML = html;
-    }
-
-    function escapeHtml(str) {
-      if (!str) return "";
-      return String(str)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;");
     }
 
     function setPageMode(mode) {
       currentPageMode = mode;
-      document.getElementById("btn-page-all").className = (mode === "all") ? "btn btn-active" : "btn";
-      document.getElementById("btn-page-1").className = (mode === "page1") ? "btn btn-active" : "btn";
-      document.getElementById("btn-page-2").className = (mode === "page2") ? "btn btn-active" : "btn";
+      document.getElementById("btn-page-all").className = (mode === "all" ? "btn btn-active" : "btn");
+      document.getElementById("btn-page-1").className = (mode === "page1" ? "btn btn-active" : "btn");
+      document.getElementById("btn-page-2").className = (mode === "page2" ? "btn btn-active" : "btn");
       renderStations();
     }
 
     function toggleAutoRotate() {
       autoRotateEnabled = !autoRotateEnabled;
       var btn = document.getElementById("btn-rotate");
-      if (autoRotateEnabled) {
+      if (autoRotateEnabled && MENU_DATA.stations.length > 6) {
         btn.className = "btn btn-active";
         btn.innerHTML = "Auto-Flip Pages (15s): ON";
         setPageMode("page1");
-        autoRotateTimer = setInterval(function() {
-          if (currentPageMode === "page1") {
-            setPageMode("page2");
-          } else {
-            setPageMode("page1");
-          }
+        autoRotateTimer = setInterval(function () {
+          setPageMode(currentPageMode === "page1" ? "page2" : "page1");
         }, 15000);
       } else {
+        autoRotateEnabled = false;
         btn.className = "btn";
         btn.innerHTML = "Auto-Flip Pages (15s): OFF";
-        if (autoRotateTimer) {
-          clearInterval(autoRotateTimer);
-          autoRotateTimer = null;
-        }
+        if (autoRotateTimer) clearInterval(autoRotateTimer);
+        autoRotateTimer = null;
         setPageMode("all");
       }
     }
 
-    function updateClock() {
-      var now = new Date();
-      var hours = now.getHours();
-      var minutes = now.getMinutes();
-      var ampm = hours >= 12 ? "PM" : "AM";
-      hours = hours % 12;
-      hours = hours ? hours : 12;
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      var el = document.getElementById("live-clock");
-      if (el) {
-        el.innerHTML = hours + ":" + minutes + " " + ampm;
-      }
+    function menuNotAvailable(reason, closed) {
+      MENU_DATA = { stations: [] };
+      window.menuEmptyTitle = closed ? "Dining hall menu is currently closed" : "Live menu temporarily unavailable";
+      window.menuEmptySub = closed ? "Next meal menu will appear during service hours." :
+        "We could not verify the current menu. Please check MyDiningHub or ask our team.";
+      setStatus(closed ? "● Outside service hours" : "● Live sync unavailable", closed ? "closed" : "warn");
+      document.getElementById("footer-timestamp").innerHTML = escapeHtml(reason);
+      renderStations();
     }
 
-    // Polls local or cloud proxy endpoint (/api/menu or menu_data.json) if hosted alongside utsc_menu_server.py
-    function pollLiveMenu() {
+    function renderVerifiedMenu(obj) {
+      var now = getTorontoNow();
+      if (!validLiveData(obj, now)) return false;
+      MENU_DATA = obj;
+      window.menuEmptyTitle = "";
+      document.getElementById("footer-timestamp").innerHTML = "Verified " +
+        escapeHtml(obj.mealPeriod) + " • Updated " + escapeHtml(new Date(obj.fetchedAt).toLocaleTimeString("en-US", {
+          hour: "numeric", minute: "2-digit", timeZone: "America/Toronto"
+        })) + " Toronto";
+      setStatus("● Verified " + obj.mealPeriod + " menu", "ok");
+      lastValidatedAt = new Date().getTime();
+      renderStations();
+      return true;
+    }
+
+    function requestJson(url, callback) {
       var xhr = new XMLHttpRequest();
-      xhr.open("GET", "menu_data.json?t=" + new Date().getTime(), true);
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          try {
-            var parsed = JSON.parse(xhr.responseText);
-            if (parsed && parsed.stations && parsed.stations.length > 0) {
-              MENU_DATA = parsed;
-              renderStations();
-              var statusEl = document.getElementById("sync-status");
-              if (statusEl) {
-                statusEl.innerHTML = "● Live Menu Synced (" + escapeHtml(parsed.dateLabel || "Just now") + ")";
-              }
-            }
-          } catch (e) {
-            // Keep fallback menu data if JSON parse fails
-          }
+      xhr.open("GET", url + (url.indexOf("?") === -1 ? "?" : "&") + "t=" + new Date().getTime(), true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState !== 4) return;
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {callback(JSON.parse(xhr.responseText)); return;} catch (e) {}
         }
+        callback(null);
       };
+      xhr.onerror = function () {callback(null);};
       xhr.send();
     }
 
-    // Initialize board
+    function pollLiveMenu() {
+      if (syncInProgress) return;
+      syncInProgress = true;
+      var now = getTorontoNow();
+      var expected = expectedMeal(now);
+      if (!now) {
+        menuNotAvailable("TV clock or Toronto timezone not available", false);
+        syncInProgress = false;
+        return;
+      }
+      if (expected === "Closed") {
+        menuNotAvailable("Outside configured meal service hours", true);
+        syncInProgress = false;
+        return;
+      }
+      // Prefer local server endpoint; plain JSON supports GitHub Pages as well.
+      requestJson((/\.github\.io$/i.test(window.location.hostname) ? "menu_data.json" : "api/menu"), function (obj) {
+        if (obj && renderVerifiedMenu(obj)) {syncInProgress = false; return;}
+        requestJson("menu_data.json", function (fallback) {
+          if (!renderVerifiedMenu(fallback)) {
+            menuNotAvailable("Unable to verify current " + expected + " menu", false);
+          }
+          syncInProgress = false;
+        });
+      });
+    }
+
+    function updateClockAndSafety() {
+      var toronto = getTorontoNow();
+      document.getElementById("live-clock").innerHTML = toronto ? escapeHtml(toronto.clock) : "Toronto time unavailable";
+      if (toronto && MENU_DATA.stations.length && !validLiveData(MENU_DATA, toronto)) {
+        // Prevent a previous meal from remaining on screen at the meal boundary.
+        menuNotAvailable("Meal changed or latest update has expired", false);
+        pollLiveMenu();
+      }
+      if (toronto && expectedMeal(toronto) === "Closed" && MENU_DATA.stations.length) {
+        menuNotAvailable("Outside configured meal service hours", true);
+      }
+    }
+
     renderStations();
-    updateClock();
-    setInterval(updateClock, 10000);
-    setInterval(pollLiveMenu, 300000); // Poll every 5 minutes
+    updateClockAndSafety();
+    pollLiveMenu();  // Fetch immediately, rather than waiting for the first interval.
+    setInterval(updateClockAndSafety, 10000);
+    setInterval(pollLiveMenu, 60000);
   </script>
 </body>
 </html>
