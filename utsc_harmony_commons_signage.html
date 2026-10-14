@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="900">
+  <title>UTSC Harmony Commons Dining Hall — Live Menu Signage</title>
+  <style>
+    /* Classic CSS compatible with older LG webOS Chromium engines (Chrome 53+) */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #0b1528;
+      color: #f4f6fb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      padding: 20px 28px;
+      overflow-x: hidden;
+    }
+    /* Top Header Bar */
+    .header {
+      display: table;
+      width: 100%;
+      background-color: #132342;
+      border-bottom: 3px solid #3b82f6;
+      border-radius: 10px;
+      padding: 16px 24px;
+      margin-bottom: 18px;
+    }
+    .header-left {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .header-right {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: right;
+    }
+    .campus-badge {
+      display: inline-block;
+      background-color: #1e3a8a;
+      color: #93c5fd;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+    /* Controls & Status */
+    .controls-bar {
+      display: table;
+      width: 100%;
+      margin-bottom: 18px;
+    }
+    .periods-group {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .kiosk-group {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: right;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #1e293b;
+      color: #cbd5e1;
+      border: 1px solid #334155;
+      padding: 8px 16px;
+      margin-right: 8px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-active {
+      background-color: #2563eb;
+      color: #ffffff;
+      border-color: #3b82f6;
+    }
+    .status-pill {
+      display: inline-block;
+      background-color: #064e3b;
+      color: #6ee7b7;
+      border: 1px solid #059669;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .clock-display {
+      font-size: 22px;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 4px;
+    }
+    /* Grid Layout using float/inline-block for maximum legacy webOS compatibility */
+    .stations-container {
+      width: 100%;
+      font-size: 0; /* remove inline-block whitespace */
+    }
+    .station-card {
+      display: inline-block;
+      vertical-align: top;
+      width: 32%;
+      margin-right: 2%;
+      margin-bottom: 18px;
+      background-color: #132238;
+      border: 1px solid #233858;
+      border-top: 4px solid #3b82f6;
+      border-radius: 8px;
+      padding: 16px 18px;
+      font-size: 14px;
+    }
+    .station-card.third-col {
+      margin-right: 0;
+    }
+    .station-header {
+      border-bottom: 1px solid #233858;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .station-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #60a5fa;
+    }
+    .station-count {
+      float: right;
+      background-color: #1e293b;
+      color: #94a3b8;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-top: 2px;
+    }
+    .item-list {
+      list-style: none;
+    }
+    .item-row {
+      padding: 6px 0;
+      border-bottom: 1px dashed #1e2f4d;
+      overflow: hidden;
+    }
+    .item-row:last-child {
+      border-bottom: none;
+    }
+    .item-name {
+      float: left;
+      width: 76%;
+      color: #f1f5f9;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+    .item-cal {
+      float: right;
+      width: 22%;
+      text-align: right;
+      color: #94a3b8;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .item-note {
+      clear: both;
+      display: block;
+      font-size: 12px;
+      color: #94a3b8;
+      padding-top: 4px;
+      line-height: 1.4;
+    }
+    /* Footer */
+    .footer {
+      margin-top: 10px;
+      padding-top: 12px;
+      border-top: 1px solid #1e293b;
+      font-size: 12px;
+      color: #64748b;
+      display: table;
+      width: 100%;
+    }
+    .footer-left {
+      display: table-cell;
+      text-align: left;
+    }
+    .footer-right {
+      display: table-cell;
+      text-align: right;
+    }
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+    /* Responsive fallback for portrait or smaller screens */
+    @media screen and (max-width: 1100px) {
+      .station-card {
+        width: 48.5%;
+        margin-right: 3%;
+      }
+      .station-card.third-col {
+        margin-right: 3%;
+      }
+      .station-card.even-col {
+        margin-right: 0;
+      }
+    }
+    @media screen and (max-width: 700px) {
+      .station-card {
+        width: 100%;
+        margin-right: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-left">
+      <div class="campus-badge">UTSC • 3300 Ellesmere Rd</div>
+      <div class="title">Harmony Commons Dining Hall</div>
+      <div class="subtitle" id="hours-subtitle">Breakfast: 7:00 AM–10:30 AM &nbsp;|&nbsp; Lunch: 11:30 AM–3:30 PM &nbsp;|&nbsp; Dinner: 4:00 PM–8:00 PM</div>
+    </div>
+    <div class="header-right">
+      <div class="clock-display" id="live-clock">10:30 AM</div>
+      <div class="status-pill" id="sync-status">● Live Menu Synced (Oct 14, 2026)</div>
+    </div>
+  </div>
+
+  <div class="controls-bar">
+    <div class="periods-group">
+      <button class="btn btn-active" id="btn-page-all" onclick="setPageMode('all')">All Stations (11)</button>
+      <button class="btn" id="btn-page-1" onclick="setPageMode('page1')">Page 1: Hot &amp; Featured (1–6)</button>
+      <button class="btn" id="btn-page-2" onclick="setPageMode('page2')">Page 2: Fresh &amp; Bakery (7–11)</button>
+    </div>
+    <div class="kiosk-group">
+      <button class="btn" id="btn-rotate" onclick="toggleAutoRotate()">Auto-Flip Pages (15s): OFF</button>
+      <button class="btn" onclick="pollLiveMenu()">Refresh Now</button>
+    </div>
+  </div>
+
+  <div class="stations-container" id="stations-grid"></div>
+
+  <div class="footer">
+    <div class="footer-left">
+      Source: <a href="https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall">UTSC MyDiningHub — Harmony Commons Dining Hall</a> (ES5 Legacy-Safe Signage View)
+    </div>
+    <div class="footer-right" id="footer-timestamp">
+      Auto-refreshes every 15 minutes • Built for LG webOS &amp; Kiosk Displays
+    </div>
+  </div>
+
+  <script>
+    // Strictly ES5 JavaScript (var, classic functions, XMLHttpRequest) so older LG webOS browsers never fail
+    var MENU_DATA = {
+      dateLabel: "Wednesday, Oct 14, 2026",
+      locationName: "Harmony Commons Dining Hall",
+      sourceUrl: "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
+      stations: [
+        {
+          name: "Home",
+          accent: "#3b82f6",
+          items: [
+            { name: "Pork Stroganoff", cal: "220 Cal" },
+            { name: "Spanakopita Pasta Bake", cal: "270 Cal" },
+            { name: "Mumbai Beef Burrito", cal: "260 Cal" },
+            { name: "Roasted Corn & Green Pepper", cal: "120 Cal" },
+            { name: "Herb White Rice", cal: "130 Cal" },
+            { name: "Potato Wedges", cal: "110 Cal" }
+          ]
+        },
+        {
+          name: "All Day Breakfast",
+          accent: "#f59e0b",
+          items: [
+            { name: "Chocolate Chip Pancakes", cal: "140 Cal" },
+            { name: "Waffle", cal: "370 Cal" },
+            { name: "Maple Syrup", cal: "" }
+          ]
+        },
+        {
+          name: "Pizza",
+          accent: "#ef4444",
+          items: [
+            { name: "Cheese Pizza", cal: "150 Cal" },
+            { name: "Pepperoni Pizza", cal: "190 Cal" },
+            { name: "Turkey Club Pizza", cal: "220 Cal" }
+          ]
+        },
+        {
+          name: "Vegan",
+          accent: "#10b981",
+          items: [
+            { name: "Teriyaki Plant Based Meatballs", cal: "210 Cal" },
+            { name: "Curry Turmeric Potato & Chickpea Burrito", cal: "230 Cal" },
+            { name: "Bean Ragout", cal: "130 Cal" },
+            { name: "Ginger Quinoa Pilaf", cal: "160 Cal" },
+            { name: "Green Beans & Shiitake Mushrooms", cal: "45 Cal" }
+          ]
+        },
+        {
+          name: "Pasta / Stir-Fry",
+          accent: "#8b5cf6",
+          items: [
+            { name: "Marinara Sauce", cal: "40 Cal" },
+            { name: "Pesto Sauce", cal: "420 Cal" },
+            { name: "Alfredo Sauce", cal: "100 Cal" }
+          ]
+        },
+        {
+          name: "Sushi / Dumpling Bar & Soup",
+          accent: "#ec4899",
+          items: [
+            { name: "Maki Roll (Sushi Bar)", cal: "15 Cal" },
+            { name: "No Gluten Turkey Noodle Soup", cal: "Soup" }
+          ]
+        },
+        {
+          name: "Deli",
+          accent: "#06b6d4",
+          items: [
+            { name: "Grilled Vegetable Wrap", cal: "210 Cal" },
+            { name: "Ploughman's Sandwich", cal: "340 Cal" },
+            { name: "Baguette (330 Cal) / Tortilla (310 Cal)", cal: "Bread" },
+            { name: "White / Whole Wheat Bread", cal: "150 Cal" },
+            { name: "Proteins & Cheeses", cal: "", note: "Turkey (30 Cal), Chicken Salad, Tuna, Cheddar, Swiss, Hummus" },
+            { name: "Toppings & Spreads", cal: "", note: "Cucumber, Iceberg Lettuce, Red Onions, Tomato, Mayo, Sriracha Mayo" }
+          ]
+        },
+        {
+          name: "Salad Bar",
+          accent: "#22c55e",
+          items: [
+            { name: "Prepared Salads", cal: "", note: "Hoisin Chow Mein Salad, Kale Apple Chickpea Salad" },
+            { name: "Greens & Veggies", cal: "0–20 Cal", note: "Baby Kale, Romaine, Spring Mix, Iceberg, Beets, Corn, Tomato, Radish" },
+            { name: "Proteins & Seeds", cal: "", note: "Black Beans, Chickpeas, Kidney Beans, Tofu, Hard Cooked Eggs, Feta, Pumpkin & Sunflower Seeds, Croutons" },
+            { name: "Dressings", cal: "170–190 Cal", note: "Balsamic, Calorie Wise Ranch, Greek Feta, Zesty Italian" }
+          ]
+        },
+        {
+          name: "Bakery",
+          accent: "#eab308",
+          items: [
+            { name: "Coffee Cake", cal: "170 Cal" },
+            { name: "S'mores Rice Krispie Square", cal: "110 Cal" },
+            { name: "Triple Chocolate Brownie", cal: "130 Cal" },
+            { name: "Double Chocolate Cookie", cal: "160 Cal" },
+            { name: "Chocolate Chip / Oatmeal Raisin Cookie", cal: "120 Cal" },
+            { name: "Apple Oatmeal / Sugar Cookie", cal: "110 Cal" }
+          ]
+        },
+        {
+          name: "Smoothie Bar",
+          accent: "#14b8a6",
+          items: [
+            { name: "Soy Milk", cal: "10 Cal" },
+            { name: "Coconut Yogurt", cal: "35 Cal" },
+            { name: "Plain / Vanilla Greek Yogurt", cal: "Base" },
+            { name: "Fresh Mix-Ins", cal: "0–5 Cal", note: "Beets (5 Cal), Celery (0 Cal), Cucumber (0 Cal)" }
+          ]
+        }
+      ]
+    };
+
+    var currentPageMode = "all";
+    var autoRotateTimer = null;
+    var autoRotateEnabled = false;
+
+    function renderStations() {
+      var container = document.getElementById("stations-grid");
+      if (!container) return;
+      var html = "";
+      var stations = MENU_DATA.stations || [];
+      var visibleStations = [];
+      var i;
+
+      for (i = 0; i < stations.length; i++) {
+        if (currentPageMode === "page1" && i >= 6) continue;
+        if (currentPageMode === "page2" && i < 6) continue;
+        visibleStations.push(stations[i]);
+      }
+
+      for (i = 0; i < visibleStations.length; i++) {
+        var st = visibleStations[i];
+        var colClasses = "station-card";
+        if ((i + 1) % 3 === 0) colClasses += " third-col";
+        if ((i + 1) % 2 === 0) colClasses += " even-col";
+
+        var borderStyle = st.accent ? ' style="border-top-color: ' + st.accent + ';"' : "";
+        html += '<div class="' + colClasses + '"' + borderStyle + '>';
+        html += '<div class="station-header">';
+        html += '<span class="station-count">' + st.items.length + ' items</span>';
+        html += '<div class="station-name">' + escapeHtml(st.name) + '</div>';
+        html += '</div>';
+        html += '<ul class="item-list">';
+
+        for (var j = 0; j < st.items.length; j++) {
+          var item = st.items[j];
+          html += '<li class="item-row">';
+          html += '<span class="item-name">' + escapeHtml(item.name) + '</span>';
+          if (item.cal) {
+            html += '<span class="item-cal">' + escapeHtml(item.cal) + '</span>';
+          }
+          if (item.note) {
+            html += '<span class="item-note">' + escapeHtml(item.note) + '</span>';
+          }
+          html += '</li>';
+        }
+
+        html += '</ul></div>';
+      }
+
+      container.innerHTML = html;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return "";
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function setPageMode(mode) {
+      currentPageMode = mode;
+      document.getElementById("btn-page-all").className = (mode === "all") ? "btn btn-active" : "btn";
+      document.getElementById("btn-page-1").className = (mode === "page1") ? "btn btn-active" : "btn";
+      document.getElementById("btn-page-2").className = (mode === "page2") ? "btn btn-active" : "btn";
+      renderStations();
+    }
+
+    function toggleAutoRotate() {
+      autoRotateEnabled = !autoRotateEnabled;
+      var btn = document.getElementById("btn-rotate");
+      if (autoRotateEnabled) {
+        btn.className = "btn btn-active";
+        btn.innerHTML = "Auto-Flip Pages (15s): ON";
+        setPageMode("page1");
+        autoRotateTimer = setInterval(function() {
+          if (currentPageMode === "page1") {
+            setPageMode("page2");
+          } else {
+            setPageMode("page1");
+          }
+        }, 15000);
+      } else {
+        btn.className = "btn";
+        btn.innerHTML = "Auto-Flip Pages (15s): OFF";
+        if (autoRotateTimer) {
+          clearInterval(autoRotateTimer);
+          autoRotateTimer = null;
+        }
+        setPageMode("all");
+      }
+    }
+
+    function updateClock() {
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var ampm = hours >= 12 ? "PM" : "AM";
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      var el = document.getElementById("live-clock");
+      if (el) {
+        el.innerHTML = hours + ":" + minutes + " " + ampm;
+      }
+    }
+
+    // Polls local or cloud proxy endpoint (/api/menu or menu_data.json) if hosted alongside utsc_menu_server.py
+    function pollLiveMenu() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "menu_data.json?t=" + new Date().getTime(), true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          try {
+            var parsed = JSON.parse(xhr.responseText);
+            if (parsed && parsed.stations && parsed.stations.length > 0) {
+              MENU_DATA = parsed;
+              renderStations();
+              var statusEl = document.getElementById("sync-status");
+              if (statusEl) {
+                statusEl.innerHTML = "● Live Menu Synced (" + escapeHtml(parsed.dateLabel || "Just now") + ")";
+              }
+            }
+          } catch (e) {
+            // Keep fallback menu data if JSON parse fails
+          }
+        }
+      };
+      xhr.send();
+    }
+
+    // Initialize board
+    renderStations();
+    updateClock();
+    setInterval(updateClock, 10000);
+    setInterval(pollLiveMenu, 300000); // Poll every 5 minutes
+  </script>
+</body>
+</html>
