@@ -7,7 +7,7 @@ on:
       - 'utsc_menu_server.py'
       - 'requirements.txt'
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '3-58/5 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
