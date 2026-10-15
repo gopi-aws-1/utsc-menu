@@ -37,12 +37,12 @@ DEBUG_PATH = BASE_DIR / "menu_debug.html"
 PORT = int(os.getenv("PORT", "8080"))
 REFRESH_SECONDS = max(60, int(os.getenv("REFRESH_SECONDS", "120")))
 
-# Actual meal windows shown by MyDiningHub on the live location page (Oct 14, 2026).
+# Displayed meal windows for Harmony Commons (confirm when operational hours change).
 # Staff can override times through environment variables when dining hours change.
 MEAL_WINDOWS = (
-    ("Breakfast", os.getenv("BREAKFAST_START", "07:00"), os.getenv("BREAKFAST_END", "10:30")),
-    ("Lunch", os.getenv("LUNCH_START", "11:30"), os.getenv("LUNCH_END", "15:30")),
-    ("Dinner", os.getenv("DINNER_START", "16:00"), os.getenv("DINNER_END", "20:00")),
+    ("Breakfast", os.getenv("BREAKFAST_START", "08:00"), os.getenv("BREAKFAST_END", "11:00")),
+    ("Lunch", os.getenv("LUNCH_START", "11:00"), os.getenv("LUNCH_END", "16:30")),
+    ("Dinner", os.getenv("DINNER_START", "16:30"), os.getenv("DINNER_END", "20:00")),
 )
 COLORS = ("#3b82f6", "#f59e0b", "#ef4444", "#10b981", "#8b5cf6", "#ec4899", "#06b6d4")
 log = logging.getLogger("utsc-menu")
