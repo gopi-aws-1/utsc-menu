@@ -55,10 +55,19 @@ class SignageControlsTest(unittest.TestCase):
                     self.assertEqual(page.locator(".station-card").count(), 2)
                     page.locator("#btn-page-all").click()
                     self.assertEqual(page.locator(".station-card").count(), 8)
+                    # Speed up only the 15-second page-flip interval in Chromium.
+                    page.evaluate("""() => {
+                      var actualInterval = window.setInterval;
+                      window.setInterval = function(fn, delay) {
+                        return actualInterval(fn, delay === 15000 ? 300 : delay);
+                      };
+                    }""")
                     page.locator("#btn-rotate").click()
                     self.assertIn("ON", page.locator("#btn-rotate").inner_text())
+                    page.wait_for_function("document.querySelectorAll('.station-card').length === 2", timeout=6000)
                     page.locator("#btn-rotate").click()
                     self.assertIn("OFF", page.locator("#btn-rotate").inner_text())
+                    self.assertEqual(page.locator(".station-card").count(), 8)
                     (base / "menu_data.json").write_text(json.dumps(fixture("Newly published dish")), encoding="utf8")
                     page.locator("#btn-refresh").click()
                     page.get_by_text("Newly published dish").first.wait_for(timeout=12000)

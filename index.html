@@ -365,6 +365,7 @@
       document.getElementById("btn-page-all").innerHTML = "All Stations (" + all.length + ")";
       document.getElementById("btn-page-1").innerHTML = "Page 1 (1–" + Math.min(6, all.length) + ")";
       document.getElementById("btn-page-2").innerHTML = "Page 2 (" + (all.length > 6 ? "7–" + all.length : "none") + ")";
+      document.getElementById("btn-page-1").disabled = all.length === 0;
       document.getElementById("btn-page-2").disabled = all.length <= 6;
       document.getElementById("btn-rotate").disabled = all.length <= 6;
       if (all.length <= 6 && autoRotateEnabled) {
@@ -481,16 +482,24 @@
 
     function requestJson(url, callback) {
       var xhr = new XMLHttpRequest();
+      var done = false;
+      function complete(value) {
+        if (done) return;
+        done = true;
+        callback(value);
+      }
       xhr.open("GET", url + (url.indexOf("?") === -1 ? "?" : "&") + "t=" + new Date().getTime(), true);
+      xhr.timeout = 15000;
       xhr.onreadystatechange = function () {
         if (xhr.readyState !== 4) return;
         if (xhr.status >= 200 && xhr.status < 300) {
-          try {callback(JSON.parse(xhr.responseText)); return;} catch (e) {}
+          try {complete(JSON.parse(xhr.responseText)); return;} catch (e) {}
         }
-        callback(null);
+        complete(null);
       };
-      xhr.onerror = function () {callback(null);};
-      xhr.send();
+      xhr.onerror = function () {complete(null);};
+      xhr.ontimeout = function () {complete(null);};
+      try { xhr.send(); } catch (e) { complete(null); }
     }
 
     function pollLiveMenu(manual) {
