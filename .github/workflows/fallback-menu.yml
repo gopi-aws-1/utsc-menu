@@ -1,0 +1,21 @@
+name: Fallback Harmony Commons menu sync
+
+on:
+  schedule:
+    # Runs 5 minutes after/before the primary ten-minute target.
+    # Still GitHub-hosted and best-effort; independent workflow event.
+    - cron: '2,12,22,32,42,52 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fallback:
+    # Uses the SAME production extraction/publish job, not a second scraper.
+    # It skips heavy Chromium work if the menu was verified within 7 minutes.
+    uses: ./.github/workflows/update-menu.yml
+    with:
+      skip_if_recent: true
+    permissions:
+      contents: write

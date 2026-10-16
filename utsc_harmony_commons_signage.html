@@ -93,23 +93,26 @@
       color: #ffffff;
       border-color: #3b82f6;
     }
-    .status-pill {
-      display: inline-block;
-      background-color: #1c304e;
-      color: #e2e8f0;
-      border: 1px solid #385171;
-      padding: 8px 13px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 600;
+    /* Compact clock + connection light, compatible with older LG webOS. */
+    .clock-line {
       white-space: nowrap;
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
     }
     .sync-light {
       display: inline-block;
       vertical-align: middle;
-      width: 9px;
-      height: 9px;
-      margin-right: 8px;
+      width: 12px;
+      height: 12px;
+      margin-left: 12px;
       border-radius: 50%;
       background-color: #64748b;
     }
@@ -131,6 +134,8 @@
       .sync-light.active { -webkit-animation: none; animation: none; }
     }
     .clock-display {
+      display: inline-block;
+      vertical-align: middle;
       font-size: 22px;
       font-weight: 700;
       color: #f8fafc;
@@ -276,8 +281,13 @@
       <div class="subtitle" id="hours-subtitle">Breakfast: 8:00–11:00 AM &nbsp;|&nbsp; Lunch: 11:00 AM–4:30 PM &nbsp;|&nbsp; Dinner: 4:30–8:00 PM</div>
     </div>
     <div class="header-right">
-      <div class="clock-display" id="live-clock">--:--</div>
-      <div class="status-pill" id="sync-status" role="status" aria-live="polite"><span class="sync-light"></span>Checking published menu…</div>
+      <div class="clock-line">
+        <div class="clock-display" id="live-clock">--:--</div><span
+          id="sync-light" class="sync-light" role="img"
+          aria-label="Checking menu updates"
+          title="Checking published menu updates automatically"></span>
+      </div>
+      <span id="sync-status" class="visually-hidden" role="status" aria-live="polite">Checking published menu…</span>
     </div>
   </div>
 
@@ -361,26 +371,19 @@
     }
 
     function setStatus(message, level) {
-      var el = document.getElementById("sync-status");
-      var pulse = level === "connected" ? " active" : "";
-      el.innerHTML = '<span class="sync-light' + pulse + '" aria-hidden="true"></span>' + escapeHtml(message);
-      el.className = "status-pill";
-      el.title = level === "connected"
-        ? "Auto-refresh checks the published menu each minute. Last updated is the actual source retrieval time."
-        : "The latest published menu is not currently confirmed reachable.";
-    }
-
-    function lastUpdatedLabel(obj) {
-      if (!obj || isNaN(fetchedTime(obj))) return "Last updated: unavailable";
-      var date = new Date(fetchedTime(obj));
-      try {
-        return "Last updated: " + date.toLocaleString("en-US", {
-          timeZone: "America/Toronto", month: "short", day: "numeric",
-          hour: "numeric", minute: "2-digit", hour12: true
-        }) + " ET";
-      } catch (e) {
-        return "Last updated: " + date.toUTCString() + " (UTC)";
-      }
+      // Only the activity dot is visual; the text remains accessible to
+      // screen readers. Green means our public JSON was retrieved, not that
+      // the university has published a change this instant.
+      var light = document.getElementById("sync-light");
+      var accessible = document.getElementById("sync-status");
+      var connected = level === "connected";
+      light.className = connected ? "sync-light active" : "sync-light";
+      light.title = connected
+        ? "Automatic menu checks are running. The true source retrieval time is in the footer."
+        : "Menu connectivity is not currently confirmed.";
+      light.setAttribute("aria-label", connected
+        ? "Menu polling connected" : "Menu connectivity not confirmed");
+      accessible.innerHTML = escapeHtml(message);
     }
 
     // Numeric UTC timestamps avoid old LG webOS Chromium rejecting Python's
@@ -513,12 +516,12 @@
       MENU_DATA = obj;
       window.menuEmptyTitle = "";
       document.getElementById("footer-timestamp").innerHTML = "Source menu " +
-        escapeHtml(obj.menuDate) + " • " + escapeHtml(obj.mealPeriod) + " • Retrieved " + escapeHtml(new Date(fetchedTime(obj)).toLocaleTimeString("en-US", {
+        escapeHtml(obj.menuDate) + " • " + escapeHtml(obj.mealPeriod) + " • Last updated " + escapeHtml(new Date(fetchedTime(obj)).toLocaleTimeString("en-US", {
           hour: "numeric", minute: "2-digit", timeZone: "America/Toronto"
         })) + " Toronto";
       // The green pulse confirms successful automatic checking of the public
       // menu file, not that MyDiningHub has just published a change.
-      setStatus(lastUpdatedLabel(obj), "connected");
+      setStatus("Published menu retrieved successfully", "connected");
       lastValidatedAt = new Date().getTime();
       renderStations();
       return true;
@@ -557,7 +560,7 @@
         if (!ok && !validLiveData(MENU_DATA, null)) {
           menuNotAvailable("No verified menu is currently published; check MyDiningHub", false);
         } else if (!ok) {
-          setStatus(lastUpdatedLabel(MENU_DATA), "offline");
+          setStatus("Last published menu retained; could not check for new data", "offline");
         }
         syncInProgress = false;
         if (button) { button.disabled = false; button.innerHTML = "Refresh Menu"; }

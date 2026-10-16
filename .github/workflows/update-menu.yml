@@ -10,6 +10,11 @@ on:
     # Native 10-minute backup; GitHub documents that scheduled events can be dropped.
     - cron: '7,17,27,37,47,57 * * * *'
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      skip_if_recent:
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -30,12 +35,38 @@ jobs:
           cache: pip
           cache-dependency-path: requirements.txt
 
+      - name: Skip duplicate backup sync when recently verified
+        id: recency
+        env:
+          SKIP_IF_RECENT: ${{ inputs.skip_if_recent }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import datetime, json, os
+          from pathlib import Path
+          should_sync = True
+          if os.getenv("SKIP_IF_RECENT", "false").lower() == "true":
+              try:
+                  data = json.loads(Path("menu_data.json").read_text(encoding="utf-8"))
+                  timestamp = data.get("fetchedAtEpochMs")
+                  if not isinstance(timestamp, (float, int)):
+                      timestamp = datetime.datetime.fromisoformat(data["fetchedAt"]).timestamp() * 1000
+                  seconds = datetime.datetime.now(datetime.timezone.utc).timestamp() - timestamp / 1000
+                  should_sync = not (data.get("verifiedSource") is True and -120 <= seconds <= 7 * 60)
+              except (OSError, ValueError, TypeError, KeyError):
+                  should_sync = True
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write("should_sync=" + str(should_sync).lower() + "\n")
+          print("Run MyDiningHub scraper:", should_sync)
+          PY
       - name: Install Python dependencies and Chromium
+        if: steps.recency.outputs.should_sync == 'true'
         run: |
           python -m pip install -r requirements.txt
           python -m playwright install --with-deps chromium
 
       - name: Fetch verified MyDiningHub data (retry up to three times)
+        if: steps.recency.outputs.should_sync == 'true'
         id: update
         continue-on-error: true
         run: |
@@ -51,6 +82,7 @@ jobs:
           exit 1
 
       - name: Publish verified menu or failure status
+        if: steps.recency.outputs.should_sync == 'true'
         # Always publish the status even if source extraction is unsuccessful.
         run: |
           git config user.name "github-actions[bot]"
@@ -74,7 +106,7 @@ jobs:
             exit 1
           fi
       - name: Upload diagnostics if source extraction fails
-        if: steps.update.outcome == 'failure'
+        if: steps.recency.outputs.should_sync == 'true' && steps.update.outcome == 'failure'
         uses: actions/upload-artifact@v4
         with:
           name: menu-extraction-diagnostics
@@ -86,5 +118,5 @@ jobs:
           if-no-files-found: warn
           retention-days: 3
       - name: Fail visibly when source cannot be verified
-        if: steps.update.outcome == 'failure'
+        if: steps.recency.outputs.should_sync == 'true' && steps.update.outcome == 'failure'
         run: exit 1

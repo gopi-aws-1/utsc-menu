@@ -1,3 +1,11 @@
+## No-extra-account GitHub-only automatic updates
+
+The main updater attempts MyDiningHub sync at **:07, :17, :27, :37, :47, :57 UTC** every hour. A new **fallback workflow** attempts at **:02, :12, :22, :32, :42, :52 UTC**, using the same Python scraper and the same GitHub concurrency lock. The fallback first reads `menu_data.json`: if it was already verified within the last seven minutes, it skips Chromium rather than duplicating the scrape. Otherwise it retries extraction and publishes the menu automatically. Both schedules are active in GitHub once the new workflows have been committed, with no user setup or subscription required.
+
+**Important:** Both use GitHub's best-effort Actions scheduler. This increases opportunities to update but cannot guarantee every 10–15-minute interval. The optional independent Cloudflare watchdog remains prepared and inactive until you connect Cloudflare.
+
+The header now displays **only the time and a green blinking indicator** whenever the page can retrieve the published data; a grey indicator appears when connectivity cannot be confirmed. The **actual source last-updated time is shown only at the bottom** of the page. The blinking light does not guarantee that MyDiningHub has just changed.
+
 ## Scheduling reliability (October 16, 2026)
 
 **GitHub-native schedules are best-effort and have previously missed multiple expected 10-minute runs.** The updater now runs independently from time-consuming display QA tests, retries MyDiningHub extraction up to three times, and republishes only verified data/status. The native cron still targets every 10 minutes.
