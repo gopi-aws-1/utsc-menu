@@ -5,6 +5,9 @@ on:
     paths:
       - '.github/workflows/update-menu.yml'
       - 'utsc_menu_server.py'
+      - 'index.html'
+      - 'utsc_harmony_commons_signage.html'
+      - 'tests/**'
       - 'requirements.txt'
   schedule:
     - cron: '7,17,27,37,47,57 * * * *'
