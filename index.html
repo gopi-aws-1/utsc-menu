@@ -388,7 +388,15 @@
           if (item.note) html += '<span class="item-note">' + escapeHtml(item.note) + '</span>';
           if (item.ingredients) html += '<span class="item-ingredients">Ingredients listed: ' +
             escapeHtml(item.ingredients) + '</span>';
-          if (item.serving) html += '<span class="item-serving">Serving: ' +
+          if (item.servingCalories && item.servingCalories.length) {
+            html += '<span class="item-serving">Serving sizes: ';
+            for (var sc = 0; sc < item.servingCalories.length && sc < 8; sc++) {
+              if (sc) html += ' • ';
+              var sz = item.servingCalories[sc];
+              html += escapeHtml(sz.serving) + (sz.cal ? ': ' + escapeHtml(sz.cal) : '');
+            }
+            html += '</span>';
+          } else if (item.serving) html += '<span class="item-serving">Serving: ' +
             escapeHtml(item.serving) + '</span>';
           if (item.dietary && item.dietary.length) {
             html += '<div class="item-dietary">';

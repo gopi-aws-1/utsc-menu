@@ -144,7 +144,7 @@ EXTRACT_JS = r"""() => {
     const name = clean(h.textContent);
     if (!name || name.length > 110) return null;
     const calorieText = clean(node.textContent);
-    const match = calorieText.match(/(?:^|[^0-9])(\d{1,4})\s*(?:Calories|Cal|kcal)\b/i);
+    const match = calorieText.match(/(?:^|[^0-9])(\d{1,4})\s*(?:Calories|kcal|Cal)(?=\s|$|Add\b)/i);
     return {name, cal: match ? match[1] + ' Cal' : ''};
   };
   const printed = document.querySelector('.print-menu-container .print-menu table');
@@ -194,7 +194,38 @@ EXTRACT_JS = r"""() => {
           if(button.getAttribute('aria-pressed')==='true')item.serving=label;
         }
       }
+      for(const input of node.querySelectorAll('[role="radiogroup"] input[type="radio"]')){
+        const label=clean(input.getAttribute('label') || (input.closest('label') || {}).textContent);
+        if(!label || label.length > 50)continue;
+        if(servingButtons.indexOf(label)===-1)servingButtons.push(label);
+        if(input.checked || input.getAttribute('aria-checked')==='true')item.serving=label;
+      }
       if(servingButtons.length)item.servingOptions=servingButtons;
+    }
+  }
+  // Source print menu represents each serving size as a separate row,
+  // whereas the visual recipe card represents one recipe with variants.
+  // Merge only when a source-visible parent recipe was actually found.
+  for(const station of result){
+    const remove=[];
+    for(const item of station.items){
+      const m=item.name.match(/^(.*?)\s+\((\d+(?:\.\d+)?\s*(?:gram|grams|g|oz|ml|each))\)$/i);
+      if(!m)continue;
+      const main=station.items.find(x=>normalize(x.name)===normalize(m[1]));
+      if(!main || main===item)continue;
+      if(!main.servingCalories)main.servingCalories=[];
+      main.servingCalories.push({serving:m[2],cal:item.cal});
+      remove.push(item);
+    }
+    if(remove.length){
+      station.items=station.items.filter(i=>remove.indexOf(i)===-1);
+      for(const item of station.items){
+        if(item.servingCalories && item.servingCalories.length){
+          item.servingCalories.sort((a,b)=>parseFloat(a.serving)-parseFloat(b.serving));
+          const selected=item.servingCalories.find(v=>normalize(v.serving)===normalize(item.serving || ''));
+          if(selected && selected.cal)item.cal=selected.cal;
+        }
+      }
     }
   }
   return result.filter(x=>x.items.length);
