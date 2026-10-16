@@ -284,14 +284,14 @@ def choose_meal(frame, period: str) -> bool:
     return False
 
 
-def pull_from_playwright(debug: bool = False) -> dict:
+def pull_from_playwright(debug: bool = False, inspect_period: str | None = None) -> dict:
     try:
         from playwright.sync_api import sync_playwright
     except ImportError as exc:
         raise RuntimeError("Playwright missing. Install dependencies in requirements.txt") from exc
 
     started = now_toronto()
-    period = meal_period(started)
+    period = inspect_period or meal_period(started)
     if period == "Closed":
         return {"closed": True}
     with sync_playwright() as p:
@@ -341,7 +341,7 @@ def pull_from_playwright(debug: bool = False) -> dict:
                         continue
                     # Don't publish data if the meal changed during a long scrape.
                     completed = now_toronto()
-                    if completed.date() != started.date() or meal_period(completed) != period:
+                    if completed.date() != started.date() or (not inspect_period and meal_period(completed) != period):
                         raise RuntimeError("Meal changed during fetch; retry next cycle")
                     for n, station in enumerate(stations):
                         station["accent"] = COLORS[n % len(COLORS)]
@@ -472,8 +472,39 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="UTSC live menu synchronizer")
     parser.add_argument("--once", action="store_true", help="Fetch once for GitHub Pages workflow")
     parser.add_argument("--debug", action="store_true", help="Save debug HTML/screenshot if source structure is unrecognized")
+    parser.add_argument("--inspect-meal", choices=("Breakfast", "Lunch", "Dinner"),
+                        help="Non-publishing metadata inspection of a selected meal for QA")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+    if args.inspect_meal:
+        # Test the menu selector and metadata extraction without changing
+        # menu_data.json or the trusted live-update timestamp.
+        try:
+            result = pull_from_playwright(debug=args.debug, inspect_period=args.inspect_meal)
+            if result.get("closed") or not result.get("stations"):
+                raise RuntimeError("No menu available for metadata inspection")
+            stations = result["stations"]
+            dishes = [item for station in stations for item in station["items"]]
+            coverage = {
+                "mealPeriod": args.inspect_meal,
+                "stations": len(stations),
+                "items": len(dishes),
+                "withCalories": sum(bool(x.get("cal")) for x in dishes),
+                "withIngredientSummaries": sum(bool(x.get("ingredients")) for x in dishes),
+                "withDietaryHighlights": sum(bool(x.get("dietary")) for x in dishes),
+                "source": TARGET_URL,
+                "sample": [
+                    {"name": x.get("name"), "ingredients": x.get("ingredients", ""),
+                     "dietary": x.get("dietary", []), "cal": x.get("cal", "")}
+                    for x in dishes if x.get("ingredients")
+                ][:8],
+            }
+            write_json_atomic(BASE_DIR / "menu_inspection.json", coverage)
+            log.info("SOURCE METADATA INSPECTION: %s", json.dumps(coverage))
+            return 0
+        except Exception as exc:
+            log.error("SOURCE INSPECTION FAILED (production untouched): %s", exc)
+            return 1
     if args.once:
         return 0 if sync_once(debug=args.debug) else 1
     thread = threading.Thread(target=refresh_forever, kwargs={"debug": args.debug}, daemon=True)
