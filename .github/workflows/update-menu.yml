@@ -11,7 +11,7 @@ on:
     - cron: '7,17,27,37,47,57 * * * *'
     # Toronto service transitions: use broad UTC-hour coverage so both
     # daylight and standard time lunch/dinner changes have extra triggers.
-    - cron: '0,3,6,9,12,15,18 12,13,14,15,20,21,22 * * *'
+    - cron: '0,5,10,15 15,16,20,21 * * *'
 
   workflow_dispatch:
   workflow_call:
