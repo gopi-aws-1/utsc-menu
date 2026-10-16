@@ -1,13 +1,13 @@
 # Harmony Commons — verified live menu signage
 
-This replaces the old October 14 hardcoded menu display. The board only renders meals verified for **today's selected meal period** and fetched for the current meal. It marks updates older than 15 minutes as delayed, displays them with an explicit warning for up to 120 minutes within the same meal, and hides them thereafter. When the university source is unavailable or the selector cannot be verified, the board will **say the live menu is unavailable** instead of showing lunch during dinner.
+This replaces the old hardcoded menu. During operating hours, the updater selects the active meal; outside operating hours, it extracts whichever date and meal MyDiningHub is currently displaying (including tomorrow's menu). The board keeps a previously verified menu visible for up to 36 hours and prominently marks updates older than 15 minutes as delayed. It never represents historical food as freshly fetched.
 
 ## What is in the package
 
-- `index.html` — LG webOS-compatible signage display. Fetches immediately and every 60 seconds, validates the date/meal/freshness and clears data at meal boundaries.
-- `utsc_menu_server.py` — Playwright scraper and HTTP server. Opens the university page, explicitly selects today's date and the active meal, extracts station dishes, and produces `menu_data.json` (and `sync_status.json`), but only after verification.
+- `index.html` — Legacy LG webOS-compatible signage. Checks `menu_data.json` every minute, shows the MyDiningHub menu even outside service hours, and includes functional pagination, rotation, Refresh Menu, and an admin sync shortcut.
+- `utsc_menu_server.py` — Playwright scraper, local HTTP server, station and nutrition extraction; follows the source's selected meal/date after hours.
 - `requirements.txt` — Python dependency.
-- `.github/workflows/update-menu.yml` — GitHub Actions cloud updater scheduled every 5 minutes (actual starts may be delayed by GitHub).
+- `.github/workflows/update-menu.yml` — GitHub Actions updater targeted every 10 minutes at minutes 07, 17, 27, 37, 47, 57 (Toronto and UTC hours shift together; GitHub cron uses UTC). Runs are best-effort and can be delayed.
 - `tests/` — Offline unit and browser tests using simulated menu HTML. These **do not** prove the production website has been successfully parsed.
 
 ## Verified live source extraction and important limitations
@@ -16,7 +16,7 @@ On October 15, the real MyDiningHub Dinner source was successfully extracted and
 
 **Safety:** MyDiningHub's short ingredient text is not necessarily a full ingredients or allergen declaration. A missing dietary badge does not mean an item is safe for an allergy. Staff must verify dietary and allergen needs.
 
-**Reliability:** GitHub Pages cannot run Python; GitHub Actions polls MyDiningHub on a *best-effort* five-minute schedule. GitHub's scheduling can be delayed or missed, so source changes cannot be guaranteed to appear instantaneously. For continuous operations, deploy the Python scraper on an always-on computer/server with dependable scheduling or obtain an official upstream feed/webhook. The frontend shows a visible delayed status (up to 120 minutes within the same meal) rather than mislabeling stale data as fresh.
+**Reliability:** GitHub Pages cannot run Python; GitHub Actions attempts to poll MyDiningHub on a *best-effort* 10-minute schedule. GitHub's scheduling can be delayed or missed, so source changes cannot be guaranteed to appear instantaneously. For continuous operations, deploy the Python scraper on an always-on computer/server with dependable scheduling or obtain an official upstream feed/webhook. The frontend clearly labels delayed menus (retained for up to 36 hours) rather than mislabeling them as fresh. A meal shown outside operating hours is the source-selected offering, not necessarily currently served.
 
 ## Local (same Wi-Fi as displays)
 
@@ -39,6 +39,30 @@ To perform one manual source sync:
 python utsc_menu_server.py --once --debug
 ```
 
+## Free GitHub Pages refresh controls
+
+- **Refresh Menu** (public LG button) fetches the latest `menu_data.json` already published in GitHub Pages, bypassing the browser cache. It **cannot** run Playwright or force a MyDiningHub scrape from a public browser.
+- **Run Source Sync (Admin)** opens your GitHub Actions workflow page. An authorized GitHub user must select **Run workflow**, choose the `Movie-date` branch, and confirm. Wait until the workflow and Pages deployment succeed, then press **Refresh Menu** (or wait up to 60 seconds for automatic rechecking).
+- Never put a GitHub token in public HTML or JavaScript.
+- **All Stations**, **Page 1**, **Page 2**, and **Auto-Flip** work locally. Page 2 and Auto-Flip are unavailable when the source has six or fewer stations.
+
+### Set the schedule to 10 or 15 minutes
+
+The workflow resides at `.github/workflows/update-menu.yml` on the default `Movie-date` branch. Under the `schedule` section, use one of:
+
+```yaml
+# 10-minute target (currently configured)
+schedule:
+  - cron: '7,17,27,37,47,57 * * * *'
+```
+
+```yaml
+# 15-minute target (alternative)
+schedule:
+  - cron: '7,22,37,52 * * * *'
+```
+
+Commit the workflow change to the default branch. GitHub Actions schedules operate in UTC, can start late, and sometimes drop runs; the stated interval is not a service guarantee.
 ## GitHub Pages (public URL and hands-off scheduled updates)
 
 1. Upload all files, including the hidden `.github/workflows/update-menu.yml` path, to the **root** of your GitHub repository.
@@ -78,7 +102,7 @@ The old HTML used different hours. Please confirm the current operating schedule
 
 - The `GET /api/menu` and `GET /api/health` endpoints work only in local-server mode; on GitHub Pages the frontend instead reads `menu_data.json` directly.
 - The menu is **not** the raw `live_menu_snapshot.png`. The PNG is a source-site audit screenshot, not the designed sign.
-- The browser checks every 60 seconds; status updates immediately when the clock crosses a meal boundary, with a periodic clock safety check every 10 seconds.
+- The browser checks every 60 seconds; posted service hours are informational only and never hide a verified source-selected menu.
 - Meals are never permanently baked into `index.html`. Old meals in `menu_data.json` cannot pass the frontend's current-day/current-period/age checks.
 - To run tests locally: `python -m pip install pytest`, `python -m pytest -q tests`. Chromium is needed for Playwright browser tests.
 - For food safety, the menu and calorie details are informational and must still be confirmed by dining staff before being treated as allergen advice.
