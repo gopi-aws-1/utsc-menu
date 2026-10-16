@@ -132,56 +132,72 @@ MEAL_CONTROLS = "button, [role=tab], [role=button], select, a[href], input[type=
 EXTRACT_JS = r"""() => {
   const clean = s => (s || '').replace(/\s+/g, ' ').trim();
   const result = [];
+  const normalize = s => clean(s).toLowerCase();
   const push = (name, items) => {
     name = clean(name);
-    if (!name || !items.length) return;
-    if (result.some(r => r.name.toLowerCase() === name.toLowerCase())) return;
+    if (!name || !items.length || result.some(x => normalize(x.name) === normalize(name))) return;
     result.push({name, items});
   };
-  const parseRecipe = (node) => {
-    const title = node.querySelector('h4');
-    if (!title) return null;
-    const name = clean(title.textContent);
+  const parseRecipe = node => {
+    const h = node.querySelector('h4');
+    if (!h) return null;
+    const name = clean(h.textContent);
     if (!name || name.length > 110) return null;
-    const calorieText = clean((node.querySelector('p') || {}).textContent);
-    const match = calorieText.match(/\b(\d{1,4})\s*(?:Calories|Cal|kcal)\b/i);
+    const calorieText = clean(node.textContent);
+    const match = calorieText.match(/(?:^|[^0-9])(\d{1,4})\s*(?:Calories|Cal|kcal)\b/i);
     return {name, cal: match ? match[1] + ' Cal' : ''};
   };
-  // MyDiningHub's own print table contains ALL published dishes, including
-  // the items hidden under collapsed 'View more' panels. It is generated from
-  // the selected date and meal. Avoid generic site-navigation/card selectors.
-  const printTable = document.querySelector('.print-menu-container .print-menu table');
-  if (printTable) {
+  const printed = document.querySelector('.print-menu-container .print-menu table');
+  if (printed) {
     let name = '', items = [];
-    for (const tr of printTable.querySelectorAll('tbody > tr')) {
+    for (const tr of printed.querySelectorAll('tbody > tr')) {
       const heading = tr.querySelector('td[data-focus-heading]');
-      if (heading) {
-        push(name, items);
-        name = clean(heading.textContent);
-        items = [];
-      } else if (name) {
-        for (const recipe of tr.querySelectorAll('[role="group"][aria-label="Recipe"]')) {
-          const item = parseRecipe(recipe);
-          if (item && !items.some(x => x.name === item.name)) items.push(item);
-        }
+      if (heading) { push(name, items); name=clean(heading.textContent); items=[]; }
+      else if (name) for (const recipe of tr.querySelectorAll('[role="group"][aria-label="Recipe"]')) {
+        const item=parseRecipe(recipe);
+        if (item && !items.some(x=>normalize(x.name)===normalize(item.name))) items.push(item);
       }
     }
-    push(name, items);
-    if (result.length) return result;
+    push(name,items);
   }
-  // Fallback: real on-screen station sections and recipe cards. Collapsed
-  // extras may be missing here, so the print table above is preferred.
+  // Source's printable list has all dishes. Its visible cards contain optional
+  // published ingredient *summaries* and dietary/marketing highlight labels.
+  // Never infer absent ingredients or certifications.
   for (const section of document.querySelectorAll('section[data-scroll-section]')) {
-    const heading = section.querySelector('h3[data-focus-heading]');
-    if (!heading) continue;
-    const items = [];
-    for (const recipe of section.querySelectorAll('[role="group"][aria-label="Recipe"]')) {
-      const item = parseRecipe(recipe);
-      if (item && !items.some(x => x.name === item.name)) items.push(item);
+    const h = section.querySelector('h3[data-focus-heading]');
+    if (!h) continue;
+    const stationName=clean(h.textContent);
+    let station=result.find(x=>normalize(x.name)===normalize(stationName));
+    if(!station){ station={name:stationName,items:[]}; result.push(station); }
+    for (const card of section.querySelectorAll('li.row-span-2')) {
+      const node=card.querySelector('[role="group"][aria-label="Recipe"]');
+      if(!node)continue;
+      const fromCard=parseRecipe(node);
+      if(!fromCard)continue;
+      let item=station.items.find(x=>normalize(x.name)===normalize(fromCard.name));
+      if(!item){item=fromCard;station.items.push(item);} else if(!item.cal && fromCard.cal)item.cal=fromCard.cal;
+      const ingredients = node.querySelector('p.mt-2xs.text-sm.text-type-secondary');
+      if(ingredients){const summary=clean(ingredients.textContent);if(summary && summary.length<=550)item.ingredients=summary;}
+      const labels=[];
+      for (const li of card.querySelectorAll('div.border-t ul > li')) {
+        const span=li.querySelector('span');
+        if(!span)continue;
+        const label=clean(span.textContent);
+        if(label && label.length<=45 && !labels.includes(label))labels.push(label);
+      }
+      if(labels.length)item.dietary=labels;
+      const servingButtons=[];
+      for(const button of node.querySelectorAll('button[aria-pressed]')){
+        const label=clean(button.textContent);
+        if(/^(\d+(?:\.\d+)?)\s*(gram|grams|g|oz|ml|each)$/i.test(label)){
+          servingButtons.push(label);
+          if(button.getAttribute('aria-pressed')==='true')item.serving=label;
+        }
+      }
+      if(servingButtons.length)item.servingOptions=servingButtons;
     }
-    push(heading.textContent, items);
   }
-  return result;
+  return result.filter(x=>x.items.length);
 }"""
 
 def assert_today_in_source(frame, today: datetime, today_clicked: bool = False) -> None:
@@ -305,6 +321,19 @@ def pull_from_playwright(debug: bool = False) -> dict:
                         continue
                     # The meal picker may asynchronously replace the date/recipes.
                     assert_today_in_source(frame, started)
+                    # Make all available recipe cards visible so ingredient
+                    # summaries and source dietary highlights can be captured.
+                    # The print table still supplies the complete dish inventory.
+                    for _ in range(40):
+                        more = frame.locator('button[aria-label^="View more"]')
+                        if not more.count():
+                            break
+                        try:
+                            more.first.click(timeout=2500)
+                            frame.wait_for_timeout(180)
+                        except Exception as exc:
+                            log.warning("Unable to expand additional menu cards: %s", exc)
+                            break
                     stations = frame.evaluate(EXTRACT_JS)
                     total = sum(len(s["items"]) for s in stations)
                     if not stations or total < 2:

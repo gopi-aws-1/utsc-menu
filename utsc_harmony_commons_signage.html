@@ -177,6 +177,12 @@
       font-weight: 600;
       line-height: 1.35;
     }
+    .item-ingredients { clear: both; color: #cbd5e1; font-size: 12px; padding-top: 4px; line-height: 1.45; }
+    .item-dietary { clear: both; padding-top: 4px; line-height: 1.65; }
+    .dietary-tag { display: inline-block; font-size: 10px; color: #a7f3d0;
+      border: 1px solid #14532d; background: #123b36; border-radius: 4px;
+      padding: 0 5px; margin: 2px 3px 0 0; }
+    .item-serving { clear: both; font-size: 11px; color: #93c5fd; padding-top: 3px; }
     .item-note {
       clear: both;
       display: block;
@@ -263,7 +269,8 @@
 
   <div class="footer">
     <div class="footer-left">
-      Source: <a href="https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall">UTSC MyDiningHub — Harmony Commons Dining Hall</a> (ES5 Legacy-Safe Signage View)
+      Ingredient text is a source-provided summary, not a complete allergen list. Confirm dietary needs with dining staff.
+      <div>Source: <a href="https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall">UTSC MyDiningHub — Harmony Commons Dining Hall</a> (ES5 Legacy-Safe Signage View)</div>
     </div>
     <div class="footer-right" id="footer-timestamp">
       Checking for updates every minute • Toronto time
@@ -278,7 +285,8 @@
     var autoRotateEnabled = false;
     var syncInProgress = false;
     var lastValidatedAt = 0;
-    var STALE_AFTER_MS = 15 * 60 * 1000;
+    var FRESH_AFTER_MS = 15 * 60 * 1000;
+    var STALE_AFTER_MS = 120 * 60 * 1000; // Still valid only for the SAME meal; clearly marked delayed.
 
     // These match published Harmony Commons hours. Adjust together with server ENV if hours change.
     var MEAL_TIMES = [
@@ -371,6 +379,16 @@
           html += '<li class="item-row"><span class="item-name">' + escapeHtml(item.name) + '</span>';
           if (item.cal) html += '<span class="item-cal">' + escapeHtml(item.cal) + '</span>';
           if (item.note) html += '<span class="item-note">' + escapeHtml(item.note) + '</span>';
+          if (item.ingredients) html += '<span class="item-ingredients">Ingredients listed: ' +
+            escapeHtml(item.ingredients) + '</span>';
+          if (item.serving) html += '<span class="item-serving">Serving: ' +
+            escapeHtml(item.serving) + '</span>';
+          if (item.dietary && item.dietary.length) {
+            html += '<div class="item-dietary">';
+            for (var d = 0; d < item.dietary.length && d < 8; d++)
+              html += '<span class="dietary-tag">' + escapeHtml(item.dietary[d]) + '</span>';
+            html += '</div>';
+          }
           html += '</li>';
         }
         html += '</ul></div>';
@@ -425,7 +443,9 @@
         escapeHtml(obj.mealPeriod) + " • Updated " + escapeHtml(new Date(obj.fetchedAt).toLocaleTimeString("en-US", {
           hour: "numeric", minute: "2-digit", timeZone: "America/Toronto"
         })) + " Toronto";
-      setStatus("● Verified " + obj.mealPeriod + " menu", "ok");
+      var elapsed = new Date().getTime() - Date.parse(obj.fetchedAt);
+      setStatus(elapsed <= FRESH_AFTER_MS ? ("● Verified " + obj.mealPeriod + " menu") :
+        ("● Update delayed • last verified " + obj.mealPeriod), elapsed <= FRESH_AFTER_MS ? "ok" : "warn");
       lastValidatedAt = new Date().getTime();
       renderStations();
       return true;
@@ -475,6 +495,11 @@
     function updateClockAndSafety() {
       var toronto = getTorontoNow();
       document.getElementById("live-clock").innerHTML = toronto ? escapeHtml(toronto.clock) : "Toronto time unavailable";
+      if (toronto && MENU_DATA.stations.length && validLiveData(MENU_DATA, toronto)) {
+        var currentAge = new Date().getTime() - Date.parse(MENU_DATA.fetchedAt);
+        setStatus(currentAge <= FRESH_AFTER_MS ? ("● Verified " + MENU_DATA.mealPeriod + " menu") :
+          ("● Update delayed • last verified " + MENU_DATA.mealPeriod), currentAge <= FRESH_AFTER_MS ? "ok" : "warn");
+      }
       if (toronto && MENU_DATA.stations.length && !validLiveData(MENU_DATA, toronto)) {
         // Prevent a previous meal from remaining on screen at the meal boundary.
         menuNotAvailable("Meal changed or latest update has expired", false);
