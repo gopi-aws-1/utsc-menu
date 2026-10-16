@@ -42,8 +42,9 @@ class SignageControlsTest(unittest.TestCase):
             try:
                 with sync_playwright() as p:
                     browser = p.chromium.launch(headless=True)
-                    page = browser.new_page(timezone_id="America/Toronto")
-                    page.route("https://github.com/**", lambda route: route.fulfill(status=200, body="Workflow page"))
+                    context = browser.new_context(timezone_id="America/Toronto")
+                    context.route("https://github.com/**", lambda route: route.fulfill(status=200, body="Workflow page"))
+                    page = context.new_page()
                     page.goto("http://127.0.0.1:%d/" % server.server_port)
                     page.locator(".station-card").first.wait_for(timeout=12000)
                     self.assertEqual(page.locator(".station-card").count(), 8)
