@@ -10,6 +10,7 @@ import tempfile
 import threading
 import time
 import unittest
+from zoneinfo import ZoneInfo
 
 from playwright.sync_api import sync_playwright
 
@@ -22,16 +23,19 @@ class SignageControlsTest(unittest.TestCase):
             shutil.copy(REPO / "index.html", base / "index.html")
             def fixture(name):
                 now = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(minutes=23)
+                local = datetime.datetime.now(ZoneInfo("America/Toronto"))
+                minutes = local.hour * 60 + local.minute
+                expected_period = (
+                    "Breakfast" if 480 <= minutes < 660 else
+                    "Lunch" if 660 <= minutes < 990 else
+                    "Dinner" if 990 <= minutes < 1200 else
+                    "Breakfast"
+                )
                 return {
                     "schemaVersion": 2,
                     "dateLabel": "Tomorrow (source verified)",
-                    "menuDate": "2099-01-01",
-                    "mealPeriod": (
-                        ("Breakfast" if 480 <= (datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-4))).hour*60+datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-4))).minute) < 660
-                        else "Lunch" if 660 <= (datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-4))).hour*60+datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-4))).minute) < 990
-                        else "Dinner" if 990 <= (datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-4))).hour*60+datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-4))).minute) < 1200
-                        else "Breakfast")
-                    ),
+                    "menuDate": local.date().isoformat(),
+                    "mealPeriod": expected_period,
                     "fetchedAt": now.isoformat(),
                     "fetchedAtEpochMs": int(now.timestamp() * 1000),
                     "verifiedSource": True,
