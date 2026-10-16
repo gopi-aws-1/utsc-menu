@@ -92,21 +92,22 @@ def public_status() -> dict:
     period = meal_period(current)
     data = read_json(JSON_PATH)
     status = read_json(STATUS_PATH) or {}
-    valid = bool(data and data.get("stations") and data.get("mealPeriod") == period
-                 and data.get("menuDate") == current.date().isoformat()
+    valid = bool(data and data.get("stations") and data.get("menuDate")
                  and data.get("verifiedSource") is True)
     age = None
     if valid:
         try:
             then = datetime.fromisoformat(data["fetchedAt"])
             age = int((current - then).total_seconds())
-            valid = 0 <= age <= 900  # The display never silently serves a >15 min meal.
+            valid = -120 <= age <= 36 * 3600  # Mark delayed instead of inventing current data.
         except (KeyError, ValueError, TypeError):
             valid = False
     return {
-        "status": "live" if valid else ("closed" if period == "Closed" else "unavailable"),
-        "mealPeriod": period,
-        "menuDate": current.date().isoformat(),
+        "status": ("live" if valid and age is not None and age <= 900
+                   else "delayed" if valid else "unavailable"),
+        "mealPeriod": (data or {}).get("mealPeriod"),
+        "menuDate": (data or {}).get("menuDate"),
+        "serviceWindow": period,
         "checkedAt": current.isoformat(),
         "lastSuccessfulFetch": (data or {}).get("fetchedAt"),
         "ageSeconds": age,
@@ -258,6 +259,47 @@ def assert_today_in_source(frame, today: datetime, today_clicked: bool = False) 
     )
 
 
+def selected_source_menu(frame, reference: datetime) -> tuple[str, datetime]:
+    """Use the selected MyDiningHub menu and date, with independent verification."""
+    controls = frame.locator('button[data-testid="selectButton"]')
+    period = None
+    for i in range(min(8, controls.count())):
+        button = controls.nth(i)
+        if button.is_visible():
+            match = re.fullmatch(r"Meal:\s*(Breakfast|Lunch|Dinner)",
+                                 re.sub(r"\s+", " ", button.inner_text()).strip(), re.I)
+            if match:
+                period = match.group(1).title()
+                break
+    if not period or not source_meal_selected(frame, period):
+        raise RuntimeError("Source meal selection cannot be verified")
+    title = frame.locator(".print-menu-container h1")
+    if not title.count():
+        raise RuntimeError("MyDiningHub print menu title was not found")
+    text = re.sub(r"\s+", " ", title.first.inner_text()).strip()
+    match = re.fullmatch(
+        r"Daily Menu\s+" + re.escape(period) + r"\s*-\s*([A-Za-z]{3})\s+(\d{1,2})/(\d{1,2})",
+        text, re.I)
+    if not match:
+        raise RuntimeError("Source menu title does not confirm a date")
+    weekday, month, day = match.groups()
+    try:
+        candidates = [datetime(y, int(month), int(day), tzinfo=TORONTO)
+                      for y in (reference.year - 1, reference.year, reference.year + 1)]
+    except ValueError as exc:
+        raise RuntimeError("Invalid date on MyDiningHub menu") from exc
+    selected = min(candidates, key=lambda d: abs((d.date() - reference.date()).days))
+    if abs((selected.date() - reference.date()).days) > 7:
+        raise RuntimeError("Source-selected date is unexpectedly distant")
+    if selected.strftime("%a").lower() != weekday.lower():
+        raise RuntimeError("Source weekday and date disagree")
+    expected_heading = f"{selected.strftime('%a, %b')} {selected.day}"
+    headings = frame.locator('h2[class*="text-heading-4"]')
+    if not any(h.is_visible() and h.inner_text().strip() == expected_heading
+               for h in (headings.nth(i) for i in range(headings.count()))):
+        raise RuntimeError("Selected date heading conflicts with source menu title")
+    return period, selected
+
 def choose_today(frame) -> bool:
     """Site defaults to today. Validation uses the selected visible date heading."""
     return False
@@ -324,8 +366,6 @@ def pull_from_playwright(debug: bool = False, inspect_period: str | None = None,
     started = now_toronto()
     period = inspect_period or meal_period(started)
     target_date = started + timedelta(days=inspect_day_offset)
-    if period == "Closed":
-        return {"closed": True}
     with sync_playwright() as p:
         options = {"headless": True}
         # Works with 'playwright install chromium' and with Linux system Chromium.
@@ -346,13 +386,17 @@ def pull_from_playwright(debug: bool = False, inspect_period: str | None = None,
             errors = []
             for frame in frames:
                 try:
-                    today_clicked = choose_today(frame)
-                    assert_today_in_source(frame, target_date, today_clicked)
-                    if not choose_meal(frame, period):
-                        errors.append("MyDiningHub did not verify the selected '" + period + "' menu")
-                        continue
-                    # The meal picker may asynchronously replace the date/recipes.
-                    assert_today_in_source(frame, target_date)
+                    if period == "Closed":
+                        # Follow the actual selected source meal, even after hours.
+                        selected_period, selected_date = selected_source_menu(frame, started)
+                    else:
+                        today_clicked = choose_today(frame)
+                        assert_today_in_source(frame, target_date, today_clicked)
+                        if not choose_meal(frame, period):
+                            errors.append("MyDiningHub did not verify the selected '" + period + "' menu")
+                            continue
+                        assert_today_in_source(frame, target_date)
+                        selected_period, selected_date = period, target_date
                     # Make all available recipe cards visible so ingredient
                     # summaries and source dietary highlights can be captured.
                     # The print table still supplies the complete dish inventory.
@@ -382,9 +426,9 @@ def pull_from_playwright(debug: bool = False, inspect_period: str | None = None,
                     page.screenshot(path=str(SNAPSHOT_PATH), full_page=True)
                     return {
                         "schemaVersion": 2,
-                        "dateLabel": completed.strftime("%a, %b %d, %Y"),
-                        "menuDate": completed.date().isoformat(),
-                        "mealPeriod": period,
+                        "dateLabel": selected_date.strftime("%a, %b %d, %Y"),
+                        "menuDate": selected_date.date().isoformat(),
+                        "mealPeriod": selected_period,
                         "fetchedAt": completed.isoformat(),
                         "fetchedAtEpochMs": int(completed.timestamp() * 1000),
                         "verifiedSource": True,
@@ -418,10 +462,6 @@ def sync_once(debug: bool = False) -> bool:
     if not _update_lock.acquire(blocking=False):
         return False
     try:
-        if meal_period(now_toronto()) == "Closed":
-            # Avoid unnecessary commits and preserve the last successful fetch.
-            log.info("Outside meal windows; display will show Closed")
-            return True
         try:
             payload = pull_from_playwright(debug)
             if payload.get("closed"):
@@ -480,7 +520,7 @@ class MenuHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/menu":
             status = public_status()
             data = read_json(JSON_PATH)
-            if status["status"] != "live":
+            if status["status"] not in ("live", "delayed"):
                 return self.send_json({"status": status, "stations": []}, 503)
             return self.send_json({**data, "status": status})
         if path == "/":
