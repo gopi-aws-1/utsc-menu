@@ -284,7 +284,7 @@ def choose_meal(frame, period: str) -> bool:
     return False
 
 
-def pull_from_playwright(debug: bool = False, inspect_period: str | None = None) -> dict:
+def pull_from_playwright(debug: bool = False, inspect_period: str | None = None, inspect_day_offset: int = 0) -> dict:
     try:
         from playwright.sync_api import sync_playwright
     except ImportError as exc:
@@ -292,6 +292,7 @@ def pull_from_playwright(debug: bool = False, inspect_period: str | None = None)
 
     started = now_toronto()
     period = inspect_period or meal_period(started)
+    target_date = started + timedelta(days=inspect_day_offset)
     if period == "Closed":
         return {"closed": True}
     with sync_playwright() as p:
@@ -315,12 +316,12 @@ def pull_from_playwright(debug: bool = False, inspect_period: str | None = None)
             for frame in frames:
                 try:
                     today_clicked = choose_today(frame)
-                    assert_today_in_source(frame, started, today_clicked)
+                    assert_today_in_source(frame, target_date, today_clicked)
                     if not choose_meal(frame, period):
                         errors.append("MyDiningHub did not verify the selected '" + period + "' menu")
                         continue
                     # The meal picker may asynchronously replace the date/recipes.
-                    assert_today_in_source(frame, started)
+                    assert_today_in_source(frame, target_date)
                     # Make all available recipe cards visible so ingredient
                     # summaries and source dietary highlights can be captured.
                     # The print table still supplies the complete dish inventory.
@@ -474,19 +475,23 @@ def main() -> int:
     parser.add_argument("--debug", action="store_true", help="Save debug HTML/screenshot if source structure is unrecognized")
     parser.add_argument("--inspect-meal", choices=("Breakfast", "Lunch", "Dinner"),
                         help="Non-publishing metadata inspection of a selected meal for QA")
+    parser.add_argument("--inspect-day-offset", type=int, choices=(0, 1), default=0,
+                        help="Inspect today or tomorrow without publishing")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     if args.inspect_meal:
         # Test the menu selector and metadata extraction without changing
         # menu_data.json or the trusted live-update timestamp.
         try:
-            result = pull_from_playwright(debug=args.debug, inspect_period=args.inspect_meal)
+            result = pull_from_playwright(debug=args.debug, inspect_period=args.inspect_meal,
+                                          inspect_day_offset=args.inspect_day_offset)
             if result.get("closed") or not result.get("stations"):
                 raise RuntimeError("No menu available for metadata inspection")
             stations = result["stations"]
             dishes = [item for station in stations for item in station["items"]]
             coverage = {
                 "mealPeriod": args.inspect_meal,
+                "inspectedDate": (now_toronto() + timedelta(days=args.inspect_day_offset)).date().isoformat(),
                 "stations": len(stations),
                 "items": len(dishes),
                 "withCalories": sum(bool(x.get("cal")) for x in dishes),

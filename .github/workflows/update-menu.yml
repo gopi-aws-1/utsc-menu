@@ -34,13 +34,18 @@ jobs:
       - name: Inspect meal ingredient/dietary coverage (non-publishing QA)
         if: github.event_name == 'push'
         continue-on-error: true
-        run: python utsc_menu_server.py --inspect-meal Dinner --debug
+        run: python utsc_menu_server.py --inspect-meal Breakfast --inspect-day-offset 1 --debug
       - name: Upload non-publishing QA report
         if: always() && github.event_name == 'push'
         uses: actions/upload-artifact@v4
         with:
           name: meal-metadata-qa
-          path: menu_inspection.json
+          path: |
+            menu_inspection.json
+            menu_debug.html
+            menu_debug_diagnostics.json
+            menu_debug_frame_*.html
+            menu_debug.png
           if-no-files-found: warn
           retention-days: 3
       - name: Commit verified data or failure status
