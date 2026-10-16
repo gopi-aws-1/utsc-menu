@@ -56,7 +56,21 @@ jobs:
           git add menu_data.json sync_status.json 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "Update Harmony Commons live menu and sync status"
-            git push
+            # Rebase data-only changes if a code edit advances the branch.
+            for attempt in 1 2 3; do
+              git fetch origin "${GITHUB_REF_NAME}"
+              if ! git rebase "origin/${GITHUB_REF_NAME}"; then
+                git rebase --abort || true
+                echo "Menu data changed upstream; refusing to overwrite a newer update" >&2
+                exit 1
+              fi
+              if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+                exit 0
+              fi
+              sleep 5
+            done
+            echo "Failed to publish verified menu after three retries" >&2
+            exit 1
           fi
       - name: Upload menu selector diagnostics (on failure)
         if: steps.update.outcome == 'failure'

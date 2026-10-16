@@ -419,7 +419,7 @@ def sync_once(debug: bool = False) -> bool:
         return False
     try:
         if meal_period(now_toronto()) == "Closed":
-            mark_attempt(True)
+            # Avoid unnecessary commits and preserve the last successful fetch.
             log.info("Outside meal windows; display will show Closed")
             return True
         try:
