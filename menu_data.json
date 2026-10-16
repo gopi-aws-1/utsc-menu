@@ -3,8 +3,8 @@
   "dateLabel": "Fri, Oct 16, 2026",
   "menuDate": "2026-10-16",
   "mealPeriod": "Dinner",
-  "fetchedAt": "2026-10-16T18:15:45.262361-04:00",
-  "fetchedAtEpochMs": 1792188945262,
+  "fetchedAt": "2026-10-16T18:36:27.786182-04:00",
+  "fetchedAtEpochMs": 1792190187786,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -226,7 +226,7 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "10 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Red Onions",
@@ -300,7 +300,7 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "10 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Middle Eastern Couscous Salad",
@@ -308,7 +308,7 @@
         },
         {
           "name": "Romaine Lettuce",
-          "cal": "10 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Spring Mix",
@@ -332,7 +332,7 @@
         },
         {
           "name": "Greek Feta Dressing",
-          "cal": "190 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Zesty Italian Dressing",
@@ -447,7 +447,7 @@
         },
         {
           "name": "Coconut Yogurt",
-          "cal": "35 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Plain Yogurt",
