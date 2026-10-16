@@ -1,3 +1,10 @@
+## Scheduling reliability (October 16, 2026)
+
+**GitHub-native schedules are best-effort and have previously missed multiple expected 10-minute runs.** The updater now runs independently from time-consuming display QA tests, retries MyDiningHub extraction up to three times, and republishes only verified data/status. The native cron still targets every 10 minutes.
+
+**Independent free backup is prepared but NOT ACTIVE until deployed to your Cloudflare account.** Full setup is at [backup-scheduler/README.md](backup-scheduler/README.md). The Cloudflare Worker checks GitHub Actions every 10 minutes, offset from the native schedule, and requests a fresh workflow run only when a recent successful/active run is missing. A narrowly scoped GitHub token must be stored as a private Cloudflare Worker Secret, never in the public repository.
+
+The independent scheduler is not a zero-downtime guarantee: GitHub runners, MyDiningHub, and Pages deployment can still fail or run late. Always check the source retrieval timestamp during important demonstrations.
 # Harmony Commons — verified live menu signage
 
 This replaces the old hardcoded menu. During operating hours, the updater selects the active meal; outside operating hours, it extracts whichever date and meal MyDiningHub is currently displaying (including tomorrow's menu). The board keeps a previously verified menu visible for up to 36 hours and prominently marks updates older than 15 minutes as delayed. It never represents historical food as freshly fetched.
