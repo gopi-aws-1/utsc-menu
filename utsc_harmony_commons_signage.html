@@ -398,6 +398,12 @@
       if (!obj || !obj.verifiedSource || obj.schemaVersion !== 2 || !obj.stations ||
           !obj.stations.length || !obj.fetchedAt || !obj.menuDate ||
           !/^(Breakfast|Lunch|Dinner)$/.test(obj.mealPeriod || "")) return false;
+      // During posted hours, never display an earlier meal as the current
+      // menu. Outside hours retain the university's last selected menu.
+      if (now) {
+        var active = expectedMeal(now);
+        if (active !== "Closed" && (obj.menuDate !== now.date || obj.mealPeriod !== active)) return false;
+      }
       var created = fetchedTime(obj);
       var age = new Date().getTime() - created;
       return !isNaN(created) && age >= -120000 && age <= STALE_AFTER_MS;
@@ -558,7 +564,7 @@
       var finish = function(obj) {
         var ok = renderVerifiedMenu(obj);
         if (!ok && !validLiveData(MENU_DATA, null)) {
-          menuNotAvailable("No verified menu is currently published; check MyDiningHub", false);
+          menuNotAvailable("Current meal menu is not yet published; check MyDiningHub", false);
         } else if (!ok) {
           setStatus("Last published menu retained; could not check for new data", "offline");
         }
@@ -588,7 +594,7 @@
       var toronto = getTorontoNow();
       document.getElementById("live-clock").innerHTML = toronto ? escapeHtml(toronto.clock) : "Toronto time unavailable";
       if (MENU_DATA.stations.length && !validLiveData(MENU_DATA, toronto)) {
-        menuNotAvailable("Last verified source data has expired", false);
+        menuNotAvailable("Current meal menu is being synchronized", false);
         pollLiveMenu(false);
       }
     }

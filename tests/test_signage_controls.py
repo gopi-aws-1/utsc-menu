@@ -54,6 +54,19 @@ class SignageControlsTest(unittest.TestCase):
                         self.assertNotIn("Last updated:", page.locator(".header-right").inner_text())
                         self.assertIn("Last updated", page.locator("#footer-timestamp").inner_text())
                         self.assertEqual(page.locator("#sync-light.active").count(), 1)
+                        # After the source meal boundary, older breakfast must
+                        # be rejected instead of presented as a current lunch.
+                        page.evaluate("""() => {
+                          window.expectedMeal = function() { return "Lunch"; };
+                          updateClockAndSafety();
+                        }""")
+                        self.assertEqual(page.locator(".station-card").count(), 0)
+                        # Restore the fixture's original meal selection before
+                        # testing pagination and live controls.
+                        page.evaluate("""() => { window.expectedMeal = function() { return "Closed"; }; }""")
+                        page.locator("#btn-refresh").click()
+                        page.locator(".station-card").first.wait_for(timeout=12000)
+
                         self.assertNotIn("Update delayed", page.locator("#sync-status").inner_text())
                         page.locator("#btn-page-1").click()
                         self.assertEqual(page.locator(".station-card").count(), 6)
