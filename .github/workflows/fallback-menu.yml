@@ -1,6 +1,10 @@
 name: Fallback Harmony Commons menu sync
 
 on:
+  push:
+    branches: [Movie-date]
+    paths:
+      - '.github/workflows/fallback-menu.yml'
   schedule:
     # Runs 5 minutes after/before the primary ten-minute target.
     # Still GitHub-hosted and best-effort; independent workflow event.
