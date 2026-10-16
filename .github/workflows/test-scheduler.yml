@@ -1,0 +1,25 @@
+name: Test independent scheduler
+
+on:
+  push:
+    branches: [Movie-date]
+    paths:
+      - 'backup-scheduler/**'
+      - '.github/workflows/test-scheduler.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run the scheduler's mocked GitHub API tests
+        working-directory: backup-scheduler
+        run: node --test worker.test.mjs

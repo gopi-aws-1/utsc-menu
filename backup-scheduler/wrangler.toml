@@ -1,0 +1,9 @@
+name = "harmony-commons-menu-backup"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[triggers]
+# Offset 5 minutes from GitHub's native :07/:17/etc scheduler.
+# If the native run is missing, this backup dispatches the workflow.
+crons = ["2,12,22,32,42,52 * * * *"]

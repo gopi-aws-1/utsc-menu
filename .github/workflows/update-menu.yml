@@ -5,70 +5,64 @@ on:
     paths:
       - '.github/workflows/update-menu.yml'
       - 'utsc_menu_server.py'
-      - 'index.html'
-      - 'utsc_harmony_commons_signage.html'
-      - 'tests/**'
       - 'requirements.txt'
   schedule:
+    # Native 10-minute backup; GitHub documents that scheduled events can be dropped.
     - cron: '7,17,27,37,47,57 * * * *'
   workflow_dispatch:
+
 permissions:
   contents: write
+
 concurrency:
-  group: harmony-menu-sync
+  group: harmony-commons-live-sync
   cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 9
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install dependencies
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install Python dependencies and Chromium
         run: |
-          pip install -r requirements.txt
+          python -m pip install -r requirements.txt
           python -m playwright install --with-deps chromium
-      - name: Test LG signage controls and after-hours menu visibility
-        if: github.event_name == 'push'
-        continue-on-error: true
-        run: timeout 90s python -m unittest discover -s tests -p 'test_signage_controls.py' -v
-      - name: Fetch and verify current menu
+
+      - name: Fetch verified MyDiningHub data (retry up to three times)
         id: update
         continue-on-error: true
-        run: python utsc_menu_server.py --once --debug
-      - name: Inspect meal ingredient/dietary coverage (non-publishing QA)
-        if: github.event_name == 'push'
-        continue-on-error: true
-        run: python utsc_menu_server.py --inspect-meal Breakfast --inspect-day-offset 1 --debug
-      - name: Upload non-publishing QA report
-        if: always() && github.event_name == 'push'
-        uses: actions/upload-artifact@v4
-        with:
-          name: meal-metadata-qa
-          path: |
-            menu_inspection.json
-            menu_inspect_source.html
-            menu_debug.html
-            menu_debug_diagnostics.json
-            menu_debug_frame_*.html
-            menu_debug.png
-          if-no-files-found: warn
-          retention-days: 3
-      - name: Commit verified data or failure status
+        run: |
+          for attempt in 1 2 3; do
+            echo "Source fetch attempt ${attempt}/3"
+            if python utsc_menu_server.py --once --debug; then
+              echo "Verified source fetch succeeded"
+              exit 0
+            fi
+            if [ "${attempt}" -lt 3 ]; then sleep 12; fi
+          done
+          echo "All source fetch attempts failed" >&2
+          exit 1
+
+      - name: Publish verified menu or failure status
+        # Always publish the status even if source extraction is unsuccessful.
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add menu_data.json sync_status.json 2>/dev/null || true
+          git add menu_data.json sync_status.json
           if ! git diff --cached --quiet; then
-            git commit -m "Update Harmony Commons live menu and sync status"
-            # Rebase data-only changes if a code edit advances the branch.
+            git commit -m "Sync Harmony Commons menu data"
             for attempt in 1 2 3; do
               git fetch origin "${GITHUB_REF_NAME}"
               if ! git rebase "origin/${GITHUB_REF_NAME}"; then
                 git rebase --abort || true
-                echo "Menu data changed upstream; refusing to overwrite a newer update" >&2
+                echo "A newer menu/status update already exists; not overwriting it" >&2
                 exit 1
               fi
               if git push origin "HEAD:${GITHUB_REF_NAME}"; then
@@ -76,23 +70,21 @@ jobs:
               fi
               sleep 5
             done
-            echo "Failed to publish verified menu after three retries" >&2
+            echo "Unable to publish menu data after three pushes" >&2
             exit 1
           fi
-      - name: Upload menu selector diagnostics (on failure)
+      - name: Upload diagnostics if source extraction fails
         if: steps.update.outcome == 'failure'
         uses: actions/upload-artifact@v4
         with:
-          name: mydininghub-debug
+          name: menu-extraction-diagnostics
           path: |
             menu_debug.html
             menu_debug.png
             menu_debug_frame_*.html
             menu_debug_diagnostics.json
           if-no-files-found: warn
-          retention-days: 7
-      - name: Report unsuccessful update
+          retention-days: 3
+      - name: Fail visibly when source cannot be verified
         if: steps.update.outcome == 'failure'
-        run: |
-          echo 'Menu verification failed; no unverified meals published.' >&2
-          exit 1
+        run: exit 1
