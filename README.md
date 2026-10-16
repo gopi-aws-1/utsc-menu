@@ -1,6 +1,6 @@
 # Harmony Commons — verified live menu signage
 
-This replaces the old October 14 hardcoded menu display. The board only renders meals verified for **today's selected meal period** and fetched within the previous 15 minutes. When the university source is unavailable or the selector cannot be verified, the board will **say the live menu is unavailable** instead of showing lunch during dinner.
+This replaces the old October 14 hardcoded menu display. The board only renders meals verified for **today's selected meal period** and fetched for the current meal. It marks updates older than 15 minutes as delayed, displays them with an explicit warning for up to 120 minutes within the same meal, and hides them thereafter. When the university source is unavailable or the selector cannot be verified, the board will **say the live menu is unavailable** instead of showing lunch during dinner.
 
 ## What is in the package
 
@@ -10,9 +10,13 @@ This replaces the old October 14 hardcoded menu display. The board only renders 
 - `.github/workflows/update-menu.yml` — GitHub Actions cloud updater scheduled every 5 minutes (actual starts may be delayed by GitHub).
 - `tests/` — Offline unit and browser tests using simulated menu HTML. These **do not** prove the production website has been successfully parsed.
 
-## IMPORTANT: Production source compatibility not yet verified
+## Verified live source extraction and important limitations
 
-The exact MyDiningHub page is inaccessible from the development environment, so **this release is not yet confirmed to retrieve the live UTSC menu**. It will not invent success: if the actual site's selectors/layout differ from the extraction strategy, it will display an explicit unavailable warning. To finish validation, run the scraper from a machine or GitHub Actions that can reach the live MyDiningHub site. On a failure use `--debug` and check the output / Actions artifacts; the selectors can then be refined to the real site.
+On October 15, the real MyDiningHub Dinner source was successfully extracted and published by GitHub Actions (81 raw recipe/variant rows across 11 stations). A non-publishing QA inspection of October 16 Breakfast retrieved the live source and validated ingredients and dietary highlights. The scraper expands source 'View more' sections and merges printed menu items with source-visible recipe details. Where published, calorie values, serving options, and short ingredient summaries are preserved; they are never fabricated. Variant servings such as 110 gram/118 gram retain their respective calorie values.
+
+**Safety:** MyDiningHub's short ingredient text is not necessarily a full ingredients or allergen declaration. A missing dietary badge does not mean an item is safe for an allergy. Staff must verify dietary and allergen needs.
+
+**Reliability:** GitHub Pages cannot run Python; GitHub Actions polls MyDiningHub on a *best-effort* five-minute schedule. GitHub's scheduling can be delayed or missed, so source changes cannot be guaranteed to appear instantaneously. For continuous operations, deploy the Python scraper on an always-on computer/server with dependable scheduling or obtain an official upstream feed/webhook. The frontend shows a visible delayed status (up to 120 minutes within the same meal) rather than mislabeling stale data as fresh.
 
 ## Local (same Wi-Fi as displays)
 
@@ -44,7 +48,17 @@ python utsc_menu_server.py --once --debug
 5. Confirm the run completed successfully, and check the generated `menu_data.json`: `verifiedSource` must equal `true`, `menuDate` must be today's Toronto date, `mealPeriod` must match the current meal, and `fetchedAt` must be recent. Open the GitHub Pages URL after publication.
 6. If the workflow failed, download **mydininghub-debug** from the failed Actions run and inspect the extracted controls/frame HTML. This is how to adjust the live-source selectors. Do **not** replace it with fake menu data.
 
-GitHub Actions schedules are **best effort**, may start late, and may be disabled after prolonged inactivity on public repositories. This version is truthful about freshness instead of guaranteeing zero downtime. For tighter real-time SLAs, use the always-on Python server or an equivalent managed worker instead of scheduled Actions.
+GitHub Actions schedules are **best effort**, may start late, and may be disabled after prolonged inactivity on public repositories. This version shows verified freshness or an explicit delayed status instead of claiming zero downtime. For tighter real-time SLAs, use the always-on Python server or an equivalent managed worker instead of scheduled Actions.
+
+## Client-demo checklist
+
+1. Shortly before the demo, during a meal period, open [GitHub Actions](https://github.com/gopi-aws-1/utsc-menu/actions) and run **Sync Harmony Commons menu** via **Run workflow**.
+2. Wait for the sync job and GitHub Pages deployment to finish. Verify `menu_data.json` contains **today's Toronto date**, the **correct meal period**, a recent `fetchedAt`, and the expected stations/dishes.
+3. Confirm visible ingredients, dietary highlights and, when available, serving-specific calorie values against the live MyDiningHub recipe cards. Do not assume short ingredient summaries represent full allergen lists.
+4. Open the LG kiosk URL, reload once, then leave it for a minute to verify automatic browser polling. A red/orange badge means delayed or unavailable, not confirmed real-time.
+5. If an update is unavailable, use the official MyDiningHub source directly as a **clearly labeled fallback** instead of presenting historical data as live.
+
+A separate **non-publishing QA inspection** on code pushes verifies the next day's Breakfast data but never changes public `menu_data.json`.
 
 ## Hours / meal periods
 
