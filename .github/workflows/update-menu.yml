@@ -9,6 +9,7 @@ on:
   schedule:
     # Native 10-minute backup; GitHub documents that scheduled events can be dropped.
     - cron: '7,17,27,37,47,57 * * * *'
+    # Extra transition checks; also force a source scrape on workflow changes.
     # Toronto service transitions: use broad UTC-hour coverage so both
     # daylight and standard time lunch/dinner changes have extra triggers.
     - cron: '0,5,10,15 15,16,20,21 * * *'

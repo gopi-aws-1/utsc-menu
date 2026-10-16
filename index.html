@@ -398,12 +398,10 @@
       if (!obj || !obj.verifiedSource || obj.schemaVersion !== 2 || !obj.stations ||
           !obj.stations.length || !obj.fetchedAt || !obj.menuDate ||
           !/^(Breakfast|Lunch|Dinner)$/.test(obj.mealPeriod || "")) return false;
-      // During posted hours, never display an earlier meal as the current
-      // menu. Outside hours retain the university's last selected menu.
-      if (now) {
-        var active = expectedMeal(now);
-        if (active !== "Closed" && (obj.menuDate !== now.date || obj.mealPeriod !== active)) return false;
-      }
+      // MyDiningHub is authoritative. Do not blank the display when the
+      // posted service period changes before GitHub publishes the new menu.
+      // Preserve the actual source meal and retrieval timestamp in the footer.
+      // The source scraper, not this browser, decides the published selection.
       var created = fetchedTime(obj);
       var age = new Date().getTime() - created;
       return !isNaN(created) && age >= -120000 && age <= STALE_AFTER_MS;
