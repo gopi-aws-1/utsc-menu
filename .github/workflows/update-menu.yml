@@ -42,6 +42,7 @@ jobs:
           name: meal-metadata-qa
           path: |
             menu_inspection.json
+            menu_inspect_source.html
             menu_debug.html
             menu_debug_diagnostics.json
             menu_debug_frame_*.html

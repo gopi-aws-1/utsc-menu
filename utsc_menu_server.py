@@ -336,6 +336,8 @@ def pull_from_playwright(debug: bool = False, inspect_period: str | None = None,
                             log.warning("Unable to expand additional menu cards: %s", exc)
                             break
                     stations = frame.evaluate(EXTRACT_JS)
+                    if inspect_period and debug:
+                        (BASE_DIR / "menu_inspect_source.html").write_text(frame.content(), encoding="utf-8")
                     total = sum(len(s["items"]) for s in stations)
                     if not stations or total < 2:
                         errors.append(f"Menu '{period}' selector found, but no reliable food items ({total})")
