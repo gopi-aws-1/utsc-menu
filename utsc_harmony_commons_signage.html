@@ -177,6 +177,7 @@
       font-weight: 600;
       line-height: 1.35;
     }
+    .btn:disabled { opacity: 0.45; cursor: default; }
     .item-ingredients { clear: both; color: #cbd5e1; font-size: 12px; padding-top: 4px; line-height: 1.45; }
     .item-dietary { clear: both; padding-top: 4px; line-height: 1.65; }
     .dietary-tag { display: inline-block; font-size: 10px; color: #a7f3d0;
@@ -261,7 +262,8 @@
     </div>
     <div class="kiosk-group">
       <button class="btn" id="btn-rotate" onclick="toggleAutoRotate()">Auto-Flip Pages (15s): OFF</button>
-      <button class="btn" onclick="pollLiveMenu()">Refresh Now</button>
+      <button class="btn" id="btn-refresh" onclick="pollLiveMenu(true)" title="Reload latest menu published by GitHub">Refresh Menu</button>
+      <button class="btn" id="btn-admin-sync" onclick="openAdminSync()" title="Open GitHub Actions to manually run the source scraper">Run Source Sync (Admin)</button>
     </div>
   </div>
 
@@ -286,7 +288,7 @@
     var syncInProgress = false;
     var lastValidatedAt = 0;
     var FRESH_AFTER_MS = 15 * 60 * 1000;
-    var STALE_AFTER_MS = 120 * 60 * 1000; // Still valid only for the SAME meal; clearly marked delayed.
+    var STALE_AFTER_MS = 36 * 60 * 60 * 1000; // Show verified source date and an update-delayed warning.
 
     // These match published Harmony Commons hours. Adjust together with server ENV if hours change.
     var MEAL_TIMES = [
@@ -345,9 +347,10 @@
     }
 
     function validLiveData(obj, now) {
-      if (!obj || !now || !obj.verifiedSource || obj.schemaVersion !== 2 || !obj.stations ||
-          !obj.stations.length || !obj.fetchedAt || !obj.menuDate) return false;
-      if (obj.menuDate !== now.date || obj.mealPeriod !== expectedMeal(now)) return false;
+      // Use the actual published MyDiningHub selection, including after hours.
+      if (!obj || !obj.verifiedSource || obj.schemaVersion !== 2 || !obj.stations ||
+          !obj.stations.length || !obj.fetchedAt || !obj.menuDate ||
+          !/^(Breakfast|Lunch|Dinner)$/.test(obj.mealPeriod || "")) return false;
       var created = fetchedTime(obj);
       var age = new Date().getTime() - created;
       return !isNaN(created) && age >= -120000 && age <= STALE_AFTER_MS;
@@ -363,6 +366,16 @@
       document.getElementById("btn-page-1").innerHTML = "Page 1 (1–" + Math.min(6, all.length) + ")";
       document.getElementById("btn-page-2").innerHTML = "Page 2 (" + (all.length > 6 ? "7–" + all.length : "none") + ")";
       document.getElementById("btn-page-2").disabled = all.length <= 6;
+      document.getElementById("btn-rotate").disabled = all.length <= 6;
+      if (all.length <= 6 && autoRotateEnabled) {
+        autoRotateEnabled = false;
+        if (autoRotateTimer) clearInterval(autoRotateTimer);
+        autoRotateTimer = null;
+        var rbtn = document.getElementById("btn-rotate");
+        rbtn.innerHTML = "Auto-Flip Pages (15s): OFF";
+        rbtn.className = "btn";
+        currentPageMode = "all";
+      }
       if (!all.length) {
         html = '<div class="empty-state">' + escapeHtml(window.menuEmptyTitle || "Checking the current menu…") +
           '<div class="empty-small">' + escapeHtml(window.menuEmptySub || "Connecting to the university menu source") + '</div></div>';
@@ -412,6 +425,7 @@
     }
 
     function setPageMode(mode) {
+      if (mode === "page2" && MENU_DATA.stations.length <= 6) mode = "all";
       currentPageMode = mode;
       document.getElementById("btn-page-all").className = (mode === "all" ? "btn btn-active" : "btn");
       document.getElementById("btn-page-1").className = (mode === "page1" ? "btn btn-active" : "btn");
@@ -441,10 +455,9 @@
 
     function menuNotAvailable(reason, closed) {
       MENU_DATA = { stations: [] };
-      window.menuEmptyTitle = closed ? "Dining hall menu is currently closed" : "Live menu temporarily unavailable";
-      window.menuEmptySub = closed ? "Next meal menu will appear during service hours." :
-        "We could not verify the current menu. Please check MyDiningHub or ask our team.";
-      setStatus(closed ? "● Outside service hours" : "● Live sync unavailable", closed ? "closed" : "warn");
+      window.menuEmptyTitle = "Published menu temporarily unavailable";
+      window.menuEmptySub = "Open the MyDiningHub source or ask an admin to run a source sync.";
+      setStatus("● Unable to verify published menu", "warn");
       document.getElementById("footer-timestamp").innerHTML = escapeHtml(reason);
       renderStations();
     }
@@ -454,13 +467,13 @@
       if (!validLiveData(obj, now)) return false;
       MENU_DATA = obj;
       window.menuEmptyTitle = "";
-      document.getElementById("footer-timestamp").innerHTML = "Verified " +
-        escapeHtml(obj.mealPeriod) + " • Updated " + escapeHtml(new Date(fetchedTime(obj)).toLocaleTimeString("en-US", {
+      document.getElementById("footer-timestamp").innerHTML = "Source menu " +
+        escapeHtml(obj.menuDate) + " • " + escapeHtml(obj.mealPeriod) + " • Retrieved " + escapeHtml(new Date(fetchedTime(obj)).toLocaleTimeString("en-US", {
           hour: "numeric", minute: "2-digit", timeZone: "America/Toronto"
         })) + " Toronto";
       var elapsed = new Date().getTime() - fetchedTime(obj);
-      setStatus(elapsed <= FRESH_AFTER_MS ? ("● Verified " + obj.mealPeriod + " menu") :
-        ("● Update delayed • last verified " + obj.mealPeriod), elapsed <= FRESH_AFTER_MS ? "ok" : "warn");
+      setStatus(elapsed <= FRESH_AFTER_MS ? ("● Verified " + obj.mealPeriod + " • " + obj.menuDate) :
+        ("● Update delayed • " + obj.mealPeriod + " • " + obj.menuDate), elapsed <= FRESH_AFTER_MS ? "ok" : "warn");
       lastValidatedAt = new Date().getTime();
       renderStations();
       return true;
@@ -480,31 +493,39 @@
       xhr.send();
     }
 
-    function pollLiveMenu() {
+    function pollLiveMenu(manual) {
       if (syncInProgress) return;
       syncInProgress = true;
-      var now = getTorontoNow();
-      var expected = expectedMeal(now);
-      if (!now) {
-        menuNotAvailable("TV clock or Toronto timezone not available", false);
+      var button = document.getElementById("btn-refresh");
+      if (button) { button.disabled = true; button.innerHTML = "Checking…"; }
+      if (manual) setStatus("● Checking published menu…", "warn");
+      var finish = function(obj) {
+        var ok = renderVerifiedMenu(obj);
+        if (!ok && !validLiveData(MENU_DATA, null)) {
+          menuNotAvailable("No verified menu is currently published; check MyDiningHub", false);
+        } else if (!ok) {
+          setStatus("● Could not refresh • last verified menu still displayed", "warn");
+        }
         syncInProgress = false;
-        return;
-      }
-      if (expected === "Closed") {
-        menuNotAvailable("Outside configured meal service hours", true);
-        syncInProgress = false;
-        return;
-      }
-      // Prefer local server endpoint; plain JSON supports GitHub Pages as well.
-      requestJson((/\.github\.io$/i.test(window.location.hostname) ? "menu_data.json" : "api/menu"), function (obj) {
-        if (obj && renderVerifiedMenu(obj)) {syncInProgress = false; return;}
-        requestJson("menu_data.json", function (fallback) {
-          if (!renderVerifiedMenu(fallback)) {
-            menuNotAvailable("Unable to verify current " + expected + " menu", false);
-          }
-          syncInProgress = false;
+        if (button) { button.disabled = false; button.innerHTML = "Refresh Menu"; }
+      };
+      // A public GitHub Pages button cannot run a Python scrape or store a GitHub token.
+      // It can fetch the most recently published menu with a cache-busting query.
+      if (/\.github\.io$/i.test(window.location.hostname)) {
+        requestJson("menu_data.json", finish);
+      } else {
+        requestJson("api/menu", function(obj) {
+          if (validLiveData(obj, null)) finish(obj);
+          else requestJson("menu_data.json", finish);
         });
-      });
+      }
+    }
+
+    function openAdminSync() {
+      // Manual upstream update requires GitHub sign-in and workflow permissions.
+      var url = "https://github.com/gopi-aws-1/utsc-menu/actions/workflows/update-menu.yml";
+      var tab = window.open(url, "_blank");
+      if (!tab) window.location.href = url;
     }
 
     function updateClockAndSafety() {
@@ -512,24 +533,20 @@
       document.getElementById("live-clock").innerHTML = toronto ? escapeHtml(toronto.clock) : "Toronto time unavailable";
       if (toronto && MENU_DATA.stations.length && validLiveData(MENU_DATA, toronto)) {
         var currentAge = new Date().getTime() - fetchedTime(MENU_DATA);
-        setStatus(currentAge <= FRESH_AFTER_MS ? ("● Verified " + MENU_DATA.mealPeriod + " menu") :
-          ("● Update delayed • last verified " + MENU_DATA.mealPeriod), currentAge <= FRESH_AFTER_MS ? "ok" : "warn");
+        setStatus(currentAge <= FRESH_AFTER_MS ? ("● Verified " + MENU_DATA.mealPeriod + " • " + MENU_DATA.menuDate) :
+          ("● Update delayed • " + MENU_DATA.mealPeriod + " • " + MENU_DATA.menuDate), currentAge <= FRESH_AFTER_MS ? "ok" : "warn");
       }
-      if (toronto && MENU_DATA.stations.length && !validLiveData(MENU_DATA, toronto)) {
-        // Prevent a previous meal from remaining on screen at the meal boundary.
-        menuNotAvailable("Meal changed or latest update has expired", false);
-        pollLiveMenu();
-      }
-      if (toronto && expectedMeal(toronto) === "Closed" && MENU_DATA.stations.length) {
-        menuNotAvailable("Outside configured meal service hours", true);
+      if (MENU_DATA.stations.length && !validLiveData(MENU_DATA, toronto)) {
+        menuNotAvailable("Last verified source data has expired", false);
+        pollLiveMenu(false);
       }
     }
 
     renderStations();
     updateClockAndSafety();
-    pollLiveMenu();  // Fetch immediately, rather than waiting for the first interval.
+    pollLiveMenu(false);  // Fetch immediately and once per minute.
     setInterval(updateClockAndSafety, 10000);
-    setInterval(pollLiveMenu, 60000);
+    setInterval(function () { pollLiveMenu(false); }, 60000);
   </script>
 </body>
 </html>
