@@ -3,8 +3,8 @@
   "dateLabel": "Fri, Oct 16, 2026",
   "menuDate": "2026-10-16",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-16T11:28:10.559508-04:00",
-  "fetchedAtEpochMs": 1792164490559,
+  "fetchedAt": "2026-10-16T13:00:05.358348-04:00",
+  "fetchedAtEpochMs": 1792170005358,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -55,9 +55,8 @@
         },
         {
           "name": "Pulled Pork Sandwich",
-          "cal": "220 Cal",
+          "cal": "0 Cal",
           "ingredients": "BBQ pulled pork, cheddar, kaiser",
-          "serving": "80 gram",
           "servingOptions": [
             "80 gram",
             "110 gram"
@@ -225,7 +224,7 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "10 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Red Onions",
@@ -299,7 +298,7 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "10 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Middle Eastern Couscous Salad",
@@ -307,7 +306,7 @@
         },
         {
           "name": "Romaine Lettuce",
-          "cal": "10 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Spring Mix",
@@ -331,7 +330,7 @@
         },
         {
           "name": "Greek Feta Dressing",
-          "cal": "190 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Zesty Italian Dressing",
@@ -463,7 +462,7 @@
         },
         {
           "name": "Coconut Yogurt",
-          "cal": "35 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Plain Yogurt",
