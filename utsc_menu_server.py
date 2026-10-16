@@ -352,6 +352,7 @@ def pull_from_playwright(debug: bool = False) -> dict:
                         "menuDate": completed.date().isoformat(),
                         "mealPeriod": period,
                         "fetchedAt": completed.isoformat(),
+                        "fetchedAtEpochMs": int(completed.timestamp() * 1000),
                         "verifiedSource": True,
                         "locationName": "Harmony Commons Dining Hall",
                         "sourceUrl": TARGET_URL,

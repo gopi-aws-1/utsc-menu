@@ -337,11 +337,18 @@
       el.className = "status-pill" + (level === "warn" ? " status-warning" : level === "closed" ? " status-closed" : "");
     }
 
+    // Numeric UTC timestamps avoid old LG webOS Chromium rejecting Python's
+    // 6-digit fractional ISO datetime notation.
+    function fetchedTime(obj) {
+      if (obj && typeof obj.fetchedAtEpochMs === "number") return obj.fetchedAtEpochMs;
+      return obj && obj.fetchedAt ? Date.parse(obj.fetchedAt) : NaN;
+    }
+
     function validLiveData(obj, now) {
       if (!obj || !now || !obj.verifiedSource || obj.schemaVersion !== 2 || !obj.stations ||
           !obj.stations.length || !obj.fetchedAt || !obj.menuDate) return false;
       if (obj.menuDate !== now.date || obj.mealPeriod !== expectedMeal(now)) return false;
-      var created = Date.parse(obj.fetchedAt);
+      var created = fetchedTime(obj);
       var age = new Date().getTime() - created;
       return !isNaN(created) && age >= -120000 && age <= STALE_AFTER_MS;
     }
@@ -440,10 +447,10 @@
       MENU_DATA = obj;
       window.menuEmptyTitle = "";
       document.getElementById("footer-timestamp").innerHTML = "Verified " +
-        escapeHtml(obj.mealPeriod) + " • Updated " + escapeHtml(new Date(obj.fetchedAt).toLocaleTimeString("en-US", {
+        escapeHtml(obj.mealPeriod) + " • Updated " + escapeHtml(new Date(fetchedTime(obj)).toLocaleTimeString("en-US", {
           hour: "numeric", minute: "2-digit", timeZone: "America/Toronto"
         })) + " Toronto";
-      var elapsed = new Date().getTime() - Date.parse(obj.fetchedAt);
+      var elapsed = new Date().getTime() - fetchedTime(obj);
       setStatus(elapsed <= FRESH_AFTER_MS ? ("● Verified " + obj.mealPeriod + " menu") :
         ("● Update delayed • last verified " + obj.mealPeriod), elapsed <= FRESH_AFTER_MS ? "ok" : "warn");
       lastValidatedAt = new Date().getTime();
@@ -496,7 +503,7 @@
       var toronto = getTorontoNow();
       document.getElementById("live-clock").innerHTML = toronto ? escapeHtml(toronto.clock) : "Toronto time unavailable";
       if (toronto && MENU_DATA.stations.length && validLiveData(MENU_DATA, toronto)) {
-        var currentAge = new Date().getTime() - Date.parse(MENU_DATA.fetchedAt);
+        var currentAge = new Date().getTime() - fetchedTime(MENU_DATA);
         setStatus(currentAge <= FRESH_AFTER_MS ? ("● Verified " + MENU_DATA.mealPeriod + " menu") :
           ("● Update delayed • last verified " + MENU_DATA.mealPeriod), currentAge <= FRESH_AFTER_MS ? "ok" : "warn");
       }
