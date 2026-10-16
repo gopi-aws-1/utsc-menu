@@ -95,13 +95,40 @@
     }
     .status-pill {
       display: inline-block;
-      background-color: #064e3b;
-      color: #6ee7b7;
-      border: 1px solid #059669;
-      padding: 6px 12px;
+      background-color: #1c304e;
+      color: #e2e8f0;
+      border: 1px solid #385171;
+      padding: 8px 13px;
       border-radius: 20px;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
+      white-space: nowrap;
+    }
+    .sync-light {
+      display: inline-block;
+      vertical-align: middle;
+      width: 9px;
+      height: 9px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background-color: #64748b;
+    }
+    .sync-light.active {
+      background-color: #22c55e;
+      box-shadow: 0 0 0 2px rgba(34,197,94,.18);
+      -webkit-animation: livePulse 1.8s ease-in-out infinite;
+      animation: livePulse 1.8s ease-in-out infinite;
+    }
+    @-webkit-keyframes livePulse {
+      0%, 100% { opacity: 1; -webkit-transform: scale(1); }
+      50% { opacity: .35; -webkit-transform: scale(.8); }
+    }
+    @keyframes livePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .35; transform: scale(.8); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sync-light.active { -webkit-animation: none; animation: none; }
     }
     .clock-display {
       font-size: 22px;
@@ -250,7 +277,7 @@
     </div>
     <div class="header-right">
       <div class="clock-display" id="live-clock">--:--</div>
-      <div class="status-pill" id="sync-status">● Checking live menu…</div>
+      <div class="status-pill" id="sync-status" role="status" aria-live="polite"><span class="sync-light"></span>Checking published menu…</div>
     </div>
   </div>
 
@@ -335,8 +362,25 @@
 
     function setStatus(message, level) {
       var el = document.getElementById("sync-status");
-      el.innerHTML = escapeHtml(message);
-      el.className = "status-pill" + (level === "warn" ? " status-warning" : level === "closed" ? " status-closed" : "");
+      var pulse = level === "connected" ? " active" : "";
+      el.innerHTML = '<span class="sync-light' + pulse + '" aria-hidden="true"></span>' + escapeHtml(message);
+      el.className = "status-pill";
+      el.title = level === "connected"
+        ? "Auto-refresh checks the published menu each minute. Last updated is the actual source retrieval time."
+        : "The latest published menu is not currently confirmed reachable.";
+    }
+
+    function lastUpdatedLabel(obj) {
+      if (!obj || isNaN(fetchedTime(obj))) return "Last updated: unavailable";
+      var date = new Date(fetchedTime(obj));
+      try {
+        return "Last updated: " + date.toLocaleString("en-US", {
+          timeZone: "America/Toronto", month: "short", day: "numeric",
+          hour: "numeric", minute: "2-digit", hour12: true
+        }) + " ET";
+      } catch (e) {
+        return "Last updated: " + date.toUTCString() + " (UTC)";
+      }
     }
 
     // Numeric UTC timestamps avoid old LG webOS Chromium rejecting Python's
@@ -458,7 +502,7 @@
       MENU_DATA = { stations: [] };
       window.menuEmptyTitle = "Published menu temporarily unavailable";
       window.menuEmptySub = "Open the MyDiningHub source or ask an admin to run a source sync.";
-      setStatus("● Unable to verify published menu", "warn");
+      setStatus("Menu unavailable", "offline");
       document.getElementById("footer-timestamp").innerHTML = escapeHtml(reason);
       renderStations();
     }
@@ -472,9 +516,9 @@
         escapeHtml(obj.menuDate) + " • " + escapeHtml(obj.mealPeriod) + " • Retrieved " + escapeHtml(new Date(fetchedTime(obj)).toLocaleTimeString("en-US", {
           hour: "numeric", minute: "2-digit", timeZone: "America/Toronto"
         })) + " Toronto";
-      var elapsed = new Date().getTime() - fetchedTime(obj);
-      setStatus(elapsed <= FRESH_AFTER_MS ? ("● Verified " + obj.mealPeriod + " • " + obj.menuDate) :
-        ("● Update delayed • " + obj.mealPeriod + " • " + obj.menuDate), elapsed <= FRESH_AFTER_MS ? "ok" : "warn");
+      // The green pulse confirms successful automatic checking of the public
+      // menu file, not that MyDiningHub has just published a change.
+      setStatus(lastUpdatedLabel(obj), "connected");
       lastValidatedAt = new Date().getTime();
       renderStations();
       return true;
@@ -507,13 +551,13 @@
       syncInProgress = true;
       var button = document.getElementById("btn-refresh");
       if (button) { button.disabled = true; button.innerHTML = "Checking…"; }
-      if (manual) setStatus("● Checking published menu…", "warn");
+      if (manual) setStatus("Checking published menu…", "checking");
       var finish = function(obj) {
         var ok = renderVerifiedMenu(obj);
         if (!ok && !validLiveData(MENU_DATA, null)) {
           menuNotAvailable("No verified menu is currently published; check MyDiningHub", false);
         } else if (!ok) {
-          setStatus("● Could not refresh • last verified menu still displayed", "warn");
+          setStatus(lastUpdatedLabel(MENU_DATA), "offline");
         }
         syncInProgress = false;
         if (button) { button.disabled = false; button.innerHTML = "Refresh Menu"; }
@@ -540,11 +584,6 @@
     function updateClockAndSafety() {
       var toronto = getTorontoNow();
       document.getElementById("live-clock").innerHTML = toronto ? escapeHtml(toronto.clock) : "Toronto time unavailable";
-      if (toronto && MENU_DATA.stations.length && validLiveData(MENU_DATA, toronto)) {
-        var currentAge = new Date().getTime() - fetchedTime(MENU_DATA);
-        setStatus(currentAge <= FRESH_AFTER_MS ? ("● Verified " + MENU_DATA.mealPeriod + " • " + MENU_DATA.menuDate) :
-          ("● Update delayed • " + MENU_DATA.mealPeriod + " • " + MENU_DATA.menuDate), currentAge <= FRESH_AFTER_MS ? "ok" : "warn");
-      }
       if (MENU_DATA.stations.length && !validLiveData(MENU_DATA, toronto)) {
         menuNotAvailable("Last verified source data has expired", false);
         pollLiveMenu(false);

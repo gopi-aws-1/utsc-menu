@@ -106,3 +106,6 @@ The old HTML used different hours. Please confirm the current operating schedule
 - Meals are never permanently baked into `index.html`. Old meals in `menu_data.json` cannot pass the frontend's current-day/current-period/age checks.
 - To run tests locally: `python -m pip install pytest`, `python -m pytest -q tests`. Chromium is needed for Playwright browser tests.
 - For food safety, the menu and calorie details are informational and must still be confirmed by dining staff before being treated as allergen advice.
+## Update timestamp and activity light
+
+The sign shows **Last updated: [Toronto time] ET** from the verified source retrieval timestamp, alongside a subtle pulsing green dot when the browser successfully reads the published JSON. This dot indicates the **site's automatic polling is functioning** (the browser checks every minute); it does **not** mean the upstream source has just changed. The source's selected menu/date remain in the footer. The light stops pulsing on fetch failure or when data is unavailable. This replaces the distracting delayed-update banner without making the timestamp misleading.

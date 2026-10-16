@@ -21,7 +21,7 @@ class SignageControlsTest(unittest.TestCase):
             base = pathlib.Path(tmp)
             shutil.copy(REPO / "index.html", base / "index.html")
             def fixture(name):
-                now = datetime.datetime.now(datetime.timezone.utc)
+                now = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(minutes=23)
                 return {
                     "schemaVersion": 2,
                     "dateLabel": "Tomorrow (source verified)",
@@ -48,7 +48,9 @@ class SignageControlsTest(unittest.TestCase):
                     page.goto("http://127.0.0.1:%d/" % server.server_port)
                     page.locator(".station-card").first.wait_for(timeout=12000)
                     self.assertEqual(page.locator(".station-card").count(), 8)
-                    self.assertIn("Breakfast", page.locator("#sync-status").inner_text())
+                    self.assertIn("Last updated:", page.locator("#sync-status").inner_text())
+                    self.assertEqual(page.locator("#sync-status .sync-light.active").count(), 1)
+                    self.assertNotIn("Update delayed", page.locator("#sync-status").inner_text())
                     page.locator("#btn-page-1").click()
                     self.assertEqual(page.locator(".station-card").count(), 6)
                     page.locator("#btn-page-2").click()
@@ -72,6 +74,7 @@ class SignageControlsTest(unittest.TestCase):
                     page.locator("#btn-refresh").click()
                     page.get_by_text("Newly published dish").first.wait_for(timeout=12000)
                     self.assertFalse(page.locator("#btn-refresh").is_disabled())
+                    self.assertEqual(page.locator("#sync-status .sync-light.active").count(), 1)
                     with page.expect_popup() as popup_info:
                         page.locator("#btn-admin-sync").click()
                     popup = popup_info.value
