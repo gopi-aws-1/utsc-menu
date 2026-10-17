@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Sat, Oct 17, 2026",
   "menuDate": "2026-10-17",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-17T15:07:57.366997-04:00",
-  "fetchedAtEpochMs": 1792264077366,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-17T16:56:05.945162-04:00",
+  "fetchedAtEpochMs": 1792270565945,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,19 +13,24 @@
       "name": "Home",
       "items": [
         {
-          "name": "Chicken a la King",
-          "cal": "130 Cal",
-          "ingredients": "chicken, mushroom, green pepper, onion"
+          "name": "Char Sui Pork Loin",
+          "cal": "160 Cal",
+          "ingredients": "pork, hoisin, honey, sesame oil, soy sauce, spices",
+          "dietary": [
+            "No Dairy"
+          ]
         },
         {
-          "name": "Seoul Beef Quesadilla",
-          "cal": "380 Cal",
-          "ingredients": "gochujang beef, kimchi, korean BBQ sauce, mozzarella, tortilla"
+          "name": "Chicken Penne Primevera Alfredo",
+          "cal": "320 Cal",
+          "ingredients": "chicken, mushroom, carrot, zucchini, bell pepper, alfredo sauce, penne",
+          "dietary": [
+            "Coolfood Meal"
+          ]
         },
         {
-          "name": "PEI Vegetable Medley",
-          "cal": "35 Cal",
-          "ingredients": "green beans, wax beans, carrot",
+          "name": "Broccoli Florets",
+          "cal": "30 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -33,8 +38,13 @@
           ]
         },
         {
-          "name": "Brown Rice",
-          "cal": "120 Cal",
+          "name": "Fresh Cut Fries",
+          "cal": "420 Cal"
+        },
+        {
+          "name": "Sweet Potato Wedges",
+          "cal": "150 Cal",
+          "ingredients": "sweet potato, parsley, oregano, spices",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -42,14 +52,12 @@
           ]
         },
         {
-          "name": "Za'atar Roasted Potatoes",
-          "cal": "120 Cal",
-          "ingredients": "potato, za'atar",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "name": "Cheese Sauce",
+          "cal": ""
+        },
+        {
+          "name": "Pico de Gallo",
+          "cal": ""
         }
       ],
       "accent": "#3b82f6"
@@ -72,12 +80,23 @@
       "accent": "#f59e0b"
     },
     {
-      "name": "Sushi/Dumpling Bar",
+      "name": "Pho/Ramen",
       "items": [
         {
-          "name": "Maki Roll",
+          "name": "Chicken Broth",
           "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
+          "dietary": [
+            "No Dairy",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Vegetable Broth",
+          "cal": "60 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         }
       ],
       "accent": "#ef4444"
@@ -117,16 +136,20 @@
       "name": "Pasta/Stir-Fry",
       "items": [
         {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
+          "name": "Chicken",
+          "cal": "50 Cal"
         },
         {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
+          "name": "Mixed Pepper",
+          "cal": "5 Cal"
         },
         {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
+          "name": "Red Onion",
+          "cal": "10 Cal"
+        },
+        {
+          "name": "Teriyaki Sauce",
+          "cal": "45 Cal"
         }
       ],
       "accent": "#8b5cf6"
@@ -333,30 +356,27 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Veggie & Bean Jambalaya",
-          "cal": "130 Cal",
-          "ingredients": "kidney beans, rice, okra, red pepper, onion, celery",
+          "name": "Plant Based Cabbage Roll Casserole",
+          "cal": "160 Cal",
+          "ingredients": "meatless crumble, tomato, cabbage, onion, seven grain medley",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
-            "Plant Forward",
-            "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Samosa Salad",
-          "cal": "60 Cal",
-          "ingredients": "samosa, kachumber salad, pickled red onion, cilantro chutney, kale greens",
+          "name": "Maple Glazed Tempeh Sandwich",
+          "cal": "230 Cal",
+          "ingredients": "maple glazed tempeh, carrot, lettuce, vegan mayo, no gluten bread",
           "dietary": [
-            "Coolfood Meal",
             "No Dairy",
-            "Eat Well"
+            "No Gluten"
           ]
         },
         {
-          "name": "Corn",
-          "cal": "100 Cal",
+          "name": "Peas",
+          "cal": "90 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -364,8 +384,9 @@
           ]
         },
         {
-          "name": "Brown Rice",
-          "cal": "120 Cal",
+          "name": "Red Potatoes & Onions",
+          "cal": "160 Cal",
+          "ingredients": "potato, garlic, herbs",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -379,11 +400,30 @@
       "name": "Bakery",
       "items": [
         {
+          "name": "Lemon Cheesecake",
+          "cal": "190 Cal",
+          "ingredients": "lemon pudding, cheesecake, graham crackers",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Black Bean Brownie",
+          "cal": "100 Cal",
+          "dietary": [
+            "Vegan"
+          ]
+        },
+        {
           "name": "Mint Brownie",
           "cal": "290 Cal",
           "dietary": [
             "Vegetarian"
           ]
+        },
+        {
+          "name": "Oreo Rice Krispie Square",
+          "cal": "120 Cal"
         },
         {
           "name": "Chocolate Chip Cookie",
