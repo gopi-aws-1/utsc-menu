@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Sun, Oct 18, 2026",
   "menuDate": "2026-10-18",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-18T15:31:29.052309-04:00",
-  "fetchedAtEpochMs": 1792351889052,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-18T17:47:53.834060-04:00",
+  "fetchedAtEpochMs": 1792360073834,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,27 +13,23 @@
       "name": "Home",
       "items": [
         {
-          "name": "Beef Stew",
-          "cal": "150 Cal",
-          "ingredients": "beef, carrot, celery, peas, potato"
-        },
-        {
-          "name": "Penne Primavera Rose",
-          "cal": "240 Cal",
-          "ingredients": "milk, parmesan, carrot, mushroom, zucchini, red & green pepper, penne",
+          "name": "Lemon Dijon Roasted Turkey Breast",
+          "cal": "110 Cal",
           "dietary": [
-            "Coolfood Meal"
+            "No Dairy",
+            "No Gluten",
+            "Eat Well"
           ]
         },
         {
-          "name": "Jerk Chicken Nachos",
-          "cal": "220 Cal",
-          "ingredients": "chicken, pineapple, sour cream, cheese, cilantro"
+          "name": "Penne & Meat Sauce",
+          "cal": "270 Cal",
+          "ingredients": "beef, carrot, celery, tomato, italian seasoning, parmesan, penne pasta"
         },
         {
-          "name": "Asian Vegetable Medley",
-          "cal": "50 Cal",
-          "ingredients": "broccoli, green beans, carrot, onion, red pepper, mushroom",
+          "name": "Maple Roasted Vegetables",
+          "cal": "160 Cal",
+          "ingredients": "turnip, parsnip, carrot, sweet potato, maple syrup",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -41,17 +37,42 @@
           ]
         },
         {
-          "name": "Brown Rice",
-          "cal": "120 Cal",
+          "name": "Red Mashed Potatoes",
+          "cal": "130 Cal",
+          "ingredients": "red potato, milk",
           "dietary": [
-            "Vegan",
+            "Vegetarian",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Potato Wedges",
-          "cal": "260 Cal"
+          "name": "Hot Dog",
+          "cal": "410 Cal",
+          "ingredients": "beef weiner, hot dog bun",
+          "dietary": [
+            "No Dairy"
+          ],
+          "serving": "160 gram",
+          "servingOptions": [
+            "160 gram",
+            "80 gram",
+            "120 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "80 gram",
+              "cal": "210 Cal"
+            },
+            {
+              "serving": "120 gram",
+              "cal": "310 Cal"
+            },
+            {
+              "serving": "160 gram",
+              "cal": "410 Cal"
+            }
+          ]
         }
       ],
       "accent": "#3b82f6"
@@ -81,12 +102,23 @@
       "accent": "#f59e0b"
     },
     {
-      "name": "Sushi/Dumpling Bar",
+      "name": "Pho/Ramen",
       "items": [
         {
-          "name": "Maki Roll",
+          "name": "Chicken Broth",
           "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
+          "dietary": [
+            "No Dairy",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Vegetable Broth",
+          "cal": "60 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         }
       ],
       "accent": "#ef4444"
@@ -127,16 +159,20 @@
       "name": "Pasta/Stir-Fry",
       "items": [
         {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
+          "name": "Chicken",
+          "cal": "50 Cal"
         },
         {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
+          "name": "Mixed Pepper",
+          "cal": "5 Cal"
         },
         {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
+          "name": "Red Onion",
+          "cal": "10 Cal"
+        },
+        {
+          "name": "Teriyaki Sauce",
+          "cal": "45 Cal"
         }
       ],
       "accent": "#8b5cf6"
@@ -361,41 +397,30 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Chickpea Curry",
-          "cal": "150 Cal",
-          "ingredients": "chickpea, cream, tomato, garlic, ginger, curry paste",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Plant Based Sausage Rapini Shells",
-          "cal": "310 Cal",
-          "ingredients": "plant based sausage, rapini, roasted garlic puree, pasta shells",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Lentil Barbacoa Taco",
+          "name": "Kale, Lentil & Quinoa Stew",
           "cal": "100 Cal",
-          "ingredients": "barbacoa lentils, lettuce, tomato, vegan queso, corn tortilla",
+          "ingredients": "lentils, quinoa, kale, celery, carrot, tomato, onion",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
-            "Plant Forward",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Green Beans",
-          "cal": "35 Cal",
+          "name": "Sweet Potato Coconut Curry",
+          "cal": "180 Cal",
+          "ingredients": "sweet potato, mushroom, kale, lemongrass, green curry paste, cilantro",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Zucchini & Tomato",
+          "cal": "45 Cal",
+          "ingredients": "zucchini, tomato, onion, garlic, oregano, thyme",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -409,9 +434,8 @@
       "name": "Bakery",
       "items": [
         {
-          "name": "Apple Crisp",
-          "cal": "160 Cal",
-          "ingredients": "apples, cinnamon, brown sugar, oats, flour",
+          "name": "Chocolate Zucchini Cake",
+          "cal": "270 Cal",
           "dietary": [
             "Vegetarian"
           ]
@@ -419,6 +443,13 @@
         {
           "name": "Coconut Crunch Rice Krispie Square",
           "cal": "100 Cal"
+        },
+        {
+          "name": "Haystack Brownie",
+          "cal": "130 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "No Gluten Lemon Coconut Bar",
