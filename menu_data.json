@@ -3,8 +3,8 @@
   "dateLabel": "Mon, Oct 19, 2026",
   "menuDate": "2026-10-19",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-19T11:41:30.846067-04:00",
-  "fetchedAtEpochMs": 1792424490846,
+  "fetchedAt": "2026-10-19T12:59:45.475510-04:00",
+  "fetchedAtEpochMs": 1792429185475,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -32,11 +32,8 @@
         },
         {
           "name": "Beef Taco",
-          "cal": "200 Cal",
-          "ingredients": "taco-spiced beef, tomato, lettuce, cheddar, sour cream, taco shell",
-          "dietary": [
-            "No Gluten"
-          ]
+          "cal": "230 Cal",
+          "ingredients": "taco-spiced beef, tomato, lettuce, cheddar, sour cream, tortilla"
         },
         {
           "name": "Roasted Zucchini & Corn",
