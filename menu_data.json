@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Mon, Oct 19, 2026",
   "menuDate": "2026-10-19",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-19T16:16:53.392966-04:00",
-  "fetchedAtEpochMs": 1792441013392,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-19T16:44:40.758871-04:00",
+  "fetchedAtEpochMs": 1792442680758,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,31 +13,32 @@
       "name": "Home",
       "items": [
         {
-          "name": "Chicken Cacciatore",
-          "cal": "130 Cal",
-          "ingredients": "chicken, mushroom, green pepper, onion, tomato, spices",
+          "name": "Adobo Chicken",
+          "cal": "100 Cal",
           "dietary": [
             "No Dairy",
             "No Gluten"
           ]
         },
         {
-          "name": "Spanakopita Pasta Bake",
-          "cal": "270 Cal",
-          "ingredients": "rigatoni, spinach, cream, onion, dill, feta, parsley, panko bread crumbs",
+          "name": "Alfredo Gochujang Pasta",
+          "cal": "320 Cal",
           "dietary": [
             "Vegetarian",
             "Coolfood Meal"
           ]
         },
         {
-          "name": "Beef Taco",
-          "cal": "230 Cal",
-          "ingredients": "taco-spiced beef, tomato, lettuce, cheddar, sour cream, tortilla"
+          "name": "Sloppy Joe",
+          "cal": "420 Cal",
+          "ingredients": "beef, onion, celery, green pepper, tomato, kaiser",
+          "dietary": [
+            "No Dairy"
+          ]
         },
         {
-          "name": "Roasted Zucchini & Corn",
-          "cal": "90 Cal",
+          "name": "Chop Suey Stir Fry Vegetables",
+          "cal": "50 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -45,31 +46,12 @@
           ]
         },
         {
-          "name": "Herb White Rice",
-          "cal": "130 Cal",
-          "ingredients": "rice, onion, parsley, spices",
+          "name": "Garlic Fried Rice",
+          "cal": "110 Cal",
+          "ingredients": "rice, garlic",
           "dietary": [
             "Vegan",
             "No Gluten"
-          ]
-        },
-        {
-          "name": "French Fries",
-          "cal": "580 Cal",
-          "serving": "115 gram",
-          "servingOptions": [
-            "115 gram",
-            "105 gram"
-          ],
-          "servingCalories": [
-            {
-              "serving": "105 gram",
-              "cal": "530 Cal"
-            },
-            {
-              "serving": "115 gram",
-              "cal": "580 Cal"
-            }
           ]
         }
       ],
@@ -98,17 +80,6 @@
         }
       ],
       "accent": "#f59e0b"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#ef4444"
     },
     {
       "name": "Pizza",
@@ -140,25 +111,7 @@
           "ingredients": "pepperoni, mozzarella"
         }
       ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#8b5cf6"
+      "accent": "#ef4444"
     },
     {
       "name": "Deli",
@@ -260,7 +213,7 @@
           "cal": ""
         }
       ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Salad Bar",
@@ -354,7 +307,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Soup",
@@ -364,69 +317,58 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Vegan",
       "items": [
         {
-          "name": "Tofu Schnitzel",
-          "cal": "340 Cal"
-        },
-        {
-          "name": "Cuban Black Bean Stew",
-          "cal": "90 Cal",
-          "ingredients": "black beans, red pepper, celery, carrot, tomato, onion",
+          "name": "Plant Based Gumbo",
+          "cal": "240 Cal",
+          "ingredients": "plant based sausage, green pepper, celery, onion, cajun spice, parsley",
           "dietary": [
             "Vegan",
-            "Plant Forward",
+            "Coolfood Meal",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Cumin Green Beans",
+          "cal": "35 Cal",
+          "ingredients": "green bean, onion, garlic, cilantro, spices",
+          "dietary": [
+            "Vegan",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "White Rice",
-          "cal": "130 Cal",
+          "name": "Bean & Veggie Quinoa",
+          "cal": "140 Cal",
+          "ingredients": "quinoa, bean medley, zucchini, celery, carrots, cilantro",
           "dietary": [
             "Vegan",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Cauliflower Lentil Dahl Bowl",
-          "cal": "230 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ],
-          "serving": "195 gram",
-          "servingOptions": [
-            "195 gram",
-            "118 gram"
-          ],
-          "servingCalories": [
-            {
-              "serving": "118 gram",
-              "cal": "140 Cal"
-            },
-            {
-              "serving": "195 gram",
-              "cal": "230 Cal"
-            }
+            "No Gluten",
+            "Eat Well"
           ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "Oat Fudge Bar",
-          "cal": "300 Cal",
+          "name": "Oreo Cheesecake",
+          "cal": "210 Cal",
+          "ingredients": "oreo cookies, cheesecake, milk, whipped topping",
           "dietary": [
             "Vegetarian"
           ]
+        },
+        {
+          "name": "Chocolate Chip Rice Krispie Square",
+          "cal": "100 Cal"
         },
         {
           "name": "Sweet & Salty Brownie",
@@ -440,6 +382,14 @@
           "cal": "120 Cal",
           "dietary": [
             "Vegetarian"
+          ]
+        },
+        {
+          "name": "Mint Chocolate No Gluten Cookie",
+          "cal": "120 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
           ]
         },
         {
@@ -457,7 +407,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -495,7 +445,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
