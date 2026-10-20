@@ -3,8 +3,8 @@
   "dateLabel": "Tue, Oct 20, 2026",
   "menuDate": "2026-10-20",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-10-20T06:10:50.137930-04:00",
-  "fetchedAtEpochMs": 1792491050137,
+  "fetchedAt": "2026-10-20T10:31:23.769331-04:00",
+  "fetchedAtEpochMs": 1792506683769,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -41,8 +41,11 @@
           ]
         },
         {
-          "name": "Bacon",
-          "cal": "70 Cal"
+          "name": "Breakfast Sausage",
+          "cal": "120 Cal",
+          "dietary": [
+            "No Dairy"
+          ]
         },
         {
           "name": "Home Style Potatoes (118 millilitre)",
