@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Tue, Oct 20, 2026",
   "menuDate": "2026-10-20",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-20T15:12:42.202241-04:00",
-  "fetchedAtEpochMs": 1792523562202,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-20T16:36:46.258140-04:00",
+  "fetchedAtEpochMs": 1792528606258,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,34 +13,30 @@
       "name": "Home",
       "items": [
         {
-          "name": "Vegetable Fried Rice",
-          "cal": "190 Cal",
-          "ingredients": "rice, egg, carrot, celery, red pepper, peas, soy sauce, hoisin sauce",
+          "name": "Cajun Cornmeal Crusted Tilapia",
+          "cal": "130 Cal",
           "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
             "No Dairy",
+            "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Spicy Crispy Chicken Snack Wrap",
-          "cal": "290 Cal",
-          "ingredients": "crispy chicken, lettuce, tomato, sriracha mayo, tortilla"
-        },
-        {
-          "name": "Penne Marinara",
-          "cal": "210 Cal",
-          "ingredients": "tomato, onion, garlic, oregano, basil, sugar, parmesan cheese, penne",
+          "name": "Chipotle Corn Macaroni & Cheese",
+          "cal": "350 Cal",
+          "ingredients": "chipotle corn, green onion, cilantro, jalapeno cheese sauce, pasta",
           "dietary": [
-            "Coolfood Meal",
-            "Eat Well"
+            "Coolfood Meal"
           ]
         },
         {
-          "name": "Italian Vegetable Medley",
-          "cal": "45 Cal",
-          "ingredients": "romano beans, lima beans, cauliflower, zucchini, red pepper",
+          "name": "Turkey Kimchi Reuben",
+          "cal": "250 Cal"
+        },
+        {
+          "name": "Vegetable Medley",
+          "cal": "60 Cal",
+          "ingredients": "zucchini, red pepper, broccoli, cauliflower, carrot, peas",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -48,26 +44,19 @@
           ]
         },
         {
-          "name": "Shepherd's Pie",
-          "cal": "310 Cal",
-          "ingredients": "beef, onion, carrot, celery, spices, mashed potato",
+          "name": "Turmeric Basmatic Rice",
+          "cal": "",
           "dietary": [
+            "Vegan",
             "No Gluten"
-          ],
-          "serving": "205 gram",
-          "servingOptions": [
-            "205 gram",
-            "180 gram"
-          ],
-          "servingCalories": [
-            {
-              "serving": "180 gram",
-              "cal": "280 Cal"
-            },
-            {
-              "serving": "205 gram",
-              "cal": "310 Cal"
-            }
+          ]
+        },
+        {
+          "name": "Potato Chips",
+          "cal": "100 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
           ]
         }
       ],
@@ -96,17 +85,6 @@
         }
       ],
       "accent": "#f59e0b"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#ef4444"
     },
     {
       "name": "Pizza",
@@ -141,25 +119,7 @@
           ]
         }
       ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#8b5cf6"
+      "accent": "#ef4444"
     },
     {
       "name": "Deli",
@@ -270,7 +230,7 @@
           "cal": ""
         }
       ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Salad Bar",
@@ -364,7 +324,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Soup",
@@ -374,44 +334,40 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Vegan",
       "items": [
         {
-          "name": "Tofu & Eggplant Stew",
-          "cal": "100 Cal",
-          "ingredients": "tofu, eggplant, carrot, onion, parsley, tomato basil sauce",
+          "name": "Caribbean Chickpea Curry",
+          "cal": "160 Cal",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Five Spice Roasted Carrots",
+          "cal": "90 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "White Rice",
+          "cal": "130 Cal",
+          "dietary": [
+            "Vegan",
             "No Gluten"
-          ]
-        },
-        {
-          "name": "White Bean Ragout",
-          "cal": "110 Cal",
-          "ingredients": "navy beans, onion, tomato, parsley",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Chickpea Basmati Pilaf",
-          "cal": "140 Cal",
-          "ingredients": "basmati rice, chickpeas, green pepper, carrot",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
           ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
@@ -421,11 +377,10 @@
           "cal": "90 Cal"
         },
         {
-          "name": "Lemon Square",
-          "cal": "150 Cal",
+          "name": "Date Square",
+          "cal": "170 Cal",
           "dietary": [
-            "Vegetarian",
-            "Eat Well"
+            "Vegetarian"
           ]
         },
         {
@@ -433,14 +388,6 @@
           "cal": "230 Cal",
           "dietary": [
             "Vegetarian"
-          ]
-        },
-        {
-          "name": "Vegan No Gluten Blondie",
-          "cal": "260 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
           ]
         },
         {
@@ -472,7 +419,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -510,7 +457,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
