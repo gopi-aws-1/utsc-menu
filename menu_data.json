@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Wed, Oct 21, 2026",
   "menuDate": "2026-10-21",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-21T15:37:16.342981-04:00",
-  "fetchedAtEpochMs": 1792611436342,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-21T16:42:08.986309-04:00",
+  "fetchedAtEpochMs": 1792615328986,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,55 +13,40 @@
       "name": "Home",
       "items": [
         {
-          "name": "Cajun Turkey Breast",
-          "cal": "120 Cal",
-          "ingredients": "turkey, cajun spice, garlic",
+          "name": "Honey Mustard Pork Loin",
+          "cal": "160 Cal",
           "dietary": [
             "No Dairy",
-            "No Gluten",
-            "Eat Well"
+            "No Gluten"
           ]
         },
         {
-          "name": "Primavera Rose Penne",
-          "cal": "240 Cal",
+          "name": "Penne Marinara",
+          "cal": "210 Cal",
+          "ingredients": "tomato, onion, garlic, oregano, basil, sugar, parmesan cheese, penne",
           "dietary": [
             "Coolfood Meal",
             "Eat Well"
           ]
         },
         {
-          "name": "Fiesta Carnitas Taco",
-          "cal": "190 Cal",
-          "ingredients": "shredded pork, corn salsa, salsa roja, refried beans, cilantro",
+          "name": "BLT Sandwich",
+          "cal": "150 Cal",
+          "ingredients": "bacon, lettuce, tomato, mayo, white bread",
           "dietary": [
             "No Dairy"
           ]
         },
         {
-          "name": "Green Beans",
-          "cal": "40 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "name": "Honey & Togarashi Roasted Parsnips",
+          "cal": "140 Cal"
         },
         {
-          "name": "Zucchini Rice Casserole",
+          "name": "Yukon Gold & Sweet Potato Mash",
           "cal": "120 Cal",
-          "ingredients": "rice, zucchini, onion, parmesan",
+          "ingredients": "potato, sweet potato, milk",
           "dietary": [
-            "Plant Forward",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Roasted Balsamic Mini Potatoes",
-          "cal": "160 Cal",
-          "dietary": [
-            "Vegan",
+            "Vegetarian",
             "No Gluten",
             "Eat Well"
           ]
@@ -85,17 +70,6 @@
         }
       ],
       "accent": "#f59e0b"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#ef4444"
     },
     {
       "name": "Pizza",
@@ -130,25 +104,7 @@
           "ingredients": "pepperoni, mozzarella"
         }
       ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#8b5cf6"
+      "accent": "#ef4444"
     },
     {
       "name": "Deli",
@@ -256,7 +212,7 @@
           "cal": ""
         }
       ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Salad Bar",
@@ -354,7 +310,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Soup",
@@ -364,33 +320,34 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Vegan",
       "items": [
         {
-          "name": "Mushroom Mapo Tofu",
-          "cal": "100 Cal",
-          "ingredients": "tofu, mushroom, sambal chili sauce, sesame, soy sauce",
+          "name": "Plant Based Macaroni & Cheese",
+          "cal": "400 Cal",
+          "ingredients": "pasta, white sauce, bread crumb, nutritional yeast, garlic",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
-            "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Fiesta Lentil Taco",
-          "cal": "150 Cal",
-          "ingredients": "taco-spiced lentils, corn salsa, salsa roja, refried beans, cilantro",
+          "name": "Veggie Fajita Burrito",
+          "cal": "260 Cal",
+          "ingredients": "black beans, bell peppers, onion, cheddar, sour cream, salsa, tortilla",
           "dietary": [
-            "Vegan"
+            "Vegetarian",
+            "Coolfood Meal"
           ]
         },
         {
-          "name": "Green Beans",
-          "cal": "35 Cal",
+          "name": "Curried Peas & Carrots",
+          "cal": "70 Cal",
+          "ingredients": "peas, carrot, cilantro, spices",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -398,16 +355,16 @@
           ]
         },
         {
-          "name": "Cilantro Lime Rice",
-          "cal": "130 Cal",
-          "ingredients": "rice, lime juice, cilantro",
+          "name": "Roasted Butternut Squash",
+          "cal": "70 Cal",
           "dietary": [
             "Vegan",
-            "No Gluten"
+            "No Gluten",
+            "Eat Well"
           ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
@@ -421,16 +378,16 @@
           ]
         },
         {
-          "name": "Maple Butter Tart",
-          "cal": "130 Cal",
-          "ingredients": "maple syrup, flour, eggs, sugar, vanilla, tart shell",
+          "name": "Cookie Brownie",
+          "cal": "220 Cal",
           "dietary": [
             "Vegetarian"
           ]
         },
         {
-          "name": "Cookie Brownie",
-          "cal": "220 Cal",
+          "name": "Oreo Brownie Bowl",
+          "cal": "340 Cal",
+          "ingredients": "chocolate brownie, chocolate pudding, chocolate sauce, oreo",
           "dietary": [
             "Vegetarian"
           ]
@@ -461,7 +418,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -495,7 +452,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
