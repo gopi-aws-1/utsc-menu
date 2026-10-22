@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Thu, Oct 22, 2026",
   "menuDate": "2026-10-22",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-22T16:01:08.898969-04:00",
-  "fetchedAtEpochMs": 1792699268898,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-22T17:27:08.105306-04:00",
+  "fetchedAtEpochMs": 1792704428105,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,29 +13,18 @@
       "name": "Home",
       "items": [
         {
-          "name": "Baked Chicken Breasts",
-          "cal": "210 Cal",
+          "name": "Asian Turkey Meatballs",
+          "cal": "150 Cal",
+          "ingredients": "turkey, sweet & spicy sauce, teriyaki sauce, sesame oil, spices",
           "dietary": [
             "No Dairy",
-            "No Gluten"
+            "Eat Well"
           ]
         },
         {
-          "name": "Primavera Pesto Penne Alfredo",
-          "cal": "300 Cal",
-          "ingredients": "milk, vegetable stock, flour, garlic powder, parmesan cheese, pesto, penne",
-          "dietary": [
-            "Coolfood Meal"
-          ]
-        },
-        {
-          "name": "Chicken Parmesan Sandwich",
-          "cal": "300 Cal"
-        },
-        {
-          "name": "Asian Vegetable Medley",
-          "cal": "50 Cal",
-          "ingredients": "broccoli, green beans, carrot, onion, red pepper, mushroom",
+          "name": "Edamame, Corn & Beans",
+          "cal": "110 Cal",
+          "ingredients": "edamame, corn, black bean, tomato, lime, spices",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -43,9 +32,9 @@
           ]
         },
         {
-          "name": "Mexican Rice",
-          "cal": "150 Cal",
-          "ingredients": "rice, onion, garlic, spices",
+          "name": "Roasted Potatoes",
+          "cal": "130 Cal",
+          "ingredients": "potato, paprika",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -53,8 +42,49 @@
           ]
         },
         {
-          "name": "Gluten Free Mushroom Stroganoff Sauce",
-          "cal": ""
+          "name": "Cauliflower Kale Baked Penne",
+          "cal": "170 Cal",
+          "ingredients": "cauliflower, mushroom, kale, white sauce, breadcrumbs, penne pasta",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "Plant Forward",
+            "Eat Well"
+          ],
+          "serving": "100 gram",
+          "servingOptions": [
+            "100 gram",
+            "178 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "100 gram",
+              "cal": "170 Cal"
+            },
+            {
+              "serving": "178 gram",
+              "cal": "310 Cal"
+            }
+          ]
+        },
+        {
+          "name": "Samosa",
+          "cal": "70 Cal",
+          "serving": "20 gram",
+          "servingOptions": [
+            "20 gram",
+            "85 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "20 gram",
+              "cal": "70 Cal"
+            },
+            {
+              "serving": "85 gram",
+              "cal": "300 Cal"
+            }
+          ]
         }
       ],
       "accent": "#3b82f6"
@@ -75,17 +105,6 @@
         }
       ],
       "accent": "#f59e0b"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#ef4444"
     },
     {
       "name": "Pizza",
@@ -113,25 +132,7 @@
           "ingredients": "sausage, red onion, banana peppers, chili pepper flakes, mozzarella, goat cheese"
         }
       ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#8b5cf6"
+      "accent": "#ef4444"
     },
     {
       "name": "Deli",
@@ -238,7 +239,7 @@
           "cal": ""
         }
       ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Salad Bar",
@@ -336,7 +337,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Soup",
@@ -346,15 +347,15 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Vegan",
       "items": [
         {
-          "name": "Plant Based Bean Paella",
-          "cal": "180 Cal",
-          "ingredients": "rice, beans, carrot, celery, bell pepper, mushroom, peas, corn",
+          "name": "Eggplant Coconut Curry",
+          "cal": "60 Cal",
+          "ingredients": "eggplant, tomato, coconut milk, cilantro, onion, garlic, ginger, spices",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
@@ -364,50 +365,49 @@
           ]
         },
         {
-          "name": "Eggplant Lentil Moussaka",
-          "cal": "100 Cal",
-          "ingredients": "eggplant, red pepper, tomato, onion, parmesan, feta, cream sauce",
+          "name": "Ethiopian Bean Stew",
+          "cal": "130 Cal",
+          "ingredients": "lentils, fava beans, spinach, tomato, potato, coconut milk",
           "dietary": [
+            "Vegan",
             "Coolfood Meal",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Asian Vegetable Medley",
-          "cal": "50 Cal",
-          "ingredients": "broccoli, green beans, carrot, onion, red pepper, mushroom",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Falafel",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegan",
             "Plant Forward",
             "No Gluten"
           ]
+        },
+        {
+          "name": "Ginger Roasted Cauliflower & Carrots",
+          "cal": "100 Cal",
+          "ingredients": "cauliflower, carrot, onion, ginger, spices",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Chickpea Basmati Pilaf",
+          "cal": "140 Cal",
+          "ingredients": "basmati rice, chickpeas, green pepper, carrot",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "Blondie",
-          "cal": "310 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "name": "Carrot Cake",
+          "cal": "210 Cal"
         },
         {
-          "name": "Oreo Brownie Bowl",
-          "cal": "340 Cal",
-          "ingredients": "chocolate brownie, chocolate pudding, chocolate sauce, oreo",
+          "name": "Haystack Brownie",
+          "cal": "130 Cal",
           "dietary": [
             "Vegetarian"
           ]
@@ -450,7 +450,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -488,7 +488,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
