@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Fri, Oct 23, 2026",
   "menuDate": "2026-10-23",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-23T14:47:04.343661-04:00",
-  "fetchedAtEpochMs": 1792781224343,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-23T16:35:06.265413-04:00",
+  "fetchedAtEpochMs": 1792787706265,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,29 +13,28 @@
       "name": "Home",
       "items": [
         {
-          "name": "Battered Cod",
-          "cal": "160 Cal",
-          "ingredients": "cod, fish batter",
+          "name": "Beef Stew",
+          "cal": "130 Cal",
+          "ingredients": "beef, carrot, celery, peas, potato"
+        },
+        {
+          "name": "Sausage Baked Ziti",
+          "cal": "400 Cal",
           "dietary": [
-            "No Dairy"
+            "Coolfood Meal"
           ]
         },
         {
-          "name": "Pork & Sweet Potato Stew",
-          "cal": "140 Cal",
+          "name": "Grilled Cheese Sandwich",
+          "cal": "170 Cal",
+          "ingredients": "cheddar cheese, whole wheat bread",
           "dietary": [
-            "No Gluten",
-            "Eat Well"
+            "Vegetarian"
           ]
         },
         {
-          "name": "Butternut Squash Macaroni & Cheese",
-          "cal": ""
-        },
-        {
-          "name": "California Vegetable Medley",
-          "cal": "40 Cal",
-          "ingredients": "bell pepper, broccoli, carrot, cauliflower",
+          "name": "Lemon Oregano Roasted Zucchini",
+          "cal": "120 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -43,17 +42,13 @@
           ]
         },
         {
-          "name": "Garlic Fried Rice",
-          "cal": "110 Cal",
-          "ingredients": "rice, garlic",
+          "name": "Coconut Jasmine Rice",
+          "cal": "190 Cal",
+          "ingredients": "rice, coconut milk, shredded coconut, sugar",
           "dietary": [
             "Vegan",
             "No Gluten"
           ]
-        },
-        {
-          "name": "Fresh Cut Fries",
-          "cal": "420 Cal"
         }
       ],
       "accent": "#3b82f6"
@@ -74,17 +69,6 @@
         }
       ],
       "accent": "#f59e0b"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#ef4444"
     },
     {
       "name": "Pizza",
@@ -115,25 +99,7 @@
           "ingredients": "ham, spinach, alfredo base, mozzarella, feta"
         }
       ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#8b5cf6"
+      "accent": "#ef4444"
     },
     {
       "name": "Deli",
@@ -201,7 +167,7 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "10 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Red Onions",
@@ -224,7 +190,7 @@
           "cal": ""
         }
       ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Salad Bar",
@@ -279,11 +245,11 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "10 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Romaine Lettuce",
-          "cal": "10 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Spring Mix",
@@ -307,31 +273,31 @@
         },
         {
           "name": "Greek Feta Dressing",
-          "cal": "190 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Zesty Italian Dressing",
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Vegan",
       "items": [
         {
-          "name": "Harissa Tofu Grain Bowl",
-          "cal": "210 Cal",
-          "ingredients": "harissa tofu, cucumber, pickled red onion, couscous, lemon za'atar dressing",
+          "name": "BBQ Plant Based Meatballs",
+          "cal": "200 Cal",
+          "ingredients": "vegan meatball, bbq sauce",
           "dietary": [
             "Vegan",
-            "Coolfood Meal"
+            "Coolfood Meal",
+            "Plant Forward"
           ]
         },
         {
-          "name": "Bean Ragout",
-          "cal": "130 Cal",
-          "ingredients": "kidney beans, chickpeas, green pepper, carrot, tomato",
+          "name": "Ratatouille Tofu Stew",
+          "cal": "120 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -339,48 +305,31 @@
           ]
         },
         {
-          "name": "Eggplant Coconut Curry",
-          "cal": "60 Cal",
-          "ingredients": "eggplant, tomato, coconut milk, cilantro, onion, garlic, ginger, spices",
+          "name": "Sunrise Vegetable Medley",
+          "cal": "50 Cal",
+          "ingredients": "green beans, orange & yellow carrots",
           "dietary": [
             "Vegan",
-            "Coolfood Meal",
-            "Plant Forward",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "French Onion Baked Pasta",
-          "cal": "140 Cal",
+          "name": "Quinoa & Corn Medley",
+          "cal": "120 Cal",
+          "ingredients": "quinoa, red pepper, corn, onion",
           "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
+            "Vegan",
+            "No Gluten",
             "Eat Well"
-          ]
-        },
-        {
-          "name": "Big Bean Quesadilla",
-          "cal": "290 Cal",
-          "ingredients": "refried beans, black beans, salsa, cheddar, tortilla",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal"
           ]
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Bakery",
       "items": [
-        {
-          "name": "Coffee Cake",
-          "cal": "170 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
-        },
         {
           "name": "Berry Crisp",
           "cal": "170 Cal",
@@ -389,6 +338,17 @@
             "Vegan",
             "No Gluten"
           ]
+        },
+        {
+          "name": "Dream Bar",
+          "cal": "240 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Sweet & Salty Rice Krispie Square",
+          "cal": "100 Cal"
         },
         {
           "name": "Chocolate Chip Cookie",
@@ -419,7 +379,7 @@
           ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Smoothie",
@@ -434,7 +394,7 @@
         },
         {
           "name": "Coconut Yogurt",
-          "cal": "35 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Plain Yogurt",
@@ -453,7 +413,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     }
   ]
 }
