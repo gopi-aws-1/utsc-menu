@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Sat, Oct 24, 2026",
   "menuDate": "2026-10-24",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-24T15:53:14.279029-04:00",
-  "fetchedAtEpochMs": 1792871594279,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-24T18:00:16.547406-04:00",
+  "fetchedAtEpochMs": 1792879216547,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,52 +13,45 @@
       "name": "Home",
       "items": [
         {
-          "name": "Miso Glazed Tilapia",
-          "cal": "70 Cal",
-          "ingredients": "tilapia, miso paste, rice wine vinegar, honey",
+          "name": "Piri Piri Pork Chop",
+          "cal": "120 Cal",
+          "ingredients": "pork, rosted red pepper, garlic, lemon, spices",
           "dietary": [
             "No Dairy",
-            "No Gluten",
-            "Eat Well"
+            "No Gluten"
           ]
         },
         {
-          "name": "Penne Marinara",
-          "cal": "230 Cal",
-          "ingredients": "tomato sauce, parmesan cheese, penne pasta",
+          "name": "Alfredo Gochujang Pasta",
+          "cal": "320 Cal",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Chicken Fajita Burrito",
+          "cal": "260 Cal",
+          "ingredients": "chicken breast, bell peppers, onion, cheddar, sour cream, salsa, tortilla",
           "dietary": [
             "Coolfood Meal"
           ]
         },
         {
-          "name": "Vegetable Fried Rice",
-          "cal": "190 Cal",
-          "ingredients": "carrot, corn, onion, peas, egg, green onion, lettuce, rice",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
-            "Plant Forward",
-            "No Dairy",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Pork Belly Bao Bun",
-          "cal": "220 Cal",
-          "ingredients": "pork belly, pickled cucumber, hoisin sauce, green onion, bao bun",
-          "dietary": [
-            "No Dairy"
-          ]
-        },
-        {
-          "name": "Red Pepper & Bok Choy",
-          "cal": "60 Cal",
-          "ingredients": "bok choy, red pepper",
+          "name": "Broccoli Florets",
+          "cal": "30 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
             "Eat Well"
+          ]
+        },
+        {
+          "name": "Jalapeno White Rice",
+          "cal": "140 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
           ]
         }
       ],
@@ -89,17 +82,6 @@
       "accent": "#f59e0b"
     },
     {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#ef4444"
-    },
-    {
       "name": "Pizza",
       "items": [
         {
@@ -123,25 +105,7 @@
           ]
         }
       ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#8b5cf6"
+      "accent": "#ef4444"
     },
     {
       "name": "Deli",
@@ -249,7 +213,7 @@
           "cal": ""
         }
       ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Salad Bar",
@@ -335,7 +299,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Soup",
@@ -345,54 +309,77 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Vegan",
       "items": [
         {
-          "name": "Spicy Mango Tofu Stir Fry",
-          "cal": "160 Cal",
-          "ingredients": "tofu, mango, cabbage, celery, red onion, thai sweet & spicy sauce, basil",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal"
-          ]
-        },
-        {
-          "name": "Jackfruit Bao Bun",
-          "cal": "130 Cal",
-          "ingredients": "jackfruit, pickled cucumber, hoisin sauce, green onion, bao bun",
-          "dietary": [
-            "Vegan"
-          ]
-        },
-        {
-          "name": "Curry Rice Pilaf",
-          "cal": "150 Cal",
-          "ingredients": "rice, peas, onion, spices",
+          "name": "Rosemary Polenta",
+          "cal": "35 Cal",
+          "ingredients": "polenta, rosemary",
           "dietary": [
             "Vegan",
             "No Gluten",
             "Eat Well"
           ]
+        },
+        {
+          "name": "Veggie Fajita Burrito",
+          "cal": "260 Cal",
+          "ingredients": "black beans, bell peppers, onion, cheddar, sour cream, salsa, tortilla",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Lemon Garlic Spinach",
+          "cal": "90 Cal",
+          "ingredients": "spinach, garlic, lemon juice",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Brussels Sprout Baked Penne",
+          "cal": "340 Cal",
+          "ingredients": "brussels sprout, vegan cream sauce, no gluten penne, nutritional yeast",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "No Gluten",
+            "Eat Well"
+          ],
+          "serving": "170 gram",
+          "servingOptions": [
+            "170 gram",
+            "178 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "170 gram",
+              "cal": "340 Cal"
+            },
+            {
+              "serving": "178 gram",
+              "cal": "350 Cal"
+            }
+          ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "Banana Cake",
-          "cal": "130 Cal"
-        },
-        {
-          "name": "Peach Crisp",
-          "cal": "160 Cal",
-          "ingredients": "peaches, cinnamon, brown sugar, oats, flour",
+          "name": "Blueberry Tart",
+          "cal": "100 Cal",
+          "ingredients": "blueberry pie filling, tart shell",
           "dietary": [
-            "Vegetarian"
+            "Vegan"
           ]
         },
         {
@@ -401,6 +388,10 @@
           "dietary": [
             "Vegetarian"
           ]
+        },
+        {
+          "name": "Oreo Rice Krispie Square",
+          "cal": "120 Cal"
         },
         {
           "name": "Chocolate Chip Cookie",
@@ -424,6 +415,14 @@
           ]
         },
         {
+          "name": "Salted Chocolate Chip Cookie",
+          "cal": "140 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
+        {
           "name": "Sugar Cookie",
           "cal": "110 Cal",
           "dietary": [
@@ -431,7 +430,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -465,7 +464,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
