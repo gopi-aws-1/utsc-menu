@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Sun, Oct 25, 2026",
   "menuDate": "2026-10-25",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-25T15:57:30.634868-04:00",
-  "fetchedAtEpochMs": 1792958250634,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-25T18:17:08.670650-04:00",
+  "fetchedAtEpochMs": 1792966628670,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,17 +13,29 @@
       "name": "Home",
       "items": [
         {
-          "name": "Honey Garlic Chicken Breast",
-          "cal": "60 Cal",
-          "ingredients": "chicken, honey garlic sauce, montreal seasoning",
+          "name": "Chili Fennel Roast Beef",
+          "cal": "90 Cal",
+          "ingredients": "beef, fennel, worcestershire, garlic, spices",
           "dietary": [
-            "No Dairy"
+            "No Dairy",
+            "No Gluten"
           ]
         },
         {
-          "name": "Beef & Bean Quesadilla",
-          "cal": "310 Cal",
-          "ingredients": "ground beef, refried beans, salsa, cheddar, tortilla"
+          "name": "Penne Primavera Rose",
+          "cal": "240 Cal",
+          "ingredients": "milk, parmesan, carrot, mushroom, zucchini, red & green pepper, penne",
+          "dietary": [
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Baja Fish Taco",
+          "cal": "210 Cal",
+          "ingredients": "crispy fish, pico de gallo, red cabbage slaw, sour cream, cilantro, tortilla",
+          "dietary": [
+            "Coolfood Meal"
+          ]
         },
         {
           "name": "Vegetable Medley",
@@ -36,12 +48,12 @@
           ]
         },
         {
-          "name": "Garlic Fried Rice",
-          "cal": "110 Cal",
-          "ingredients": "rice, garlic",
+          "name": "Horseradish Mashed Potato",
+          "cal": "100 Cal",
           "dietary": [
-            "Vegan",
-            "No Gluten"
+            "Vegetarian",
+            "No Gluten",
+            "Eat Well"
           ]
         }
       ],
@@ -63,17 +75,6 @@
         }
       ],
       "accent": "#f59e0b"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#ef4444"
     },
     {
       "name": "Pizza",
@@ -99,25 +100,7 @@
           "ingredients": "pepperoni, mozzarella"
         }
       ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#8b5cf6"
+      "accent": "#ef4444"
     },
     {
       "name": "Deli",
@@ -210,7 +193,7 @@
           "cal": ""
         }
       ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Salad Bar",
@@ -300,7 +283,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Soup",
@@ -310,56 +293,61 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Vegan",
       "items": [
         {
-          "name": "Plant Based Macaroni & Cheese",
-          "cal": "400 Cal",
-          "ingredients": "pasta, white sauce, bread crumb, nutritional yeast, garlic",
+          "name": "Sweet Potato Coconut Curry",
+          "cal": "180 Cal",
+          "ingredients": "sweet potato, mushroom, kale, lemongrass, green curry paste, cilantro",
           "dietary": [
             "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Gai Lan (Chinese Broccoli)",
+          "cal": "60 Cal",
+          "dietary": [
+            "Vegan",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Plant Based Meatball Sub",
+          "cal": "190 Cal",
+          "ingredients": "plant based meatballs, mozzarella, tomato basil sauce, pesto mayo, sub roll",
+          "dietary": [
             "Coolfood Meal",
             "Eat Well"
           ]
         },
         {
-          "name": "Italian Vegetable Medley",
-          "cal": "45 Cal",
-          "ingredients": "romano beans, lima beans, cauliflower, zucchini, red pepper",
+          "name": "Coconut Jasmine Rice",
+          "cal": "190 Cal",
+          "ingredients": "rice, coconut milk, shredded coconut, sugar",
           "dietary": [
             "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Basmati Rice",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Cajun Red Potatoes",
-          "cal": "130 Cal",
-          "ingredients": "potato, cajun seasoning",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
+            "No Gluten"
           ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
+        {
+          "name": "Cherry Crisp",
+          "cal": "160 Cal",
+          "ingredients": "cherry, brown sugar, oats, flour",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
         {
           "name": "S'mores Brownie",
           "cal": "200 Cal",
@@ -389,7 +377,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -423,7 +411,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
