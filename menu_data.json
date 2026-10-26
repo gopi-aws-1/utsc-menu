@@ -3,8 +3,8 @@
   "dateLabel": "Sun, Oct 25, 2026",
   "menuDate": "2026-10-25",
   "mealPeriod": "Dinner",
-  "fetchedAt": "2026-10-25T18:26:02.701649-04:00",
-  "fetchedAtEpochMs": 1792967162701,
+  "fetchedAt": "2026-10-25T20:36:00.933229-04:00",
+  "fetchedAtEpochMs": 1792974960933,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -20,6 +20,10 @@
             "No Dairy",
             "No Gluten"
           ]
+        },
+        {
+          "name": "Piri Piri Pork Chop",
+          "cal": ""
         },
         {
           "name": "Penne Primavera Rose",
