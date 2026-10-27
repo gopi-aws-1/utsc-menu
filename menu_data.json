@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Tue, Oct 27, 2026",
   "menuDate": "2026-10-27",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-27T15:43:23.207324-04:00",
-  "fetchedAtEpochMs": 1793130203207,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-27T17:59:15.014059-04:00",
+  "fetchedAtEpochMs": 1793138355014,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,34 +13,37 @@
       "name": "Home",
       "items": [
         {
-          "name": "Honey Garlic Chicken",
+          "name": "Thai Red Chicken Curry",
           "cal": "160 Cal",
-          "ingredients": "chicken, montreal seasoning, honey, soy sauce, garlic",
+          "ingredients": "chicken, bell pepper, carrot, red curry paste, spices, coconut milk, basil",
           "dietary": [
+            "Coolfood Meal",
             "No Dairy",
-            "No Gluten"
+            "No Gluten",
+            "Eat Well"
           ]
         },
         {
-          "name": "Penne Alfredo",
-          "cal": "230 Cal",
-          "ingredients": "alfredo sauce, parmesan cheese, penne pasta",
+          "name": "Broccoli Florets",
+          "cal": "30 Cal",
           "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Spanakopita Pasta Bake",
+          "cal": "270 Cal",
+          "ingredients": "rigatoni, spinach, cream, onion, dill, feta, parsley, panko bread crumbs",
+          "dietary": [
+            "Vegetarian",
             "Coolfood Meal"
           ]
         },
         {
-          "name": "Sweet Chili Pork Taco",
-          "cal": "200 Cal",
-          "ingredients": "sweet chili pulled pork, thai slaw, tortilla",
-          "dietary": [
-            "Plant Forward",
-            "No Dairy"
-          ]
-        },
-        {
-          "name": "Bok Choy",
-          "cal": "45 Cal",
+          "name": "Jasmine Rice",
+          "cal": "130 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -48,13 +51,22 @@
           ]
         },
         {
-          "name": "Cajun Rice",
-          "cal": "120 Cal",
-          "ingredients": "rice, green pepper, celery, onion, spices",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
+          "name": "Supreme Taco Fries",
+          "cal": "250 Cal",
+          "serving": "155 gram",
+          "servingOptions": [
+            "155 gram",
+            "165 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "155 gram",
+              "cal": "250 Cal"
+            },
+            {
+              "serving": "165 gram",
+              "cal": "270 Cal"
+            }
           ]
         }
       ],
@@ -76,17 +88,6 @@
         }
       ],
       "accent": "#f59e0b"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#ef4444"
     },
     {
       "name": "Pizza",
@@ -117,25 +118,7 @@
           "ingredients": "taco-spiced ground beef, jalapeno, tomato, olives, three cheese blend"
         }
       ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#8b5cf6"
+      "accent": "#ef4444"
     },
     {
       "name": "Deli",
@@ -243,7 +226,7 @@
           "cal": ""
         }
       ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Salad Bar",
@@ -337,7 +320,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Soup",
@@ -347,34 +330,37 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Vegan",
       "items": [
         {
-          "name": "Thai Red Tofu Curry",
-          "cal": "150 Cal",
-          "ingredients": "tofu, carrot, red pepper, green pepper, onion, fish sauce, coconut milk",
+          "name": "Plant Based Tostada",
+          "cal": "250 Cal",
+          "ingredients": "refried beans, black beans, lettuce, guacamole, tomato",
           "dietary": [
+            "Vegan",
             "Coolfood Meal",
-            "No Dairy",
+            "Plant Forward",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Seoul Lentil Quesadilla",
-          "cal": "350 Cal",
-          "ingredients": "ginger soy lentils, kimchi, korean BBQ sauce, mozzarella, tortilla",
+          "name": "Roasted Corn & Green Pepper",
+          "cal": "120 Cal",
+          "ingredients": "corn, green pepper, onion, cumin",
           "dietary": [
-            "Vegetarian"
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
           ]
         },
         {
-          "name": "Vegetable Medley",
-          "cal": "50 Cal",
-          "ingredients": "broccoli, carrot, cauliflower, onion",
+          "name": "Mexican Rice",
+          "cal": "150 Cal",
+          "ingredients": "rice, onion, garlic, spices",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -382,21 +368,34 @@
           ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "Triple Chocolate Brownie",
-          "cal": "130 Cal",
+          "name": "No Gluten Apple Pie",
+          "cal": "250 Cal",
+          "ingredients": "apples, brown sugar, spices, no gluten pie crust",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Butter Tart Bar",
+          "cal": "220 Cal",
           "dietary": [
             "Vegetarian"
           ]
         },
         {
-          "name": "Wild Berry Macaroon Bar",
-          "cal": "120 Cal",
+          "name": "Confetti Rice Krispie Square",
+          "cal": "90 Cal"
+        },
+        {
+          "name": "Triple Chocolate Brownie",
+          "cal": "130 Cal",
           "dietary": [
             "Vegetarian"
           ]
@@ -416,7 +415,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -450,7 +449,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
