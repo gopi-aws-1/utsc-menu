@@ -407,9 +407,23 @@
       return !isNaN(created) && age >= -120000 && age <= STALE_AFTER_MS;
     }
 
+    // Keep the source order for every other station, but always show Home and Vegan first.
+    function prioritizedStations(stations) {
+      var home = [];
+      var vegan = [];
+      var others = [];
+      for (var k = 0; k < stations.length; k++) {
+        var name = String(stations[k].name || "").replace(/^\s+|\s+$/g, "").toLowerCase();
+        if (name === "home") home.push(stations[k]);
+        else if (name === "vegan") vegan.push(stations[k]);
+        else others.push(stations[k]);
+      }
+      return home.concat(vegan, others);
+    }
+
     function renderStations() {
       var container = document.getElementById("stations-grid");
-      var all = MENU_DATA.stations || [];
+      var all = prioritizedStations(MENU_DATA.stations || []);
       var html = "";
       var shown = [];
       var i, j;
