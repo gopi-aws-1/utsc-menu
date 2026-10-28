@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Wed, Oct 28, 2026",
   "menuDate": "2026-10-28",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-28T16:21:21.619301-04:00",
-  "fetchedAtEpochMs": 1793218881619,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-28T16:31:04.124303-04:00",
+  "fetchedAtEpochMs": 1793219464124,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,65 +13,45 @@
       "name": "Home",
       "items": [
         {
-          "name": "Cajun Pork Souvlaki",
-          "cal": "200 Cal",
-          "ingredients": "pork, cajun spice, lemon, hot sauce",
+          "name": "Balsamic Glazed Ham",
+          "cal": "80 Cal",
           "dietary": [
-            "No Dairy",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Classic Poutine",
-          "cal": "260 Cal",
-          "ingredients": "cheese curds, french fries, gravy",
-          "serving": "160 gram",
-          "servingOptions": [
-            "160 gram",
-            "180 gram",
-            "170 gram"
-          ],
-          "servingCalories": [
-            {
-              "serving": "160 gram",
-              "cal": "260 Cal"
-            },
-            {
-              "serving": "170 gram",
-              "cal": "270 Cal"
-            },
-            {
-              "serving": "180 gram",
-              "cal": "290 Cal"
-            }
-          ]
-        },
-        {
-          "name": "California Vegetable Medley",
-          "cal": "45 Cal",
-          "ingredients": "carrot, cauliflower, broccoli",
-          "dietary": [
-            "Vegan",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Butternut Squash Macaroni & Cheese",
-          "cal": "340 Cal",
-          "ingredients": "butternut squash, cheese sauce, penne pasta, bread crumb, parmesan",
+          "name": "Primavera Rose Penne",
+          "cal": "240 Cal",
           "dietary": [
             "Coolfood Meal",
             "Eat Well"
           ]
         },
         {
-          "name": "Herb White Rice",
+          "name": "Grilled Chicken Taco",
+          "cal": "210 Cal",
+          "ingredients": "chicken breast, lettuce, tomato, sour cream, cheddar, tortilla"
+        },
+        {
+          "name": "Honey Roasted Carrots & Parsnips",
+          "cal": "170 Cal",
+          "ingredients": "carrots, parsnip, honey",
+          "dietary": [
+            "Vegetarian",
+            "No Dairy",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Roasted Potatoes",
           "cal": "130 Cal",
-          "ingredients": "rice, onion, parsley, spices",
+          "ingredients": "potato, paprika",
           "dietary": [
             "Vegan",
-            "No Gluten"
+            "No Gluten",
+            "Eat Well"
           ]
         }
       ],
@@ -89,17 +69,6 @@
         }
       ],
       "accent": "#f59e0b"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#ef4444"
     },
     {
       "name": "Pizza",
@@ -131,25 +100,7 @@
           "ingredients": "pepperoni, mozzarella"
         }
       ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#8b5cf6"
+      "accent": "#ef4444"
     },
     {
       "name": "Deli",
@@ -256,7 +207,7 @@
           "cal": ""
         }
       ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Salad Bar",
@@ -354,7 +305,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Soup",
@@ -364,37 +315,36 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Vegan",
       "items": [
         {
-          "name": "Sweet Potato Coconut Curry",
-          "cal": "180 Cal",
-          "ingredients": "sweet potato, mushroom, kale, lemongrass, green curry paste, cilantro",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Vegetable Biriyani",
-          "cal": "160 Cal",
-          "ingredients": "basmati rice, zucchini, green beans, carrot, cauliflower, red pepper, peas, cilantro",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "Plant Forward",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Ginger Roasted Cauliflower & Carrots",
+          "name": "Kale, Lentil & Quinoa Stew",
           "cal": "100 Cal",
-          "ingredients": "cauliflower, carrot, onion, ginger, spices",
+          "ingredients": "lentils, quinoa, kale, celery, carrot, tomato, onion",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Lebanese Lentil Taco",
+          "cal": "160 Cal",
+          "ingredients": "za'atar roasted chickpeas, sriracha radish kale salad, cabbage, za'atar yogurt",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal",
+            "Plant Forward"
+          ]
+        },
+        {
+          "name": "Winter Vegetable Medley",
+          "cal": "35 Cal",
+          "ingredients": "broccoli, cauliflower",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -402,18 +352,17 @@
           ]
         },
         {
-          "name": "Curry Lentils",
-          "cal": "120 Cal",
-          "ingredients": "green lentil, celery, carrot, garlic, ginger, spices",
+          "name": "Parsley Potatoes",
+          "cal": "100 Cal",
+          "ingredients": "potato, parsley",
           "dietary": [
             "Vegan",
-            "Coolfood Meal",
             "No Gluten",
             "Eat Well"
           ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
@@ -427,8 +376,8 @@
           ]
         },
         {
-          "name": "Sticky Toffee Pudding",
-          "cal": "150 Cal",
+          "name": "Triple Chocolate Fudge Cake",
+          "cal": "100 Cal",
           "dietary": [
             "Vegetarian"
           ]
@@ -456,7 +405,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -490,7 +439,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
