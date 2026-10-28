@@ -3,8 +3,8 @@
   "dateLabel": "Wed, Oct 28, 2026",
   "menuDate": "2026-10-28",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-10-28T03:21:06.374465-04:00",
-  "fetchedAtEpochMs": 1793172066374,
+  "fetchedAt": "2026-10-28T09:37:57.777501-04:00",
+  "fetchedAtEpochMs": 1793194677777,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -175,16 +175,6 @@
           ]
         },
         {
-          "name": "Southwest Tofu Breakfast Burrito",
-          "cal": "250 Cal",
-          "ingredients": "tofu, red pepper, onion, kale, potato, salsa, tortilla",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "Eat Well"
-          ]
-        },
-        {
           "name": "Lentil Dahl",
           "cal": "160 Cal",
           "ingredients": "red lentil, curry paste, jalapeno, cilantro, spices",
@@ -209,6 +199,16 @@
           "dietary": [
             "Vegan",
             "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Apple Cinnamon Baked Oatmeal",
+          "cal": "120 Cal",
+          "ingredients": "oats, apples, flax, rice milk, maple syrup, cinnamon",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
             "Eat Well"
           ]
         }
