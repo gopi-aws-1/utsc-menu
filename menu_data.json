@@ -3,8 +3,8 @@
   "dateLabel": "Wed, Oct 28, 2026",
   "menuDate": "2026-10-28",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-28T14:21:02.417007-04:00",
-  "fetchedAtEpochMs": 1793211662417,
+  "fetchedAt": "2026-10-28T14:31:06.181375-04:00",
+  "fetchedAtEpochMs": 1793212266181,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -25,9 +25,7 @@
           "name": "Classic Poutine",
           "cal": "260 Cal",
           "ingredients": "cheese curds, french fries, gravy",
-          "dietary": [
-            "Coolfood Meal"
-          ],
+          "serving": "160 gram",
           "servingOptions": [
             "160 gram",
             "180 gram",
@@ -227,7 +225,7 @@
         },
         {
           "name": "Turkey",
-          "cal": "0 Cal"
+          "cal": "30 Cal"
         },
         {
           "name": "Cucumber",
@@ -235,7 +233,7 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "0 Cal"
+          "cal": "10 Cal"
         },
         {
           "name": "Red Onions",
@@ -301,7 +299,7 @@
         },
         {
           "name": "Baby Kale",
-          "cal": "0 Cal"
+          "cal": "20 Cal"
         },
         {
           "name": "Beets",
@@ -317,7 +315,7 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "0 Cal"
+          "cal": "10 Cal"
         },
         {
           "name": "Jalapeno Coleslaw",
@@ -325,7 +323,7 @@
         },
         {
           "name": "Romaine Lettuce",
-          "cal": "0 Cal"
+          "cal": "10 Cal"
         },
         {
           "name": "Spring Mix",
@@ -341,7 +339,7 @@
         },
         {
           "name": "Balsamic Dressing",
-          "cal": "0 Cal"
+          "cal": "170 Cal"
         },
         {
           "name": "Calorie Wise Ranch Dressing",
@@ -349,7 +347,7 @@
         },
         {
           "name": "Greek Feta Dressing",
-          "cal": "0 Cal"
+          "cal": "190 Cal"
         },
         {
           "name": "Zesty Italian Dressing",
@@ -473,7 +471,7 @@
         },
         {
           "name": "Coconut Yogurt",
-          "cal": "0 Cal"
+          "cal": "35 Cal"
         },
         {
           "name": "Plain Yogurt",
