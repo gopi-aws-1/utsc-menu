@@ -1,0 +1,6 @@
+name = "harmony-commons-menu-scheduler"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[triggers]
+crons = ["3,18,33,48 * * * *"]
