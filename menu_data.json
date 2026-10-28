@@ -3,8 +3,8 @@
   "dateLabel": "Wed, Oct 28, 2026",
   "menuDate": "2026-10-28",
   "mealPeriod": "Dinner",
-  "fetchedAt": "2026-10-28T18:11:07.872100-04:00",
-  "fetchedAtEpochMs": 1793225467872,
+  "fetchedAt": "2026-10-28T18:21:02.214535-04:00",
+  "fetchedAtEpochMs": 1793226062214,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -176,7 +176,7 @@
         },
         {
           "name": "Turkey",
-          "cal": "0 Cal"
+          "cal": "30 Cal"
         },
         {
           "name": "Cucumber",
@@ -184,7 +184,7 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "0 Cal"
+          "cal": "10 Cal"
         },
         {
           "name": "Red Onions",
@@ -250,7 +250,7 @@
         },
         {
           "name": "Baby Kale",
-          "cal": "0 Cal"
+          "cal": "20 Cal"
         },
         {
           "name": "Beets",
@@ -266,7 +266,7 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "0 Cal"
+          "cal": "10 Cal"
         },
         {
           "name": "Jalapeno Coleslaw",
@@ -274,7 +274,7 @@
         },
         {
           "name": "Romaine Lettuce",
-          "cal": "0 Cal"
+          "cal": "10 Cal"
         },
         {
           "name": "Spring Mix",
@@ -290,7 +290,7 @@
         },
         {
           "name": "Balsamic Dressing",
-          "cal": "0 Cal"
+          "cal": "170 Cal"
         },
         {
           "name": "Calorie Wise Ranch Dressing",
@@ -298,7 +298,7 @@
         },
         {
           "name": "Greek Feta Dressing",
-          "cal": "0 Cal"
+          "cal": "190 Cal"
         },
         {
           "name": "Zesty Italian Dressing",
@@ -420,7 +420,7 @@
         },
         {
           "name": "Coconut Yogurt",
-          "cal": "0 Cal"
+          "cal": "35 Cal"
         },
         {
           "name": "Plain Yogurt",
