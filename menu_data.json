@@ -3,8 +3,8 @@
   "dateLabel": "Thu, Oct 29, 2026",
   "menuDate": "2026-10-29",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-10-29T01:50:59.737557-04:00",
-  "fetchedAtEpochMs": 1793253059737,
+  "fetchedAt": "2026-10-29T02:00:58.404388-04:00",
+  "fetchedAtEpochMs": 1793253658404,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -14,38 +14,20 @@
       "items": [
         {
           "name": "Hard Cooked Egg",
-          "cal": "80 Cal",
-          "dietary": [
-            "Vegetarian",
-            "No Dairy",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "80 Cal"
         },
         {
           "name": "Scrambled Egg",
-          "cal": "140 Cal",
-          "dietary": [
-            "Vegetarian",
-            "No Dairy",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "140 Cal"
         },
         {
           "name": "Mexicali Burrito",
           "cal": "260 Cal",
-          "ingredients": "egg, cheese, salsa, tortilla",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "ingredients": "egg, cheese, salsa, tortilla"
         },
         {
           "name": "Breakfast Sausage",
-          "cal": "120 Cal",
-          "dietary": [
-            "No Dairy"
-          ]
+          "cal": "120 Cal"
         }
       ],
       "accent": "#3b82f6"
@@ -56,40 +38,21 @@
         {
           "name": "Ethiopian Lentils",
           "cal": "140 Cal",
-          "ingredients": "red lentil, tomato, garlic, onion, vegetable stock, berbere seasoning",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
+          "ingredients": "red lentil, tomato, garlic, onion, vegetable stock, berbere seasoning"
         },
         {
           "name": "Lemon Turmeric Pinto Beans",
           "cal": "160 Cal",
-          "ingredients": "pinto beans, lemon juice, spices",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "ingredients": "pinto beans, lemon juice, spices"
         },
         {
           "name": "Basmati Rice",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "110 Cal"
         },
         {
           "name": "Apple Cinnamon Baked Oatmeal",
           "cal": "120 Cal",
-          "ingredients": "oats, apples, flax, rice milk, maple syrup, cinnamon",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "Eat Well"
-          ]
+          "ingredients": "oats, apples, flax, rice milk, maple syrup, cinnamon"
         }
       ],
       "accent": "#f59e0b"
@@ -99,12 +62,7 @@
       "items": [
         {
           "name": "Sauteed Mushrooms",
-          "cal": "50 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "50 Cal"
         },
         {
           "name": "Egg",
@@ -182,11 +140,7 @@
       "items": [
         {
           "name": "Congee",
-          "cal": "50 Cal",
-          "dietary": [
-            "No Dairy",
-            "No Gluten"
-          ]
+          "cal": "50 Cal"
         },
         {
           "name": "Oatmeal",
@@ -200,17 +154,11 @@
       "items": [
         {
           "name": "Blueberry Muffin",
-          "cal": "60 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "60 Cal"
         },
         {
           "name": "Oatmeal Apple Muffin",
-          "cal": "60 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "60 Cal"
         },
         {
           "name": "Raisin Bran Muffin",
@@ -222,10 +170,7 @@
         },
         {
           "name": "Vanilla Creme Crown",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "150 Cal"
         }
       ],
       "accent": "#ec4899"
