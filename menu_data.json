@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Thu, Oct 29, 2026",
   "menuDate": "2026-10-29",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-29T16:21:32.387312-04:00",
-  "fetchedAtEpochMs": 1793305292387,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-29T16:31:02.506124-04:00",
+  "fetchedAtEpochMs": 1793305862506,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,72 +13,47 @@
       "name": "Home",
       "items": [
         {
-          "name": "Sweet & Sour Turkey Meatballs",
-          "cal": "170 Cal",
+          "name": "Chili Garlic Veggie Stir Fry",
+          "cal": "90 Cal",
+          "ingredients": "cabbage, carrot, celery, onion, spices, sweet chili sauce, soy sauce",
           "dietary": [
-            "No Dairy",
+            "Vegan",
+            "Coolfood Meal",
+            "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Penne Marinara",
+          "name": "Teriyaki Chicken Stir Fry",
+          "cal": "220 Cal",
+          "ingredients": "chicken breast, carrot, snow peas, green pepper, cabbage, teriyaki sauce,",
+          "dietary": [
+            "Coolfood Meal",
+            "No Dairy",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Penne Alfredo",
           "cal": "230 Cal",
-          "ingredients": "tomato sauce, parmesan cheese, penne pasta",
+          "ingredients": "alfredo sauce, parmesan cheese, penne pasta",
           "dietary": [
             "Coolfood Meal"
           ]
         },
         {
-          "name": "Vegetable Fried Rice",
+          "name": "Reuben Sandwich",
           "cal": "190 Cal",
-          "ingredients": "carrot, corn, onion, peas, egg, green onion, lettuce, rice",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
-            "Plant Forward",
-            "No Dairy",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "ingredients": "corned beef, swiss cheese, sauerkraut, thousand island dressing, rye bread"
         },
         {
-          "name": "Broccoli",
-          "cal": "35 Cal",
+          "name": "Jasmine Rice",
+          "cal": "130 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
             "Eat Well"
-          ]
-        },
-        {
-          "name": "Garlic Bread",
-          "cal": "170 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
-        },
-        {
-          "name": "Potato Wedges",
-          "cal": "110 Cal"
-        },
-        {
-          "name": "Pulled Pork Sandwich",
-          "cal": "220 Cal",
-          "ingredients": "BBQ pulled pork, cheddar, kaiser",
-          "serving": "80 gram",
-          "servingOptions": [
-            "80 gram",
-            "110 gram"
-          ],
-          "servingCalories": [
-            {
-              "serving": "80 gram",
-              "cal": "220 Cal"
-            },
-            {
-              "serving": "110 gram",
-              "cal": "310 Cal"
-            }
           ]
         }
       ],
@@ -88,29 +63,43 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Tempeh Steak",
-          "cal": "160 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Plant Based Sausage Bean Stew",
+          "name": "Swedish Plant Based Meatballs",
           "cal": "170 Cal",
-          "ingredients": "plant based sausage, kidney beans, carrot, celery, tomato, thyme, kale",
+          "ingredients": "vegan meatball, rice milk, soy sauce, dijon mustard",
           "dietary": [
             "Vegan",
+            "Coolfood Meal",
+            "Plant Forward",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Veggie Burger",
+          "cal": "400 Cal",
+          "ingredients": "veggie patty, lettuce, tomato, sesame seed bun",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
             "Plant Forward"
           ]
         },
         {
-          "name": "Greek Falafel Pita",
-          "cal": "250 Cal",
-          "ingredients": "falafel, red onion, cucumber, lettuce, tomato, tzatziki, hummus, tortilla",
+          "name": "Green Beans & Tomato",
+          "cal": "45 Cal",
+          "ingredients": "green bean, tomato, garlic, parsley, lemon juice",
           "dietary": [
-            "Vegetarian",
-            "Plant Forward"
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Red Potatoes",
+          "cal": "110 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
           ]
         }
       ],
@@ -128,17 +117,6 @@
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
     },
     {
       "name": "Pizza",
@@ -172,25 +150,7 @@
           ]
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -291,7 +251,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -385,7 +345,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Soup",
@@ -395,17 +355,14 @@
           "cal": ""
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "Oat Bar",
-          "cal": "190 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "name": "Rice Krispie Square",
+          "cal": "80 Cal"
         },
         {
           "name": "Tiger Brownie",
@@ -442,9 +399,14 @@
           "dietary": [
             "Vegetarian"
           ]
+        },
+        {
+          "name": "Lemon Dream Bowl",
+          "cal": "320 Cal",
+          "ingredients": "vanilla cake, lemon pudding, graham cracker crumbs"
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -478,7 +440,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
