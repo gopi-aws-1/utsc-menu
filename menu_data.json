@@ -51,6 +51,50 @@
       "accent": "#3b82f6"
     },
     {
+      "name": "Vegan",
+      "items": [
+        {
+          "name": "Ethiopian Lentils",
+          "cal": "140 Cal",
+          "ingredients": "red lentil, tomato, garlic, onion, vegetable stock, berbere seasoning",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Lemon Turmeric Pinto Beans",
+          "cal": "160 Cal",
+          "ingredients": "pinto beans, lemon juice, spices",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Basmati Rice",
+          "cal": "110 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Apple Cinnamon Baked Oatmeal",
+          "cal": "120 Cal",
+          "ingredients": "oats, apples, flax, rice milk, maple syrup, cinnamon",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "Eat Well"
+          ]
+        }
+      ],
+      "accent": "#8b5cf6"
+    },
+    {
       "name": "Omelete",
       "items": [
         {
@@ -150,50 +194,6 @@
         }
       ],
       "accent": "#10b981"
-    },
-    {
-      "name": "Vegan",
-      "items": [
-        {
-          "name": "Ethiopian Lentils",
-          "cal": "140 Cal",
-          "ingredients": "red lentil, tomato, garlic, onion, vegetable stock, berbere seasoning",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Lemon Turmeric Pinto Beans",
-          "cal": "160 Cal",
-          "ingredients": "pinto beans, lemon juice, spices",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Basmati Rice",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Apple Cinnamon Baked Oatmeal",
-          "cal": "120 Cal",
-          "ingredients": "oats, apples, flax, rice milk, maple syrup, cinnamon",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "Eat Well"
-          ]
-        }
-      ],
-      "accent": "#8b5cf6"
     },
     {
       "name": "Bakery",
