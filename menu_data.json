@@ -3,8 +3,8 @@
   "dateLabel": "Thu, Oct 29, 2026",
   "menuDate": "2026-10-29",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-10-28T21:01:02.525749-04:00",
-  "fetchedAtEpochMs": 1793235662525,
+  "fetchedAt": "2026-10-28T21:10:59.906583-04:00",
+  "fetchedAtEpochMs": 1793236259906,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -92,7 +92,7 @@
           ]
         }
       ],
-      "accent": "#8b5cf6"
+      "accent": "#f59e0b"
     },
     {
       "name": "Omelete",
@@ -133,7 +133,7 @@
           "cal": "90 Cal"
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#ef4444"
     },
     {
       "name": "Salad Bar",
@@ -175,7 +175,7 @@
           "cal": ""
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#10b981"
     },
     {
       "name": "Soup",
@@ -193,7 +193,7 @@
           "cal": ""
         }
       ],
-      "accent": "#10b981"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Bakery",
