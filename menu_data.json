@@ -3,8 +3,8 @@
   "dateLabel": "Thu, Oct 29, 2026",
   "menuDate": "2026-10-29",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-29T14:31:02.848676-04:00",
-  "fetchedAtEpochMs": 1793298662848,
+  "fetchedAt": "2026-10-29T14:41:23.187491-04:00",
+  "fetchedAtEpochMs": 1793299283187,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -63,8 +63,9 @@
         },
         {
           "name": "Pulled Pork Sandwich",
-          "cal": "0 Cal",
+          "cal": "220 Cal",
           "ingredients": "BBQ pulled pork, cheddar, kaiser",
+          "serving": "80 gram",
           "servingOptions": [
             "80 gram",
             "110 gram"
@@ -259,7 +260,7 @@
         },
         {
           "name": "Turkey",
-          "cal": "0 Cal"
+          "cal": "30 Cal"
         },
         {
           "name": "Cucumber",
@@ -267,7 +268,7 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "0 Cal"
+          "cal": "10 Cal"
         },
         {
           "name": "Red Onions",
@@ -341,7 +342,7 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "0 Cal"
+          "cal": "10 Cal"
         },
         {
           "name": "Mediterranean Chickpea Salad",
@@ -353,7 +354,7 @@
         },
         {
           "name": "Romaine Lettuce",
-          "cal": "0 Cal"
+          "cal": "10 Cal"
         },
         {
           "name": "Spring Mix",
@@ -369,7 +370,7 @@
         },
         {
           "name": "Balsamic Dressing",
-          "cal": "0 Cal"
+          "cal": "170 Cal"
         },
         {
           "name": "Calorie Wise Ranch Dressing",
@@ -377,7 +378,7 @@
         },
         {
           "name": "Greek Feta Dressing",
-          "cal": "0 Cal"
+          "cal": "190 Cal"
         },
         {
           "name": "Zesty Italian Dressing",
@@ -458,7 +459,7 @@
         },
         {
           "name": "Coconut Yogurt",
-          "cal": "0 Cal"
+          "cal": "35 Cal"
         },
         {
           "name": "Plain Yogurt",
