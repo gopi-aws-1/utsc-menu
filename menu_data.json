@@ -3,8 +3,8 @@
   "dateLabel": "Thu, Oct 29, 2026",
   "menuDate": "2026-10-29",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-29T13:11:02.177794-04:00",
-  "fetchedAtEpochMs": 1793293862177,
+  "fetchedAt": "2026-10-29T13:21:08.025859-04:00",
+  "fetchedAtEpochMs": 1793294468025,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -21,17 +21,6 @@
           ]
         },
         {
-          "name": "Vegetable Fried Rice",
-          "cal": "190 Cal",
-          "ingredients": "rice, egg, carrot, celery, red pepper, peas, soy sauce, hoisin sauce",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
-            "No Dairy",
-            "Eat Well"
-          ]
-        },
-        {
           "name": "Penne Marinara",
           "cal": "230 Cal",
           "ingredients": "tomato sauce, parmesan cheese, penne pasta",
@@ -40,11 +29,16 @@
           ]
         },
         {
-          "name": "Carnitas Pork Taco",
-          "cal": "220 Cal",
-          "ingredients": "BBQ pulled pork, tomato, lettuce, cheddar, monterey jack, sour cream",
+          "name": "Vegetable Fried Rice",
+          "cal": "190 Cal",
+          "ingredients": "carrot, corn, onion, peas, egg, green onion, lettuce, rice",
           "dietary": [
-            "Coolfood Meal"
+            "Vegetarian",
+            "Coolfood Meal",
+            "Plant Forward",
+            "No Dairy",
+            "No Gluten",
+            "Eat Well"
           ]
         },
         {
@@ -57,8 +51,35 @@
           ]
         },
         {
+          "name": "Garlic Bread",
+          "cal": "170 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
           "name": "Potato Wedges",
           "cal": "110 Cal"
+        },
+        {
+          "name": "Pulled Pork Sandwich",
+          "cal": "220 Cal",
+          "ingredients": "BBQ pulled pork, cheddar, kaiser",
+          "serving": "80 gram",
+          "servingOptions": [
+            "80 gram",
+            "110 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "80 gram",
+              "cal": "220 Cal"
+            },
+            {
+              "serving": "110 gram",
+              "cal": "310 Cal"
+            }
+          ]
         }
       ],
       "accent": "#3b82f6"
@@ -67,45 +88,29 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Panang Tofu Curry",
-          "cal": "210 Cal",
-          "ingredients": "tofu, bell pepper, carrot, red curry paste, peanut butter, coconut milk",
+          "name": "Tempeh Steak",
+          "cal": "160 Cal",
           "dietary": [
-            "Coolfood Meal",
-            "No Dairy",
-            "No Gluten",
-            "Eat Well"
+            "Vegan",
+            "No Gluten"
           ]
         },
         {
-          "name": "Chickpea Shawarma Wrap",
-          "cal": "230 Cal",
-          "ingredients": "lemon tahini chickpeas, red cabbage, cucumber, carrot, lettuce, garlic",
+          "name": "Plant Based Sausage Bean Stew",
+          "cal": "170 Cal",
+          "ingredients": "plant based sausage, kidney beans, carrot, celery, tomato, thyme, kale",
           "dietary": [
             "Vegan",
-            "Coolfood Meal",
-            "Plant Forward",
-            "Eat Well"
+            "Plant Forward"
           ]
         },
         {
-          "name": "Peas",
-          "cal": "90 Cal",
+          "name": "Greek Falafel Pita",
+          "cal": "250 Cal",
+          "ingredients": "falafel, red onion, cucumber, lettuce, tomato, tzatziki, hummus, tortilla",
           "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Quinoa Ratatouille",
-          "cal": "80 Cal",
-          "ingredients": "quinoa, zucchini, eggplant, green pepper, tomato",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "No Gluten",
-            "Eat Well"
+            "Vegetarian",
+            "Plant Forward"
           ]
         }
       ],
