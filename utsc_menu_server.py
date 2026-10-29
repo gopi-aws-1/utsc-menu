@@ -421,6 +421,17 @@ def pull_from_playwright(debug: bool = False, inspect_period: str | None = None,
                     completed = now_toronto()
                     if completed.date() != started.date() or (not inspect_period and meal_period(completed) != period):
                         raise RuntimeError("Meal changed during fetch; retry next cycle")
+                    # Always publish Home first and Vegan second for every day/meal.
+                    # Preserve the existing relative order of all other stations.
+                    def station_priority(station):
+                        name = " ".join(str(station.get("name", "")).split()).casefold()
+                        if name == "home":
+                            return 0
+                        if name == "vegan":
+                            return 1
+                        return 2
+
+                    stations.sort(key=station_priority)
                     for n, station in enumerate(stations):
                         station["accent"] = COLORS[n % len(COLORS)]
                     page.screenshot(path=str(SNAPSHOT_PATH), full_page=True)
