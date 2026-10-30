@@ -3,8 +3,8 @@
   "dateLabel": "Fri, Oct 30, 2026",
   "menuDate": "2026-10-30",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-30T13:31:18.999622-04:00",
-  "fetchedAtEpochMs": 1793381478999,
+  "fetchedAt": "2026-10-30T13:41:18.954656-04:00",
+  "fetchedAtEpochMs": 1793382078954,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -100,12 +100,11 @@
           ]
         },
         {
-          "name": "Mushroom Donair Wrap",
-          "cal": "290 Cal",
-          "ingredients": "portobello mushroom, lettuce, tomato, red onion, donair sauce, tortilla",
+          "name": "Cauliflower Rice",
+          "cal": "15 Cal",
           "dietary": [
-            "Vegetarian",
-            "Coolfood Meal"
+            "Vegan",
+            "No Gluten"
           ]
         },
         {
@@ -116,14 +115,6 @@
             "Vegan",
             "Coolfood Meal",
             "Plant Forward",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Cauliflower Rice",
-          "cal": "15 Cal",
-          "dietary": [
-            "Vegan",
             "No Gluten"
           ]
         }
