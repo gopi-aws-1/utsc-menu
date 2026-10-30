@@ -3,8 +3,8 @@
   "dateLabel": "Fri, Oct 30, 2026",
   "menuDate": "2026-10-30",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-30T11:00:59.652192-04:00",
-  "fetchedAtEpochMs": 1793372459652,
+  "fetchedAt": "2026-10-30T11:11:08.290984-04:00",
+  "fetchedAtEpochMs": 1793373068290,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -15,23 +15,41 @@
         {
           "name": "Char Sui Pork Loin",
           "cal": "160 Cal",
-          "ingredients": "pork, hoisin, honey, sesame oil, soy sauce, spices"
+          "ingredients": "pork, hoisin, honey, sesame oil, soy sauce, spices",
+          "dietary": [
+            "No Dairy"
+          ]
         },
         {
           "name": "Bok Choy",
-          "cal": "40 Cal"
+          "cal": "40 Cal",
+          "dietary": [
+            "Vegan",
+            "Eat Well"
+          ]
         },
         {
           "name": "Cauliflower Kale Baked Penne",
-          "cal": "170 Cal"
+          "cal": "170 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Chow Mein Noodles",
-          "cal": "160 Cal"
+          "cal": "160 Cal",
+          "dietary": [
+            "Vegetarian",
+            "No Dairy"
+          ]
         },
         {
           "name": "White Rice",
-          "cal": "130 Cal"
+          "cal": "130 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         },
         {
           "name": "Crispy Chicken Caesar Wrap",
@@ -62,6 +80,9 @@
           "name": "Tahini Falafel Bowl",
           "cal": "300 Cal",
           "ingredients": "falafel, beets, carrot, pumpkin seeds, couscous, curry tahini sauce",
+          "dietary": [
+            "Vegan"
+          ],
           "serving": "175 gram",
           "servingOptions": [
             "175 gram",
@@ -81,16 +102,30 @@
         {
           "name": "Mushroom Donair Wrap",
           "cal": "290 Cal",
-          "ingredients": "portobello mushroom, lettuce, tomato, red onion, donair sauce, tortilla"
+          "ingredients": "portobello mushroom, lettuce, tomato, red onion, donair sauce, tortilla",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal"
+          ]
         },
         {
           "name": "Sweet Potato Chickpea Curry",
           "cal": "170 Cal",
-          "ingredients": "sweet potato, chickpea, coconut milk, curry paste, soy sauce, lime juice, cilantro"
+          "ingredients": "sweet potato, chickpea, coconut milk, curry paste, soy sauce, lime juice, cilantro",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "Plant Forward",
+            "No Gluten"
+          ]
         },
         {
           "name": "Cauliflower Rice",
-          "cal": "15 Cal"
+          "cal": "15 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         }
       ],
       "accent": "#f59e0b"
@@ -100,7 +135,10 @@
       "items": [
         {
           "name": "Waffle",
-          "cal": "370 Cal"
+          "cal": "370 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         }
       ],
       "accent": "#ef4444"
@@ -126,7 +164,10 @@
         },
         {
           "name": "Cheese Pizza",
-          "cal": "150 Cal"
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Chicken Parmesan Pizza",
@@ -160,23 +201,39 @@
         {
           "name": "White Bean Caprese Ciabatta",
           "cal": "260 Cal",
-          "ingredients": "tomato, mozzarella, white bean spread, pesto, ciabatta"
+          "ingredients": "tomato, mozzarella, white bean spread, pesto, ciabatta",
+          "dietary": [
+            "Coolfood Meal",
+            "Eat Well"
+          ]
         },
         {
           "name": "Baguette",
-          "cal": "330 Cal"
+          "cal": "330 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "White Bread",
-          "cal": "150 Cal"
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Whole Wheat Bread",
-          "cal": "150 Cal"
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Tortilla",
-          "cal": "310 Cal"
+          "cal": "310 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Cheddar Cheese",
@@ -343,15 +400,24 @@
         {
           "name": "Blueberry Tart",
           "cal": "100 Cal",
-          "ingredients": "blueberry pie filling, tart shell"
+          "ingredients": "blueberry pie filling, tart shell",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Mint Brownie",
-          "cal": "290 Cal"
+          "cal": "290 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Pumpkin Swirl Brownie",
-          "cal": "260 Cal"
+          "cal": "260 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Sweet & Salty Rice Krispie Square",
@@ -359,19 +425,33 @@
         },
         {
           "name": "Banana Snickerdoodle Cookie",
-          "cal": "140 Cal"
+          "cal": "140 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
           "name": "Chocolate Chip Cookie",
-          "cal": "120 Cal"
+          "cal": "120 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Oatmeal Raisin Cookie",
-          "cal": "120 Cal"
+          "cal": "120 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Sugar Cookie",
-          "cal": "110 Cal"
+          "cal": "110 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         }
       ],
       "accent": "#ef4444"
@@ -381,7 +461,11 @@
       "items": [
         {
           "name": "Soy Milk",
-          "cal": "10 Cal"
+          "cal": "10 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         },
         {
           "name": "Coconut Yogurt",
