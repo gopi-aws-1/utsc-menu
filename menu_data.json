@@ -3,8 +3,8 @@
   "dateLabel": "Fri, Oct 30, 2026",
   "menuDate": "2026-10-30",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-30T14:01:23.283261-04:00",
-  "fetchedAtEpochMs": 1793383283283,
+  "fetchedAt": "2026-10-30T14:11:04.947166-04:00",
+  "fetchedAtEpochMs": 1793383864947,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -53,8 +53,7 @@
         },
         {
           "name": "Crispy Chicken Caesar Wrap",
-          "cal": "470 Cal",
-          "serving": "180 gram",
+          "cal": "0 Cal",
           "servingOptions": [
             "180 gram",
             "125 gram"
@@ -83,7 +82,6 @@
           "dietary": [
             "Vegan"
           ],
-          "serving": "175 gram",
           "servingOptions": [
             "175 gram",
             "165 gram"
@@ -120,12 +118,14 @@
         },
         {
           "name": "Lentil Barbacoa Taco",
-          "cal": "90 Cal",
+          "cal": "0 Cal",
           "dietary": [
             "Vegan",
-            "No Gluten"
+            "Coolfood Meal",
+            "Plant Forward",
+            "No Gluten",
+            "Eat Well"
           ],
-          "serving": "90 gram",
           "servingOptions": [
             "90 gram",
             "95 gram"
@@ -266,7 +266,7 @@
         },
         {
           "name": "Turkey",
-          "cal": "30 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Cucumber",
@@ -274,7 +274,7 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "10 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Red Onions",
@@ -356,11 +356,11 @@
         },
         {
           "name": "Iceberg Lettuce",
-          "cal": "10 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Romaine Lettuce",
-          "cal": "10 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Spring Mix",
@@ -380,7 +380,7 @@
         },
         {
           "name": "Greek Feta Dressing",
-          "cal": "190 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Zesty Italian Dressing",
@@ -478,7 +478,7 @@
         },
         {
           "name": "Coconut Yogurt",
-          "cal": "35 Cal"
+          "cal": "0 Cal"
         },
         {
           "name": "Plain Yogurt",
