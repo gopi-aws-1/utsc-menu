@@ -3,8 +3,8 @@
   "dateLabel": "Fri, Oct 30, 2026",
   "menuDate": "2026-10-30",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-30T13:41:18.954656-04:00",
-  "fetchedAtEpochMs": 1793382078954,
+  "fetchedAt": "2026-10-30T13:51:01.350613-04:00",
+  "fetchedAtEpochMs": 1793382661350,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -100,14 +100,6 @@
           ]
         },
         {
-          "name": "Cauliflower Rice",
-          "cal": "15 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
-        },
-        {
           "name": "Sweet Potato Chickpea Curry",
           "cal": "170 Cal",
           "ingredients": "sweet potato, chickpea, coconut milk, curry paste, soy sauce, lime juice, cilantro",
@@ -116,6 +108,37 @@
             "Coolfood Meal",
             "Plant Forward",
             "No Gluten"
+          ]
+        },
+        {
+          "name": "Cauliflower Rice",
+          "cal": "15 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Lentil Barbacoa Taco",
+          "cal": "90 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ],
+          "serving": "90 gram",
+          "servingOptions": [
+            "90 gram",
+            "95 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "90 gram",
+              "cal": "90 Cal"
+            },
+            {
+              "serving": "95 gram",
+              "cal": "100 Cal"
+            }
           ]
         }
       ],
