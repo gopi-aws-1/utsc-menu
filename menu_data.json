@@ -3,8 +3,8 @@
   "dateLabel": "Fri, Oct 30, 2026",
   "menuDate": "2026-10-30",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-30T13:51:01.350613-04:00",
-  "fetchedAtEpochMs": 1793382661350,
+  "fetchedAt": "2026-10-30T14:01:23.283261-04:00",
+  "fetchedAtEpochMs": 1793383283283,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -182,11 +182,6 @@
           "dietary": [
             "Vegetarian"
           ]
-        },
-        {
-          "name": "Chicken Parmesan Pizza",
-          "cal": "190 Cal",
-          "ingredients": "chicken breast, parmesan, mozzarella, basil"
         }
       ],
       "accent": "#8b5cf6"
