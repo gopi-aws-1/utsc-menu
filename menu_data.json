@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Sat, Oct 31, 2026",
   "menuDate": "2026-10-31",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-10-31T16:21:31.582340-04:00",
-  "fetchedAtEpochMs": 1793478091582,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-10-31T16:31:10.336192-04:00",
+  "fetchedAtEpochMs": 1793478670336,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,35 +13,24 @@
       "name": "Home",
       "items": [
         {
-          "name": "Chicken Tikka Masala",
-          "cal": "190 Cal",
-          "ingredients": "chicken, tomato, yogurt, cream,· lemon juice, cilantro, spices",
-          "dietary": [
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "French Onion Baked Pasta",
-          "cal": "140 Cal",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Grilled Cheese Sandwich",
-          "cal": "170 Cal",
-          "ingredients": "cheddar cheese, white bread",
+          "name": "Perogies with Cheddar & Onion",
+          "cal": "350 Cal",
+          "ingredients": "perogies, sautéed onion, cheddar, sour cream",
           "dietary": [
             "Vegetarian"
           ]
         },
         {
-          "name": "California Vegetable Medley",
-          "cal": "45 Cal",
-          "ingredients": "carrot, cauliflower, broccoli",
+          "name": "Tomato & Feta Baked Pasta",
+          "cal": "350 Cal",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Rapini",
+          "cal": "25 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -49,12 +38,12 @@
           ]
         },
         {
-          "name": "Basmati Rice",
-          "cal": "110 Cal",
+          "name": "Herb White Rice",
+          "cal": "130 Cal",
+          "ingredients": "rice, onion, parsley, spices",
           "dietary": [
             "Vegan",
-            "No Gluten",
-            "Eat Well"
+            "No Gluten"
           ]
         }
       ],
@@ -64,28 +53,28 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Mushroom Bourguignon",
-          "cal": "70 Cal",
+          "name": "Korean BBQ Tofu",
+          "cal": "160 Cal",
           "dietary": [
             "Vegan",
-            "Coolfood Meal",
-            "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Coponata",
-          "cal": "90 Cal",
-          "ingredients": "celery, onion, eggplant, tomato, olives, capers",
+          "name": "Bok Choy",
+          "cal": "40 Cal",
           "dietary": [
             "Vegan",
-            "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Braised White Beans & Kale",
-          "cal": "130 Cal"
+          "name": "Creamy Miso & Coconut Polenta",
+          "cal": "190 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         }
       ],
       "accent": "#f59e0b"
@@ -102,17 +91,6 @@
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
     },
     {
       "name": "Pizza",
@@ -142,25 +120,7 @@
           "ingredients": "sausage, red onion, banana peppers, chili pepper flakes, mozzarella, goat cheese"
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -268,7 +228,7 @@
           ]
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -366,11 +326,27 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Bakery",
       "items": [
+        {
+          "name": "Vegan No Gluten Chocolate Cake",
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Raspberry Tart",
+          "cal": "100 Cal",
+          "ingredients": "raspberry filling, tart shell",
+          "dietary": [
+            "Vegan"
+          ]
+        },
         {
           "name": "Cookie Brownie",
           "cal": "220 Cal",
@@ -404,7 +380,7 @@
           ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Smoothie",
@@ -438,7 +414,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     }
   ]
 }
