@@ -3,8 +3,8 @@
   "dateLabel": "Sat, Oct 31, 2026",
   "menuDate": "2026-10-31",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-10-31T09:01:02.644823-04:00",
-  "fetchedAtEpochMs": 1793451662644,
+  "fetchedAt": "2026-10-31T09:11:01.474658-04:00",
+  "fetchedAtEpochMs": 1793452261474,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -33,16 +33,6 @@
           ]
         },
         {
-          "name": "Southwest Frittata",
-          "cal": "140 Cal",
-          "ingredients": "egg, black beans, green pepper, cheddar, salsa, cilantro",
-          "dietary": [
-            "Vegetarian",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
           "name": "Egg & Cheese Bagel",
           "cal": "230 Cal",
           "ingredients": "egg, cheddar cheese, plain bagel",
@@ -53,8 +43,25 @@
           ]
         },
         {
+          "name": "Pom Pom Potatoes (118 millilitre)",
+          "cal": "160 Cal"
+        },
+        {
+          "name": "Pom Pom Potatoes (89 millilitre)",
+          "cal": "120 Cal"
+        },
+        {
           "name": "Bacon",
           "cal": "70 Cal"
+        },
+        {
+          "name": "Pom Pom Potatoes",
+          "cal": "160 Cal",
+          "serving": "118 millilitre",
+          "servingOptions": [
+            "118 millilitre",
+            "89 millilitre"
+          ]
         }
       ],
       "accent": "#3b82f6"
@@ -70,37 +77,6 @@
             "Vegan",
             "Coolfood Meal",
             "Plant Forward",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Moroccan Sweet Potato Chickpea Frittata",
-          "cal": "140 Cal",
-          "ingredients": "egg, chickpeas, sweet potato, salsa, sour cream",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Chickpea Scramble",
-          "cal": "310 Cal",
-          "ingredients": "chickpeas, baba ghanoush, onion, garlic, spices",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Wild Rice",
-          "cal": "120 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
             "Eat Well"
           ]
         }
