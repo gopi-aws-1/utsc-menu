@@ -3,8 +3,8 @@
   "dateLabel": "Sat, Oct 31, 2026",
   "menuDate": "2026-10-31",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-10-31T09:21:00.602366-04:00",
-  "fetchedAtEpochMs": 1793452860602,
+  "fetchedAt": "2026-10-31T09:31:00.360115-04:00",
+  "fetchedAtEpochMs": 1793453460360,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -33,9 +33,9 @@
           ]
         },
         {
-          "name": "Egg & Cheese Bagel",
-          "cal": "230 Cal",
-          "ingredients": "egg, cheddar cheese, plain bagel",
+          "name": "Egg & Cheese Breakfast Sandwich",
+          "cal": "310 Cal",
+          "ingredients": "egg, cheddar, english muffin",
           "dietary": [
             "Vegetarian",
             "Coolfood Meal",
@@ -78,6 +78,32 @@
             "Coolfood Meal",
             "Plant Forward",
             "Eat Well"
+          ]
+        },
+        {
+          "name": "Spinach Potato Plant Based Frittata",
+          "cal": "160 Cal",
+          "ingredients": "plant based egg, potato, spinach",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "No Gluten",
+            "Eat Well"
+          ],
+          "serving": "110 gram",
+          "servingOptions": [
+            "110 gram",
+            "118 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "110 gram",
+              "cal": "160 Cal"
+            },
+            {
+              "serving": "118 gram",
+              "cal": "180 Cal"
+            }
           ]
         }
       ],
