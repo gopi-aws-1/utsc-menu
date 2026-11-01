@@ -243,9 +243,9 @@ def assert_today_in_source(frame, today: datetime, today_clicked: bool = False) 
     title = frame.locator(".print-menu-container h1")
     if not title.count():
         raise RuntimeError("MyDiningHub dated print menu title unavailable")
-    text = re.sub(r"\\s+", " ", title.first.inner_text()).strip()
+    text = re.sub(r"\s+", " ", title.first.inner_text()).strip()
     match = re.fullmatch(
-        r"Daily Menu\\s+(Breakfast|Lunch|Dinner)\\s*-\\s*([A-Za-z]{3})\\s+(\\d{1,2})/(\\d{1,2})",
+        r"Daily Menu\s+(Breakfast|Lunch|Dinner)\s*-\s*([A-Za-z]{3})\s+(\d{1,2})/(\d{1,2})",
         text, re.I
     )
     if not match:
