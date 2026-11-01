@@ -1,6 +1,6 @@
 {
-  "lastAttempt": "2026-11-01T14:41:28.027254-05:00",
+  "lastAttempt": "2026-11-01T14:46:58.054956-05:00",
   "lastSuccessfulFetch": "2026-10-31T20:51:21.695683-04:00",
-  "lastError": "Frame https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall: MyDiningHub selected date does not match 2026-11-01; expected header 'Sun, Nov 1'",
+  "lastError": "Frame https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall: MyDiningHub title cannot verify date: 'Daily Menu Lunch - Sun 11/01'",
   "success": false
 }
