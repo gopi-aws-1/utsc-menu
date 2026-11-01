@@ -295,9 +295,28 @@ def selected_source_menu(frame, reference: datetime) -> tuple[str, datetime]:
         raise RuntimeError("Source weekday and date disagree")
     expected_heading = f"{selected.strftime('%a, %b')} {selected.day}"
     headings = frame.locator('h2[class*="text-heading-4"]')
-    if not any(h.is_visible() and h.inner_text().strip() == expected_heading
-               for h in (headings.nth(i) for i in range(headings.count()))):
-        raise RuntimeError("Selected date heading conflicts with source menu title")
+    visible_headings = [
+        h.inner_text().strip()
+        for h in (headings.nth(i) for i in range(headings.count()))
+        if h.is_visible()
+    ]
+    if expected_heading not in visible_headings:
+        # MyDiningHub can roll its calendar forward before Toronto midnight
+        # while its printed menu is still today's final meal. Accept only
+        # that exact one-day-ahead rollover during local evening hours.
+        tomorrow = selected + timedelta(days=1)
+        next_heading = f"{tomorrow.strftime('%a, %b')} {tomorrow.day}"
+        evening_rollover = (
+            selected.date() == reference.date()
+            and reference.hour >= 20
+            and next_heading in visible_headings
+        )
+        if not evening_rollover:
+            raise RuntimeError(
+                "Selected date heading conflicts with source menu title: "
+                f"title={text!r}, headings={visible_headings!r}"
+            )
+        log.warning("MyDiningHub calendar rolled to tomorrow; verified current-day print menu %s", text)
     return period, selected
 
 def choose_today(frame) -> bool:
