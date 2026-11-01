@@ -1,6 +1,6 @@
 {
-  "lastAttempt": "2026-10-31T21:21:34.005691-04:00",
+  "lastAttempt": "2026-10-31T21:30:54.397835-04:00",
   "lastSuccessfulFetch": "2026-10-31T20:51:21.695683-04:00",
-  "lastError": "Frame https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall: Selected date heading conflicts with source menu title",
+  "lastError": "Frame https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall: Selected date heading conflicts with source menu title: title='Daily Menu Breakfast - Sun 11/01', headings=['Sun, Nov 01']",
   "success": false
 }
