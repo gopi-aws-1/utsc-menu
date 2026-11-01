@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Sun, Nov 01, 2026",
   "menuDate": "2026-11-01",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-01T16:21:25.426867-05:00",
-  "fetchedAtEpochMs": 1793568085426,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-01T16:31:06.143321-05:00",
+  "fetchedAtEpochMs": 1793568666143,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,58 +13,77 @@
       "name": "Home",
       "items": [
         {
-          "name": "Beef Kofta Bowl",
-          "cal": "260 Cal",
-          "ingredients": "kefta meatballs, beets, carrot, pumpkin seeds, couscous, curry tahini sauce",
+          "name": "Turkey Colcannon Pie",
+          "cal": "200 Cal",
           "dietary": [
-            "Plant Forward"
+            "Coolfood Meal",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Spinach & Pepper Baked Rigatoni",
+          "cal": "210 Cal",
+          "ingredients": "spinach, bell pepper, tomato, tomato basil sauce, mozzarella, rigatoni pasta",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Italian Sausage Hot Dog",
+          "cal": "550 Cal"
+        },
+        {
+          "name": "Spanish Rice",
+          "cal": "110 Cal",
+          "ingredients": "rice, tomato, green pepper, garlic, herbs & spices",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Asian Vegetable Medley",
+          "cal": "50 Cal",
+          "ingredients": "broccoli, green beans, carrot, onion, red pepper, mushroom",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Potato Wedges",
+          "cal": "110 Cal"
+        },
+        {
+          "name": "Hot Dog",
+          "cal": "410 Cal",
+          "ingredients": "beef weiner, hot dog bun",
+          "dietary": [
+            "No Dairy"
           ],
-          "serving": "165 gram",
+          "serving": "160 gram",
           "servingOptions": [
-            "165 gram",
-            "185 gram"
+            "160 gram",
+            "80 gram",
+            "120 gram"
           ],
           "servingCalories": [
             {
-              "serving": "165 gram",
-              "cal": "260 Cal"
+              "serving": "80 gram",
+              "cal": "210 Cal"
             },
             {
-              "serving": "185 gram",
-              "cal": "290 Cal"
+              "serving": "120 gram",
+              "cal": "310 Cal"
+            },
+            {
+              "serving": "160 gram",
+              "cal": "410 Cal"
             }
-          ]
-        },
-        {
-          "name": "Sunrise Vegetable Medley",
-          "cal": "50 Cal",
-          "ingredients": "green beans, orange & yellow carrots",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Sundried Tomato Penne Alfredo",
-          "cal": "300 Cal",
-          "dietary": [
-            "Coolfood Meal"
-          ]
-        },
-        {
-          "name": "Pom Pom Nachos",
-          "cal": "150 Cal",
-          "ingredients": "jalapeno cheese sauce, salsa, sour cream, pom pom potato"
-        },
-        {
-          "name": "Lemon Ginger Rice",
-          "cal": "150 Cal",
-          "ingredients": "rice, onion, garlic, lemon juice, spices",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
           ]
         }
       ],
@@ -74,30 +93,18 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Chickpea Coconut Curry",
-          "cal": "150 Cal",
-          "ingredients": "chickpea, coconut milk, tomato, curry paste",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Gochujang Tofu Lettuce Wrap",
-          "cal": "50 Cal",
+          "name": "Falafel Mezze Salad",
+          "cal": "190 Cal",
+          "ingredients": "falafel, tabbouleh, pita croutons, cabbage, hummus, lettuce, vinaigrette",
           "dietary": [
             "Vegetarian",
-            "Coolfood Meal",
-            "No Dairy",
-            "No Gluten",
-            "Eat Well"
+            "Coolfood Meal"
           ]
         },
         {
-          "name": "Peas & Carrots",
-          "cal": "60 Cal",
+          "name": "Cumin Roasted Cauliflower",
+          "cal": "30 Cal",
+          "ingredients": "cauliflower, garlic, cumin",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -105,8 +112,9 @@
           ]
         },
         {
-          "name": "Basmati Rice",
-          "cal": "110 Cal",
+          "name": "Quinoa & Corn Medley",
+          "cal": "120 Cal",
+          "ingredients": "quinoa, red pepper, corn, onion",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -130,17 +138,6 @@
       "accent": "#ef4444"
     },
     {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
-    },
-    {
       "name": "Pizza",
       "items": [
         {
@@ -156,25 +153,7 @@
           "ingredients": "pepperoni, mozzarella"
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -275,7 +254,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -361,7 +340,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Bakery",
@@ -375,8 +354,12 @@
           ]
         },
         {
-          "name": "Dream Bar",
-          "cal": "240 Cal",
+          "name": "Coconut Crunch Rice Krispie Square",
+          "cal": "100 Cal"
+        },
+        {
+          "name": "Date Square",
+          "cal": "170 Cal",
           "dietary": [
             "Vegetarian"
           ]
@@ -403,7 +386,7 @@
           ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Smoothie",
@@ -437,7 +420,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     }
   ]
 }
