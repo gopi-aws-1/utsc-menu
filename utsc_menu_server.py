@@ -233,31 +233,38 @@ EXTRACT_JS = r"""() => {
 }"""
 
 def assert_today_in_source(frame, today: datetime, today_clicked: bool = False) -> None:
-    """Verify the *selected* visible calendar heading, not today's hours card.
+    """Verify source menu date and selected meal, without relying on brittle heading CSS.
 
-    Source evidence from the real Oct 14 MyDiningHub page:
-    date heading: h2 "Wed, Oct 14" (inside aria-live="polite")
-    print menu: "Daily Menu Dinner - Wed 10/14" (not rendered visibly)
+    MyDiningHub's calendar heading may be missing, zero-padded or lag its
+    printable menu after a date rollover. The printable title supplies an
+    explicit weekday/month/day and the meal selector corroborates its period.
+    A title for any other date fails closed, even if the heading looks right.
     """
-    iso = today.date().isoformat()
-    exact_heading = f"{today.strftime('%a, %b')} {today.day}"
-    headings = frame.locator('h2[class*="text-heading-4"]')
-    for i in range(headings.count()):
-        heading = headings.nth(i)
-        if not heading.is_visible():
-            continue
-        if heading.inner_text().strip() == exact_heading:
-            return
-    # Alternative accessible calendar widgets with an actual selected date.
-    dates = frame.locator('input[type="date"]')
-    for i in range(min(4, dates.count())):
-        date_el = dates.nth(i)
-        if date_el.is_visible() and date_el.input_value() == iso:
-            return
-    raise RuntimeError(
-        f"MyDiningHub selected date does not match {iso}; expected header '{exact_heading}'"
+    title = frame.locator(".print-menu-container h1")
+    if not title.count():
+        raise RuntimeError("MyDiningHub dated print menu title unavailable")
+    text = re.sub(r"\\s+", " ", title.first.inner_text()).strip()
+    match = re.fullmatch(
+        r"Daily Menu\\s+(Breakfast|Lunch|Dinner)\\s*-\\s*([A-Za-z]{3})\\s+(\\d{1,2})/(\\d{1,2})",
+        text, re.I
     )
-
+    if not match:
+        raise RuntimeError(f"MyDiningHub title cannot verify date: {text!r}")
+    period, weekday, month, day = match.groups()
+    expected = today.astimezone(TORONTO).date()
+    if (int(month), int(day), weekday.casefold()) != (
+        expected.month, expected.day, expected.strftime("%a").casefold()
+    ):
+        raise RuntimeError(f"Source menu title {text!r} does not match {expected}")
+    if not source_meal_selected(frame, period.title()):
+        raise RuntimeError("MyDiningHub menu title and meal selector disagree")
+    # Print title and live meal selector are authoritative. Calendar headings
+    # are only diagnostic: their format can change or they can roll over early.
+    headings = frame.locator('h2[class*="text-heading-4"]')
+    visible = [h.inner_text().strip()
+               for h in (headings.nth(i) for i in range(headings.count()))
+               if h.is_visible()]
+    log.info("Verified dated menu title=%r; visible calendar headings=%r", text, visible)
 
 def selected_source_menu(frame, reference: datetime) -> tuple[str, datetime]:
     """Use the selected MyDiningHub menu and date, with independent verification."""
