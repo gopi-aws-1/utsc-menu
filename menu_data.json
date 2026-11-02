@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Mon, Nov 02, 2026",
   "menuDate": "2026-11-02",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-02T16:21:36.582838-05:00",
-  "fetchedAtEpochMs": 1793654496582,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-02T16:31:04.641874-05:00",
+  "fetchedAtEpochMs": 1793655064641,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,25 +13,35 @@
       "name": "Home",
       "items": [
         {
-          "name": "Adobo Chicken",
-          "cal": "100 Cal",
+          "name": "Herb Roasted Chicken",
+          "cal": "170 Cal",
+          "ingredients": "chicken, lemon pepper, herbs",
           "dietary": [
             "No Dairy",
-            "No Gluten"
+            "No Gluten",
+            "Eat Well"
           ]
         },
         {
-          "name": "Tomato & Feta Baked Pasta",
-          "cal": "350 Cal",
+          "name": "Penne Alfredo",
+          "cal": "260 Cal",
+          "ingredients": "alfredo sauce, parmesan cheese, penne pasta",
           "dietary": [
-            "Vegetarian",
             "Coolfood Meal"
           ]
         },
         {
-          "name": "Red Pepper & Bok Choy",
-          "cal": "60 Cal",
-          "ingredients": "bok choy, red pepper",
+          "name": "Pork Belly Bao Bun",
+          "cal": "220 Cal",
+          "ingredients": "pork belly, pickled cucumber, hoisin sauce, green onion, bao bun",
+          "dietary": [
+            "No Dairy"
+          ]
+        },
+        {
+          "name": "Grilled Vegetable Medley",
+          "cal": "70 Cal",
+          "ingredients": "zucchini, red & green pepper, carrot, onion",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -39,26 +49,13 @@
           ]
         },
         {
-          "name": "BLT Wrap",
-          "cal": "250 Cal",
-          "ingredients": "bacon, lettuce, tomato, mayo, tortilla",
+          "name": "Red Potatoes & Onions",
+          "cal": "160 Cal",
+          "ingredients": "potato, garlic, herbs",
           "dietary": [
-            "No Dairy"
-          ],
-          "serving": "115 gram",
-          "servingOptions": [
-            "115 gram",
-            "112 gram"
-          ],
-          "servingCalories": [
-            {
-              "serving": "112 gram",
-              "cal": "240 Cal"
-            },
-            {
-              "serving": "115 gram",
-              "cal": "250 Cal"
-            }
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
           ]
         }
       ],
@@ -68,18 +65,20 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Teriyaki Plant Based Meatballs",
-          "cal": "210 Cal",
-          "ingredients": "vegan meatball, thai sweet & spicy sauce, teriyaki sauce",
+          "name": "Middle Eastern Chickpeas",
+          "cal": "140 Cal",
+          "ingredients": "chickpeas, spinach, red pepper, onion",
           "dietary": [
             "Vegan",
-            "Plant Forward"
+            "Coolfood Meal",
+            "No Gluten",
+            "Eat Well"
           ]
         },
         {
-          "name": "Vegetable Medley",
-          "cal": "60 Cal",
-          "ingredients": "wax beans, peas, corn, carrot",
+          "name": "Zucchini & Tomato",
+          "cal": "45 Cal",
+          "ingredients": "zucchini, tomato, onion, garlic, oregano, thyme",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -87,8 +86,9 @@
           ]
         },
         {
-          "name": "Jasmine Rice",
-          "cal": "130 Cal",
+          "name": "Curry Rice Pilaf",
+          "cal": "150 Cal",
+          "ingredients": "rice, peas, onion, spices",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -96,25 +96,25 @@
           ]
         },
         {
-          "name": "Lentil Bolognese Baked Penne",
-          "cal": "230 Cal",
-          "ingredients": "squash, carrot, parsnip, lentil tomato sauce, penne pasta, mozzarella, parmesan",
+          "name": "Korean BBQ Tempeh Wrap",
+          "cal": "290 Cal",
+          "ingredients": "tempeh, red pepper, green onion, guacamole, lettuce, sesame seeds",
           "dietary": [
-            "Coolfood Meal"
+            "Vegan"
           ],
-          "serving": "195 gram",
+          "serving": "100 gram",
           "servingOptions": [
-            "195 gram",
-            "178 gram"
+            "100 gram",
+            "255 gram"
           ],
           "servingCalories": [
             {
-              "serving": "178 gram",
-              "cal": "210 Cal"
+              "serving": "100 gram",
+              "cal": "290 Cal"
             },
             {
-              "serving": "195 gram",
-              "cal": "230 Cal"
+              "serving": "255 gram",
+              "cal": "730 Cal"
             }
           ]
         }
@@ -133,17 +133,6 @@
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
     },
     {
       "name": "Pizza",
@@ -174,25 +163,7 @@
           "ingredients": "pepperoni, mozzarella"
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -299,7 +270,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -389,7 +360,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Soup",
@@ -399,15 +370,15 @@
           "cal": ""
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "Lemon Cheesecake",
-          "cal": "190 Cal",
-          "ingredients": "lemon pudding, cheesecake, graham crackers",
+          "name": "Lemon Tart",
+          "cal": "110 Cal",
+          "ingredients": "lemon pudding, tart shell, whipped topping",
           "dietary": [
             "Vegetarian"
           ]
@@ -467,7 +438,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -501,7 +472,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
