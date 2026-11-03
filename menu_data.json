@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Tue, Nov 03, 2026",
   "menuDate": "2026-11-03",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-03T16:21:25.101252-05:00",
-  "fetchedAtEpochMs": 1793740885101,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-03T16:31:08.874905-05:00",
+  "fetchedAtEpochMs": 1793741468874,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,79 +13,27 @@
       "name": "Home",
       "items": [
         {
-          "name": "Jerk Pork Loin",
-          "cal": "160 Cal",
-          "ingredients": "pork, lime, soy sauce, jalapeno, herbs & spices",
+          "name": "Lemon & Garlic Cod",
+          "cal": "80 Cal",
           "dietary": [
-            "No Dairy",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Spanakopita Pasta Bake",
-          "cal": "270 Cal",
-          "ingredients": "rigatoni, spinach, cream, onion, dill, feta, parsley, panko bread crumbs",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal"
-          ]
-        },
-        {
-          "name": "Salsa Verde Chicken Enchilada",
-          "cal": "160 Cal",
-          "ingredients": "taco-spiced chicken breast, salsa verde, cheese, sour cream, cilantro",
-          "dietary": [
-            "Coolfood Meal"
-          ]
-        },
-        {
-          "name": "Roasted Corn & Green Pepper",
-          "cal": "120 Cal",
-          "ingredients": "corn, green pepper, onion, cumin",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Coconut Jasmine Rice",
-          "cal": "190 Cal",
-          "ingredients": "rice, coconut milk, shredded coconut, sugar",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
-        }
-      ],
-      "accent": "#3b82f6"
-    },
-    {
-      "name": "Vegan",
-      "items": [
-        {
-          "name": "Vegetable Fried Rice",
-          "cal": "190 Cal",
-          "ingredients": "carrot, corn, onion, peas, egg, green onion, lettuce, rice",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
-            "Plant Forward",
             "No Dairy",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "BBQ Lentil Taco",
-          "cal": "150 Cal",
-          "ingredients": "BBQ lentils, coleslaw, green onion, tortilla",
+          "name": "Eggplant Baked Orzo",
+          "cal": "170 Cal",
+          "ingredients": "eggplant, carrot, celery, orzo pasta, mozzarella",
           "dietary": [
             "Vegetarian",
-            "Coolfood Meal",
-            "No Dairy",
-            "Eat Well"
+            "Coolfood Meal"
           ]
+        },
+        {
+          "name": "Spicy Crispy Chicken Snack Wrap",
+          "cal": "250 Cal",
+          "ingredients": "crispy chicken, lettuce, tomato, sriracha mayo, tortilla"
         },
         {
           "name": "Asian Vegetable Medley",
@@ -98,12 +46,54 @@
           ]
         },
         {
-          "name": "Chickpea Potato Curry",
-          "cal": "120 Cal",
-          "ingredients": "potato, chickpeas, tomato, onion, cilantro, spices",
+          "name": "Turmeric Kale Fried Rice",
+          "cal": "140 Cal",
+          "ingredients": "rice, kale, green onion, spices",
           "dietary": [
             "Vegan",
             "No Gluten",
+            "Eat Well"
+          ]
+        }
+      ],
+      "accent": "#3b82f6"
+    },
+    {
+      "name": "Vegan",
+      "items": [
+        {
+          "name": "Crispy Tofu Nuggets",
+          "cal": "2810 Cal",
+          "dietary": [
+            "Vegan"
+          ]
+        },
+        {
+          "name": "Cuban Black Bean Stew",
+          "cal": "90 Cal",
+          "ingredients": "black beans, red pepper, celery, carrot, tomato, onion",
+          "dietary": [
+            "Vegan",
+            "Plant Forward",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Plant Based Gumbo",
+          "cal": "240 Cal",
+          "ingredients": "plant based sausage, green pepper, celery, onion, cajun spice, parsley",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Chili Sesame Eggplant",
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegan",
             "Eat Well"
           ]
         }
@@ -122,17 +112,6 @@
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
     },
     {
       "name": "Pizza",
@@ -167,25 +146,7 @@
           "ingredients": "pepperoni, mozzarella"
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -292,7 +253,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -386,7 +347,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Soup",
@@ -396,15 +357,14 @@
           "cal": ""
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "Apple Crisp",
-          "cal": "160 Cal",
-          "ingredients": "apples, cinnamon, brown sugar, oats, flour",
+          "name": "Sticky Toffee Pudding",
+          "cal": "150 Cal",
           "dietary": [
             "Vegetarian"
           ]
@@ -414,8 +374,8 @@
           "cal": "90 Cal"
         },
         {
-          "name": "Haystack Brownie",
-          "cal": "130 Cal",
+          "name": "Cookie Brownie",
+          "cal": "220 Cal",
           "dietary": [
             "Vegetarian"
           ]
@@ -457,7 +417,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -491,7 +451,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
