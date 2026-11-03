@@ -3,8 +3,8 @@
   "dateLabel": "Tue, Nov 03, 2026",
   "menuDate": "2026-11-03",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-03T11:40:54.880605-05:00",
-  "fetchedAtEpochMs": 1793724054880,
+  "fetchedAt": "2026-11-03T11:50:57.498494-05:00",
+  "fetchedAtEpochMs": 1793724657498,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -138,11 +138,6 @@
       "name": "Pizza",
       "items": [
         {
-          "name": "Bee Sting Pizza",
-          "cal": "190 Cal",
-          "ingredients": "pepperoni, mozzarella, hot honey drizzle"
-        },
-        {
           "name": "Cheese Pizza",
           "cal": "150 Cal",
           "dietary": [
@@ -150,16 +145,26 @@
           ]
         },
         {
-          "name": "Mushroom & Caramelized Onion Pizza",
-          "cal": "390 Cal",
+          "name": "Fajita Chicken Pizza",
+          "cal": "190 Cal",
+          "ingredients": "taco-spiced chicken breast, onion, red & green pepper, cilantro, mozzarella",
           "dietary": [
             "Coolfood Meal"
           ]
         },
         {
-          "name": "Pierogi Pizza",
-          "cal": "230 Cal",
-          "ingredients": "bacon, potato, caramelized onion, sour cream, mozzarella, cheddar, dill"
+          "name": "Garden Vegetable Pizza",
+          "cal": "160 Cal",
+          "ingredients": "green pepper, red onion, mushroom, tomato, mozzarella",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Pepperoni Pizza",
+          "cal": "190 Cal",
+          "ingredients": "pepperoni, mozzarella"
         }
       ],
       "accent": "#8b5cf6"
