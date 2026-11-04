@@ -3,8 +3,8 @@
   "dateLabel": "Wed, Nov 04, 2026",
   "menuDate": "2026-11-04",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-04T13:54:11.070242-05:00",
-  "fetchedAtEpochMs": 1793818451070,
+  "fetchedAt": "2026-11-04T14:01:01.780617-05:00",
+  "fetchedAtEpochMs": 1793818861780,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -15,50 +15,28 @@
         {
           "name": "Butter Chicken",
           "cal": "120 Cal",
-          "ingredients": "chicken, tomato sauce, yogurt, cream, brown sugar, lemon juice",
-          "dietary": [
-            "No Gluten"
-          ]
+          "ingredients": "chicken, tomato sauce, yogurt, cream, brown sugar, lemon juice"
         },
         {
           "name": "Macaroni & Cheese",
-          "cal": "280 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "280 Cal"
         },
         {
           "name": "Beef Slider",
           "cal": "180 Cal",
-          "ingredients": "beef patty, bun",
-          "dietary": [
-            "No Dairy"
-          ]
+          "ingredients": "beef patty, bun"
         },
         {
           "name": "Broccoli Florets",
-          "cal": "30 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "30 Cal"
         },
         {
           "name": "Basmati Rice",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "110 Cal"
         },
         {
           "name": "Grilled Naan",
-          "cal": "100 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "100 Cal"
         }
       ],
       "accent": "#3b82f6"
@@ -69,41 +47,21 @@
         {
           "name": "Loaded Lentil & Grits Bowl",
           "cal": "190 Cal",
-          "ingredients": "BBQ lentils, braised collard greens, cheesy grits",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
-            "No Gluten"
-          ]
+          "ingredients": "BBQ lentils, braised collard greens, cheesy grits"
         },
         {
           "name": "Mushroom Stroganoff Linguine",
           "cal": "290 Cal",
-          "ingredients": "pasta, mushroom stroganoff sauce",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "Eat Well"
-          ]
+          "ingredients": "pasta, mushroom stroganoff sauce"
         },
         {
           "name": "Broccoli Florets",
-          "cal": "30 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "30 Cal"
         },
         {
           "name": "Rosemary Potato Wedges",
           "cal": "110 Cal",
-          "ingredients": "potato, rosemary, spices",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "ingredients": "potato, rosemary, spices"
         }
       ],
       "accent": "#f59e0b"
@@ -113,10 +71,7 @@
       "items": [
         {
           "name": "Waffle",
-          "cal": "370 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "370 Cal"
         }
       ],
       "accent": "#ef4444"
@@ -137,26 +92,17 @@
       "items": [
         {
           "name": "Cheese Pizza",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "150 Cal"
         },
         {
           "name": "Curry Vegetable Pizza",
           "cal": "190 Cal",
-          "ingredients": "chickpeas, spinach, red onion, chili pepper flakes, mozzarella",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "ingredients": "chickpeas, spinach, red onion, chili pepper flakes, mozzarella"
         },
         {
           "name": "Deluxe Pizza",
           "cal": "180 Cal",
-          "ingredients": "pepperoni, mushroom, green pepper, red onion, tomato, mozzarella",
-          "dietary": [
-            "Coolfood Meal"
-          ]
+          "ingredients": "pepperoni, mushroom, green pepper, red onion, tomato, mozzarella"
         }
       ],
       "accent": "#8b5cf6"
@@ -185,48 +131,28 @@
         {
           "name": "Turkey Cranberry Wrap",
           "cal": "520 Cal",
-          "ingredients": "turkey, lettuce, tomato, mozzarella, cranberry sauce, tortilla",
-          "dietary": [
-            "Coolfood Meal",
-            "Eat Well"
-          ]
+          "ingredients": "turkey, lettuce, tomato, mozzarella, cranberry sauce, tortilla"
         },
         {
           "name": "Spicy Goat Cheese & Veggie Baguette",
           "cal": "270 Cal",
-          "ingredients": "mushroom, onion, spinach, zucchini, goat cheese, baguette",
-          "dietary": [
-            "Coolfood Meal",
-            "Plant Forward"
-          ]
+          "ingredients": "mushroom, onion, spinach, zucchini, goat cheese, baguette"
         },
         {
           "name": "Baguette",
-          "cal": "330 Cal",
-          "dietary": [
-            "Vegan"
-          ]
+          "cal": "330 Cal"
         },
         {
           "name": "White Bread",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegan"
-          ]
+          "cal": "150 Cal"
         },
         {
           "name": "Whole Wheat Bread",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegan"
-          ]
+          "cal": "150 Cal"
         },
         {
           "name": "Tortilla",
-          "cal": "310 Cal",
-          "dietary": [
-            "Vegan"
-          ]
+          "cal": "310 Cal"
         },
         {
           "name": "Cheddar Cheese",
@@ -413,25 +339,15 @@
         {
           "name": "Berry Crisp",
           "cal": "170 Cal",
-          "ingredients": "berries, maple syrup, lemon, coconut, sugar",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
+          "ingredients": "berries, maple syrup, lemon, coconut, sugar"
         },
         {
           "name": "Cookie Brownie",
-          "cal": "220 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "220 Cal"
         },
         {
           "name": "Dream Bar",
-          "cal": "240 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "240 Cal"
         },
         {
           "name": "S'mores Rice Krispie Square",
@@ -439,31 +355,19 @@
         },
         {
           "name": "Chocolate Chip Cookie",
-          "cal": "120 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "120 Cal"
         },
         {
           "name": "Double Chocolate Cookie",
-          "cal": "160 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "160 Cal"
         },
         {
           "name": "Oatmeal Raisin Cookie",
-          "cal": "120 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "120 Cal"
         },
         {
           "name": "Sugar Cookie",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "110 Cal"
         }
       ],
       "accent": "#ef4444"
@@ -473,11 +377,7 @@
       "items": [
         {
           "name": "Soy Milk",
-          "cal": "10 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
+          "cal": "10 Cal"
         },
         {
           "name": "Coconut Yogurt",
