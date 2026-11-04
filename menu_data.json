@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Wed, Nov 04, 2026",
   "menuDate": "2026-11-04",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-04T16:26:39.897223-05:00",
-  "fetchedAtEpochMs": 1793827599897,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-04T16:31:02.684628-05:00",
+  "fetchedAtEpochMs": 1793827862684,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,31 +13,27 @@
       "name": "Home",
       "items": [
         {
-          "name": "Butter Chicken",
-          "cal": "120 Cal",
-          "ingredients": "chicken, tomato sauce, yogurt, cream, brown sugar, lemon juice",
+          "name": "General Tso's Chicken",
+          "cal": "150 Cal",
+          "ingredients": "chicken, sweet & spicy thai sauce, soy sauce, green onion"
+        },
+        {
+          "name": "Penne Primavera Rose",
+          "cal": "240 Cal",
+          "ingredients": "milk, parmesan, carrot, mushroom, zucchini, red & green pepper, penne",
           "dietary": [
-            "No Gluten"
+            "Coolfood Meal"
           ]
         },
         {
-          "name": "Macaroni & Cheese",
-          "cal": "280 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "name": "Seoul Beef Quesadilla",
+          "cal": "350 Cal",
+          "ingredients": "gochujang beef, kimchi, korean BBQ sauce, mozzarella, tortilla"
         },
         {
-          "name": "Beef Slider",
-          "cal": "180 Cal",
-          "ingredients": "beef patty, bun",
-          "dietary": [
-            "No Dairy"
-          ]
-        },
-        {
-          "name": "Broccoli Florets",
-          "cal": "30 Cal",
+          "name": "Asian Vegetable Medley",
+          "cal": "50 Cal",
+          "ingredients": "broccoli, green beans, carrot, onion, red pepper, mushroom",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -45,19 +41,14 @@
           ]
         },
         {
-          "name": "Basmati Rice",
+          "name": "Kimchi Fried Rice",
           "cal": "110 Cal",
+          "ingredients": "rice, egg, kimchi, celery, peas, sriracha, soy sauce",
           "dietary": [
-            "Vegan",
+            "Vegetarian",
+            "No Dairy",
             "No Gluten",
             "Eat Well"
-          ]
-        },
-        {
-          "name": "Grilled Naan",
-          "cal": "100 Cal",
-          "dietary": [
-            "Vegetarian"
           ]
         }
       ],
@@ -67,42 +58,35 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Loaded Lentil & Grits Bowl",
-          "cal": "190 Cal",
-          "ingredients": "BBQ lentils, braised collard greens, cheesy grits",
+          "name": "General Tso's Tofu",
+          "cal": "140 Cal",
+          "ingredients": "tofu, sweet & spicy thai sauce, soy sauce, green onion"
+        },
+        {
+          "name": "Eggplant Parmesan Casserole",
+          "cal": "250 Cal",
           "dietary": [
-            "Vegetarian",
+            "Vegan",
             "Coolfood Meal",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Roasted Acorn Squash",
+          "cal": "45 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Plant Based Mushroom Risotto",
+          "cal": "140 Cal",
+          "ingredients": "rice, mushroom, onion, garlic, vinegar",
+          "dietary": [
+            "Vegan",
             "No Gluten"
-          ]
-        },
-        {
-          "name": "Mushroom Stroganoff Linguine",
-          "cal": "290 Cal",
-          "ingredients": "pasta, mushroom stroganoff sauce",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Broccoli Florets",
-          "cal": "30 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Rosemary Potato Wedges",
-          "cal": "110 Cal",
-          "ingredients": "potato, rosemary, spices",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
           ]
         }
       ],
@@ -120,17 +104,6 @@
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
     },
     {
       "name": "Pizza",
@@ -159,25 +132,7 @@
           ]
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -289,7 +244,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -395,7 +350,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Soup",
@@ -405,11 +360,26 @@
           "cal": ""
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
+        {
+          "name": "Maple Chocolate Cake",
+          "cal": "100 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Apple Crisp",
+          "cal": "160 Cal",
+          "ingredients": "apples, cinnamon, brown sugar, oats, flour",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
         {
           "name": "Berry Crisp",
           "cal": "170 Cal",
@@ -420,15 +390,8 @@
           ]
         },
         {
-          "name": "Cookie Brownie",
-          "cal": "220 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
-        },
-        {
-          "name": "Dream Bar",
-          "cal": "240 Cal",
+          "name": "Haystack Brownie",
+          "cal": "130 Cal",
           "dietary": [
             "Vegetarian"
           ]
@@ -466,7 +429,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -500,7 +463,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
