@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Thu, Nov 05, 2026",
   "menuDate": "2026-11-05",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-05T16:21:26.367727-05:00",
-  "fetchedAtEpochMs": 1793913686367,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-05T16:31:04.355669-05:00",
+  "fetchedAtEpochMs": 1793914264355,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,46 +13,66 @@
       "name": "Home",
       "items": [
         {
-          "name": "Pineapple Glazed Ham",
-          "cal": "80 Cal",
-          "ingredients": "ham, pineapple, brown sugar, mustard",
+          "name": "Roasted Turkey",
+          "cal": "100 Cal",
           "dietary": [
             "No Dairy",
             "No Gluten"
           ]
         },
         {
-          "name": "Spinach & Pepper Baked Rigatoni",
-          "cal": "210 Cal",
-          "ingredients": "spinach, bell pepper, tomato, tomato basil sauce, mozzarella, rigatoni pasta",
+          "name": "Cheese Tortellini Marinara",
+          "cal": "350 Cal",
+          "ingredients": "rainbow cheese tortellini, tomato, onion, garlic, oregano,basil, sugar, parmesan",
+          "dietary": [
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Parmesan Green Beans",
+          "cal": "40 Cal",
+          "ingredients": "green bean, parmesan cheese, garlic, lemon juice",
+          "dietary": [
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Mashed Potato & Parsnips",
+          "cal": "110 Cal",
+          "ingredients": "potato, parsnip, milk, onion",
           "dietary": [
             "Vegetarian",
-            "Coolfood Meal",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Spicy Crispy Chicken Snack Wrap",
-          "cal": "250 Cal",
-          "ingredients": "crispy chicken, lettuce, tomato, sriracha mayo, tortilla"
-        },
-        {
-          "name": "Tex Mex Roasted Cauliflower",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegan",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Mexican Rice",
-          "cal": "150 Cal",
-          "ingredients": "rice, onion, garlic, spices",
+          "name": "Hot Dog",
+          "cal": "410 Cal",
+          "ingredients": "beef weiner, hot dog bun",
           "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
+            "No Dairy"
+          ],
+          "serving": "160 gram",
+          "servingOptions": [
+            "160 gram",
+            "80 gram",
+            "120 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "80 gram",
+              "cal": "210 Cal"
+            },
+            {
+              "serving": "120 gram",
+              "cal": "310 Cal"
+            },
+            {
+              "serving": "160 gram",
+              "cal": "410 Cal"
+            }
           ]
         }
       ],
@@ -62,58 +82,41 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Sweet Potato Chickpea Curry",
-          "cal": "170 Cal",
-          "ingredients": "sweet potato, chickpea, coconut milk, curry paste, soy sauce, lime juice, cilantro",
+          "name": "Rice Noodle Pomodoro",
+          "cal": "240 Cal",
+          "ingredients": "pomodoro sauce, rice noodles, basil chiffonade",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
-            "Plant Forward",
             "No Gluten"
           ]
         },
         {
-          "name": "Roasted Zucchini & Corn",
-          "cal": "90 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Mushroom Risotto",
-          "cal": "140 Cal",
-          "ingredients": "rice, mushroom, nutritional yeast, parsley, vinegar",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Greek Falafel Wrap",
-          "cal": "290 Cal",
-          "ingredients": "falafel, cucumber, red onion, lettuce, tomato, tzatziki, hummus, tortilla",
+          "name": "Buffalo Cauliflower Wrap",
+          "cal": "330 Cal",
+          "ingredients": "cauliflower, cucumber, carrot, lettuce, ranch, hot sauce, tortilla",
           "dietary": [
             "Vegetarian",
-            "Coolfood Meal",
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Rapini",
+          "cal": "25 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
             "Eat Well"
-          ],
-          "serving": "140 gram",
-          "servingOptions": [
-            "140 gram",
-            "145 gram"
-          ],
-          "servingCalories": [
-            {
-              "serving": "140 gram",
-              "cal": "290 Cal"
-            },
-            {
-              "serving": "145 gram",
-              "cal": "300 Cal"
-            }
+          ]
+        },
+        {
+          "name": "Lemon Paprika Potatoes",
+          "cal": "130 Cal",
+          "ingredients": "potato, lemon pepper, parsley, paprika",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
           ]
         }
       ],
@@ -131,17 +134,6 @@
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
     },
     {
       "name": "Pizza",
@@ -173,25 +165,7 @@
           "ingredients": "teriyaki chicken breast, snow peas, green onion, red onion, mozzarella"
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -290,7 +264,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -392,7 +366,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Soup",
@@ -402,11 +376,19 @@
           "cal": ""
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
+        {
+          "name": "Apple Peach Crisp",
+          "cal": "160 Cal",
+          "ingredients": "peach· apple, lemon, cinnamon, brown sugar, oats, flour",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
         {
           "name": "Chickpea Blondie",
           "cal": "70 Cal",
@@ -414,13 +396,6 @@
             "Vegan",
             "Plant Forward",
             "Eat Well"
-          ]
-        },
-        {
-          "name": "Oat Fudge Bar",
-          "cal": "300 Cal",
-          "dietary": [
-            "Vegetarian"
           ]
         },
         {
@@ -457,7 +432,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -491,7 +466,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
