@@ -270,6 +270,114 @@
         margin-right: 0 !important;
       }
     }
+
+    /* November 5, 2026 only: decorative theme, no menu or control changes. */
+    .diwali-greeting { display: none; }
+    body.diwali-theme {
+      background: #1d0a21;
+      background: radial-gradient(circle at 50% 0%, #391039 0%, #260d2b 48%, #170b20 100%);
+      color: #fff5e1;
+      position: relative;
+    }
+    body.diwali-theme:before {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 104px;
+      background: url("diwali_garland.svg") repeat-x center top;
+      background-size: auto 150px;
+      opacity: .90;
+      z-index: 0;
+    }
+    .diwali-theme .header {
+      position: relative;
+      background: #5b0d42;
+      background: linear-gradient(110deg, #55103e, #671044 54%, #421034);
+      border: 1px solid #b77c44;
+      border-bottom: 3px solid #ffce64;
+      padding-top: 30px;
+      padding-bottom: 20px;
+      box-shadow: 0 6px 20px rgba(14, 3, 15, .4);
+    }
+    .diwali-theme .campus-badge {
+      background-color: #6d1b46;
+      color: #ffe5b0;
+      border: 1px solid #c68b45;
+    }
+    .diwali-theme .title { color: #fff5dc; }
+    .diwali-theme .subtitle { color: #f7d5b0; }
+    .diwali-theme .clock-display { color: #fff1c3; }
+    .diwali-theme .diwali-greeting {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+      font-weight: bold;
+      letter-spacing: .3px;
+      color: #ffd76d;
+      margin-bottom: 8px;
+      text-shadow: 0 1px 1px #2c0825;
+      white-space: nowrap;
+    }
+    .diwali-theme .diwali-greeting:before,
+    .diwali-theme .diwali-greeting:after {
+      content: "✦";
+      color: #f4a931;
+      font-size: 14px;
+      vertical-align: middle;
+      margin: 0 10px;
+    }
+    .diwali-theme .btn {
+      background-color: #431c36;
+      border-color: #81506b;
+      color: #f7d8c3;
+    }
+    .diwali-theme .btn-active {
+      background-color: #a74b35;
+      color: #fff8df;
+      border-color: #f5b85f;
+    }
+    .diwali-theme .station-card {
+      position: relative;
+      background-color: #431530;
+      background: linear-gradient(150deg, #481534, #3b132d);
+      border: 1px solid #a96d46;
+      border-top: 4px solid #ffd16b !important;
+      border-radius: 9px;
+      box-shadow: 0 5px 16px rgba(22, 4, 20, .45);
+    }
+    .diwali-theme .station-card:after {
+      content: "✦";
+      position: absolute;
+      bottom: 14px;
+      right: 16px;
+      font-size: 13px;
+      color: #eaaa43;
+      pointer-events: none;
+    }
+    .diwali-theme .station-header { border-bottom-color: #995c51; }
+    .diwali-theme .station-name { color: #ffd171; }
+    .diwali-theme .station-count { background-color: #65314d; color: #f2ceb1; }
+    .diwali-theme .item-row { border-bottom-color: #724054; }
+    .diwali-theme .item-name { color: #fff2df; }
+    .diwali-theme .item-cal, .diwali-theme .item-note { color: #e2b99e; }
+    .diwali-theme .item-ingredients { color: #f1d6c7; }
+    .diwali-theme .item-serving { color: #f8cf92; }
+    .diwali-theme .dietary-tag { color: #a7f3d0; }
+    .diwali-theme .empty-state { background-color: #431530; border-color: #ab7247; }
+    .diwali-theme .empty-small { color: #f1c9ad; }
+    .diwali-theme .footer { border-top-color: #a96d46; color: #e0b591; }
+    .diwali-theme .footer a { color: #ffca80; }
+    /* Preserve strong warnings even under the festive palette. */
+    .diwali-theme .status-warning { background-color: #7c2d12; border-color: #f97316; color: #ffedd5; }
+    .diwali-theme .status-closed { background-color: #1e293b; border-color: #475569; color: #cbd5e1; }
+    @media screen and (max-width: 700px) {
+      .diwali-theme .header-left, .diwali-theme .header-right { display: block; text-align: left; }
+      .diwali-theme .diwali-greeting { font-size: 19px; margin-top: 10px; }
+    }
+
   </style>
 </head>
 <body>
@@ -281,6 +389,7 @@
       <div class="subtitle" id="hours-subtitle">Breakfast: 8:00–11:00 AM &nbsp;|&nbsp; Lunch: 11:00 AM–4:30 PM &nbsp;|&nbsp; Dinner: 4:30–8:00 PM</div>
     </div>
     <div class="header-right">
+      <div class="diwali-greeting" aria-hidden="true">Happy Diwali</div>
       <div class="clock-line">
         <div class="clock-display" id="live-clock">--:--</div><span
           id="sync-light" class="sync-light" role="img"
@@ -602,8 +711,20 @@
       if (!tab) window.location.href = url;
     }
 
+    // Visual-only Diwali theme: ON Nov 5 Toronto time; OFF automatically from Nov 6.
+    // This runs with the existing 10-second clock refresh, even on unattended TVs.
+    function applyDiwaliTheme(toronto) {
+      var active = !!(toronto && toronto.date === "2026-11-05");
+      var body = document.body;
+      var current = " " + body.className.replace(/^\s+|\s+$/g, "") + " ";
+      current = current.replace(/\sdiwali-theme\s/g, " ");
+      var restored = current.replace(/^\s+|\s+$/g, "");
+      body.className = active ? (restored ? restored + " " : "") + "diwali-theme" : restored;
+    }
+
     function updateClockAndSafety() {
       var toronto = getTorontoNow();
+      applyDiwaliTheme(toronto);
       document.getElementById("live-clock").innerHTML = toronto ? escapeHtml(toronto.clock) : "Toronto time unavailable";
       if (MENU_DATA.stations.length && !validLiveData(MENU_DATA, toronto)) {
         menuNotAvailable("Current meal menu is being synchronized", false);
