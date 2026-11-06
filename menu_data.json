@@ -3,8 +3,8 @@
   "dateLabel": "Fri, Nov 06, 2026",
   "menuDate": "2026-11-06",
   "mealPeriod": "Dinner",
-  "fetchedAt": "2026-11-06T17:50:57.753480-05:00",
-  "fetchedAtEpochMs": 1794005457753,
+  "fetchedAt": "2026-11-06T18:00:58.989725-05:00",
+  "fetchedAtEpochMs": 1794006058989,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -14,25 +14,44 @@
       "items": [
         {
           "name": "Sweet Dijon Pork Shoulder",
-          "cal": "170 Cal"
+          "cal": "170 Cal",
+          "dietary": [
+            "No Dairy",
+            "No Gluten"
+          ]
         },
         {
           "name": "Truffle Mac & Cheese",
-          "cal": "420 Cal"
+          "cal": "420 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Fish Tikka Taco",
           "cal": "140 Cal",
-          "ingredients": "basa, cucumber raita, pickled red onion, cilantro, masala sauce, tortilla"
+          "ingredients": "basa, cucumber raita, pickled red onion, cilantro, masala sauce, tortilla",
+          "dietary": [
+            "Coolfood Meal",
+            "Eat Well"
+          ]
         },
         {
           "name": "Broccoli Florets",
-          "cal": "30 Cal"
+          "cal": "30 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
           "name": "Lemon Pesto Risotto",
           "cal": "200 Cal",
-          "ingredients": "rice, pesto, lemon juice, lemon zest, onion, garlic"
+          "ingredients": "rice, pesto, lemon juice, lemon zest, onion, garlic",
+          "dietary": [
+            "No Gluten"
+          ]
         }
       ],
       "accent": "#3b82f6"
@@ -43,19 +62,40 @@
         {
           "name": "Chickpea Lentil Bake",
           "cal": "120 Cal",
-          "ingredients": "chickpeas, lentil, bell pepper, tomato, onion"
+          "ingredients": "chickpeas, lentil, bell pepper, tomato, onion",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
           "name": "Aloo Tikki Taco",
-          "cal": "160 Cal"
+          "cal": "160 Cal",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal",
+            "Eat Well"
+          ]
         },
         {
           "name": "Carrots",
-          "cal": "60 Cal"
+          "cal": "60 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
           "name": "Wild Rice",
-          "cal": "120 Cal"
+          "cal": "120 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
         }
       ],
       "accent": "#f59e0b"
@@ -65,7 +105,10 @@
       "items": [
         {
           "name": "Waffle",
-          "cal": "370 Cal"
+          "cal": "370 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         }
       ],
       "accent": "#ef4444"
@@ -80,7 +123,10 @@
         },
         {
           "name": "Cheese Pizza",
-          "cal": "150 Cal"
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Mediterranean Pesto Pizza",
@@ -101,7 +147,13 @@
         {
           "name": "Vedge Sub",
           "cal": "110 Cal",
-          "ingredients": "cucumber, olives, red onion, tomato, lettuce, harissa sauce, sub roll"
+          "ingredients": "cucumber, olives, red onion, tomato, lettuce, harissa sauce, sub roll",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal",
+            "No Dairy",
+            "Eat Well"
+          ]
         },
         {
           "name": "Reuben Wrap",
@@ -110,19 +162,31 @@
         },
         {
           "name": "Baguette",
-          "cal": "330 Cal"
+          "cal": "330 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "White Bread",
-          "cal": "150 Cal"
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Whole Wheat Bread",
-          "cal": "150 Cal"
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Tortilla",
-          "cal": "310 Cal"
+          "cal": "310 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Cheddar Cheese",
@@ -271,7 +335,11 @@
         {
           "name": "Beef Chili",
           "cal": "90 Cal",
-          "ingredients": "beef, kidney beans, black beans, chickpeas, corn, zucchini, carrot"
+          "ingredients": "beef, kidney beans, black beans, chickpeas, corn, zucchini, carrot",
+          "dietary": [
+            "No Dairy",
+            "No Gluten"
+          ]
         }
       ],
       "accent": "#06b6d4"
@@ -282,15 +350,25 @@
         {
           "name": "Pumpkin Cheesecake",
           "cal": "190 Cal",
-          "ingredients": "cheesecake, pumpkin, milk, graham crackers, spices"
+          "ingredients": "cheesecake, pumpkin, milk, graham crackers, spices",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Vegan Marble Cake",
-          "cal": "210 Cal"
+          "cal": "210 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         },
         {
           "name": "Cream Cheese Brownie",
-          "cal": "260 Cal"
+          "cal": "260 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Sweet & Salty Rice Krispie Square",
@@ -298,23 +376,38 @@
         },
         {
           "name": "Chocolate Chip Cookie",
-          "cal": "120 Cal"
+          "cal": "120 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Double Chocolate Cookie",
-          "cal": "160 Cal"
+          "cal": "160 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Lemon Poppy Seed Cookie",
-          "cal": "110 Cal"
+          "cal": "110 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Oatmeal Raisin Cookie",
-          "cal": "120 Cal"
+          "cal": "120 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Sugar Cookie",
-          "cal": "110 Cal"
+          "cal": "110 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         }
       ],
       "accent": "#3b82f6"
@@ -324,7 +417,11 @@
       "items": [
         {
           "name": "Soy Milk",
-          "cal": "10 Cal"
+          "cal": "10 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         },
         {
           "name": "Coconut Yogurt",
