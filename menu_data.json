@@ -3,8 +3,8 @@
   "dateLabel": "Fri, Nov 06, 2026",
   "menuDate": "2026-11-06",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-11-06T09:10:56.328956-05:00",
-  "fetchedAtEpochMs": 1793974256328,
+  "fetchedAt": "2026-11-06T09:21:03.176661-05:00",
+  "fetchedAtEpochMs": 1793974863176,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -96,6 +96,14 @@
         {
           "name": "White Rice",
           "cal": "130 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Creamy Miso & Coconut Polenta",
+          "cal": "190 Cal",
           "dietary": [
             "Vegan",
             "No Gluten"
