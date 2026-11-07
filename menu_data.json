@@ -3,8 +3,8 @@
   "dateLabel": "Sat, Nov 07, 2026",
   "menuDate": "2026-11-07",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-11-07T08:11:01.962034-05:00",
-  "fetchedAtEpochMs": 1794057061962,
+  "fetchedAt": "2026-11-07T08:20:58.264989-05:00",
+  "fetchedAtEpochMs": 1794057658264,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -34,8 +34,7 @@
         },
         {
           "name": "Sausage & Egg Bagel",
-          "cal": "280 Cal",
-          "ingredients": "egg, sausage, plain bagel"
+          "cal": "280 Cal"
         },
         {
           "name": "Bacon",
