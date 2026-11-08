@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Sun, Nov 08, 2026",
   "menuDate": "2026-11-08",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-08T16:20:53.614994-05:00",
-  "fetchedAtEpochMs": 1794172853614,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-08T16:31:06.227696-05:00",
+  "fetchedAtEpochMs": 1794173466227,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,14 +13,31 @@
       "name": "Home",
       "items": [
         {
-          "name": "Salisbury Steak",
-          "cal": "190 Cal",
+          "name": "Teriyaki Salmon",
+          "cal": "70 Cal",
           "dietary": [
-            "No Dairy"
+            "No Dairy",
+            "No Gluten",
+            "Eat Well"
           ]
         },
         {
-          "name": "Asian Vegetable Medley",
+          "name": "Beef Taco",
+          "cal": "170 Cal",
+          "dietary": [
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Garlic Fried Rice",
+          "cal": "110 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Sunrise Vegetable Medley",
           "cal": "50 Cal",
           "dietary": [
             "Vegan",
@@ -29,16 +46,25 @@
           ]
         },
         {
-          "name": "Pom Pom Nachos",
-          "cal": "150 Cal"
-        },
-        {
-          "name": "Roasted Potatoes",
-          "cal": "130 Cal",
+          "name": "Creamy Sundried Tomato Tortellini",
+          "cal": "220 Cal",
           "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
+            "Coolfood Meal"
+          ],
+          "serving": "200 gram",
+          "servingOptions": [
+            "200 gram",
+            "150 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "150 gram",
+              "cal": "160 Cal"
+            },
+            {
+              "serving": "200 gram",
+              "cal": "220 Cal"
+            }
           ]
         }
       ],
@@ -48,51 +74,39 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Sweet Potato Coconut Curry",
-          "cal": "180 Cal",
+          "name": "Sweet Potato Chickpea Curry",
+          "cal": "170 Cal",
           "dietary": [
             "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Rapini",
-          "cal": "25 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "White Rice",
-          "cal": "130 Cal",
-          "dietary": [
-            "Vegan",
+            "Coolfood Meal",
+            "Plant Forward",
             "No Gluten"
           ]
         },
         {
-          "name": "Korean BBQ Tempeh Wrap",
-          "cal": "290 Cal",
+          "name": "Kimchi Tofu Scramble",
+          "cal": "90 Cal",
           "dietary": [
-            "Vegan"
-          ],
-          "serving": "100 gram",
-          "servingOptions": [
-            "100 gram",
-            "255 gram"
-          ],
-          "servingCalories": [
-            {
-              "serving": "100 gram",
-              "cal": "290 Cal"
-            },
-            {
-              "serving": "255 gram",
-              "cal": "730 Cal"
-            }
+            "Vegan",
+            "Coolfood Meal",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Falafel Bao",
+          "cal": "160 Cal",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal",
+            "No Dairy"
+          ]
+        },
+        {
+          "name": "Garlic Fried Rice",
+          "cal": "110 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
           ]
         }
       ],
@@ -117,17 +131,6 @@
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
     },
     {
       "name": "Pizza",
@@ -155,25 +158,7 @@
           "cal": "190 Cal"
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -263,7 +248,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -349,7 +334,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Soup",
@@ -359,11 +344,30 @@
           "cal": ""
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
+        {
+          "name": "Carrot Cake",
+          "cal": "210 Cal"
+        },
+        {
+          "name": "No Gluten Apple Pie",
+          "cal": "250 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Blondie",
+          "cal": "310 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
         {
           "name": "Coconut Crunch Rice Krispie Square",
           "cal": "100 Cal"
@@ -371,13 +375,6 @@
         {
           "name": "Mint Brownie",
           "cal": "290 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
-        },
-        {
-          "name": "Oreo Brownie Bowl",
-          "cal": "340 Cal",
           "dietary": [
             "Vegetarian"
           ]
@@ -404,7 +401,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -438,7 +435,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
