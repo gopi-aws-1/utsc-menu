@@ -3,8 +3,8 @@
   "dateLabel": "Sun, Nov 08, 2026",
   "menuDate": "2026-11-08",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-08T15:51:04.924443-05:00",
-  "fetchedAtEpochMs": 1794171064924,
+  "fetchedAt": "2026-11-08T16:00:58.905035-05:00",
+  "fetchedAtEpochMs": 1794171658905,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -14,19 +14,11 @@
       "items": [
         {
           "name": "Salisbury Steak",
-          "cal": "190 Cal",
-          "dietary": [
-            "No Dairy"
-          ]
+          "cal": "190 Cal"
         },
         {
           "name": "Asian Vegetable Medley",
-          "cal": "50 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "50 Cal"
         },
         {
           "name": "Pom Pom Nachos",
@@ -34,12 +26,7 @@
         },
         {
           "name": "Roasted Potatoes",
-          "cal": "130 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "130 Cal"
         }
       ],
       "accent": "#3b82f6"
@@ -49,36 +36,19 @@
       "items": [
         {
           "name": "Sweet Potato Coconut Curry",
-          "cal": "180 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "180 Cal"
         },
         {
           "name": "Rapini",
-          "cal": "25 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "25 Cal"
         },
         {
           "name": "White Rice",
-          "cal": "130 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
+          "cal": "130 Cal"
         },
         {
           "name": "Korean BBQ Tempeh Wrap",
           "cal": "290 Cal",
-          "dietary": [
-            "Vegan"
-          ],
           "serving": "100 gram",
           "servingOptions": [
             "100 gram",
@@ -103,17 +73,11 @@
       "items": [
         {
           "name": "Chocolate Chip Pancakes",
-          "cal": "140 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "140 Cal"
         },
         {
           "name": "Waffle",
-          "cal": "370 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "370 Cal"
         }
       ],
       "accent": "#ef4444"
@@ -138,17 +102,11 @@
         },
         {
           "name": "Cheese Pizza",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "150 Cal"
         },
         {
           "name": "Mediterranean Pizza",
-          "cal": "180 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "180 Cal"
         },
         {
           "name": "Pepperoni Pizza",
@@ -180,47 +138,27 @@
       "items": [
         {
           "name": "Smoked Turkey Cranberry Baguette",
-          "cal": "350 Cal",
-          "dietary": [
-            "Coolfood Meal"
-          ]
+          "cal": "350 Cal"
         },
         {
           "name": "Egg Salad Sandwich",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
-            "Eat Well"
-          ]
+          "cal": "150 Cal"
         },
         {
           "name": "Baguette",
-          "cal": "330 Cal",
-          "dietary": [
-            "Vegan"
-          ]
+          "cal": "330 Cal"
         },
         {
           "name": "White Bread",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegan"
-          ]
+          "cal": "150 Cal"
         },
         {
           "name": "Whole Wheat Bread",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegan"
-          ]
+          "cal": "150 Cal"
         },
         {
           "name": "Tortilla",
-          "cal": "310 Cal",
-          "dietary": [
-            "Vegan"
-          ]
+          "cal": "310 Cal"
         },
         {
           "name": "Cheddar Cheese",
@@ -370,38 +308,23 @@
         },
         {
           "name": "Mint Brownie",
-          "cal": "290 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "290 Cal"
         },
         {
           "name": "Oreo Brownie Bowl",
-          "cal": "340 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "340 Cal"
         },
         {
           "name": "Chocolate Chip Cookie",
-          "cal": "120 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "120 Cal"
         },
         {
           "name": "Oatmeal Raisin Cookie",
-          "cal": "120 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "120 Cal"
         },
         {
           "name": "Sugar Cookie",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "110 Cal"
         }
       ],
       "accent": "#ef4444"
@@ -411,11 +334,7 @@
       "items": [
         {
           "name": "Soy Milk",
-          "cal": "10 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
+          "cal": "10 Cal"
         },
         {
           "name": "Coconut Yogurt",
