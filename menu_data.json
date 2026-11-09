@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Mon, Nov 09, 2026",
   "menuDate": "2026-11-09",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-09T16:21:49.515439-05:00",
-  "fetchedAtEpochMs": 1794259309515,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-09T16:30:59.261391-05:00",
+  "fetchedAtEpochMs": 1794259859261,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,65 +13,11 @@
       "name": "Home",
       "items": [
         {
-          "name": "Char Sui Pork Loin",
-          "cal": "160 Cal",
+          "name": "Tomato & Feta Baked Pasta",
+          "cal": "350 Cal",
           "dietary": [
-            "No Dairy"
-          ]
-        },
-        {
-          "name": "Fettuccine Alfredo",
-          "cal": "360 Cal",
-          "dietary": [
+            "Vegetarian",
             "Coolfood Meal"
-          ]
-        },
-        {
-          "name": "Cajun Chicken Wrap",
-          "cal": "250 Cal",
-          "dietary": [
-            "Coolfood Meal",
-            "No Dairy",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Moroccan Carrots",
-          "cal": "90 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Rotini",
-          "cal": "",
-          "dietary": [
-            "Vegan"
-          ]
-        },
-        {
-          "name": "Jalapeno White Rice",
-          "cal": "140 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
-        }
-      ],
-      "accent": "#3b82f6"
-    },
-    {
-      "name": "Vegan",
-      "items": [
-        {
-          "name": "Mediterranean Chickpea Wrap",
-          "cal": "320 Cal",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "Eat Well"
           ]
         },
         {
@@ -84,21 +30,96 @@
           ]
         },
         {
-          "name": "Lentil Dahl",
-          "cal": "160 Cal",
+          "name": "Herb White Rice",
+          "cal": "130 Cal",
           "dietary": [
             "Vegan",
             "No Gluten"
           ]
         },
         {
-          "name": "Basmati Rice",
-          "cal": "110 Cal",
+          "name": "Lemon Thyme Turkey Breast",
+          "cal": "100 Cal",
+          "dietary": [
+            "No Dairy",
+            "No Gluten",
+            "Eat Well"
+          ],
+          "serving": "60 gram",
+          "servingOptions": [
+            "60 gram",
+            "120 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "60 gram",
+              "cal": "100 Cal"
+            },
+            {
+              "serving": "120 gram",
+              "cal": "200 Cal"
+            }
+          ]
+        },
+        {
+          "name": "Chipotle Lime Fish Taco",
+          "cal": "180 Cal",
+          "dietary": [
+            "Coolfood Meal",
+            "No Dairy",
+            "Eat Well"
+          ],
+          "serving": "115 gram",
+          "servingOptions": [
+            "115 gram",
+            "120 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "115 gram",
+              "cal": "180 Cal"
+            },
+            {
+              "serving": "120 gram",
+              "cal": "180 Cal"
+            }
+          ]
+        }
+      ],
+      "accent": "#3b82f6"
+    },
+    {
+      "name": "Vegan",
+      "items": [
+        {
+          "name": "Swedish Plant Based Meatballs",
+          "cal": "170 Cal",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "Plant Forward",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Sweet Chili Coconut Tofu",
+          "cal": "90 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Carrots",
+          "cal": "60 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
             "Eat Well"
           ]
+        },
+        {
+          "name": "Sweet Potato Plank Cut Fries",
+          "cal": "260 Cal"
         }
       ],
       "accent": "#f59e0b"
@@ -119,17 +140,6 @@
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
     },
     {
       "name": "Pizza",
@@ -161,25 +171,7 @@
           "cal": "190 Cal"
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -288,7 +280,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -398,26 +390,30 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "Tiramisu",
-          "cal": "130 Cal",
+          "name": "Oreo Cheesecake",
+          "cal": "200 Cal",
           "dietary": [
-            "Vegan",
-            "No Gluten"
+            "Vegetarian"
           ]
         },
         {
-          "name": "Pumpkin Spice Blondie",
-          "cal": "45 Cal",
+          "name": "Sweet & Salty Brownie",
+          "cal": "280 Cal",
           "dietary": [
-            "Vegan",
-            "Plant Forward",
-            "Eat Well"
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Chocolate Chip Cookie",
+          "cal": "120 Cal",
+          "dietary": [
+            "Vegetarian"
           ]
         },
         {
@@ -429,7 +425,7 @@
           ]
         },
         {
-          "name": "Chocolate Chip Cookie",
+          "name": "Oatmeal Raisin Cookie",
           "cal": "120 Cal",
           "dietary": [
             "Vegetarian"
@@ -443,43 +439,14 @@
           ]
         },
         {
-          "name": "Oatmeal Raisin Cookie",
-          "cal": "120 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
-        },
-        {
           "name": "Sweet & Salty Cookie",
           "cal": "130 Cal",
           "dietary": [
             "Vegetarian"
           ]
-        },
-        {
-          "name": "Brownie",
-          "cal": "270 Cal",
-          "dietary": [
-            "Vegetarian"
-          ],
-          "serving": "65 gram",
-          "servingOptions": [
-            "65 gram",
-            "70 gram"
-          ],
-          "servingCalories": [
-            {
-              "serving": "65 gram",
-              "cal": "270 Cal"
-            },
-            {
-              "serving": "70 gram",
-              "cal": "290 Cal"
-            }
-          ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Smoothie",
@@ -517,7 +484,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     }
   ]
 }
