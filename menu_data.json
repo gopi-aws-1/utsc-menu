@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Tue, Nov 10, 2026",
   "menuDate": "2026-11-10",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-10T16:22:20.104351-05:00",
-  "fetchedAtEpochMs": 1794345740104,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-10T16:31:16.668812-05:00",
+  "fetchedAtEpochMs": 1794346276668,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,16 +13,16 @@
       "name": "Home",
       "items": [
         {
-          "name": "Hoisin Sriracha Basa",
-          "cal": "70 Cal",
+          "name": "Piri Piri Pork Chop",
+          "cal": "120 Cal",
           "dietary": [
             "No Dairy",
-            "Eat Well"
+            "No Gluten"
           ]
         },
         {
-          "name": "Mushroom Pea Farfalle",
-          "cal": "260 Cal",
+          "name": "Spinach & Pepper Baked Rigatoni",
+          "cal": "210 Cal",
           "dietary": [
             "Vegetarian",
             "Coolfood Meal",
@@ -30,12 +30,18 @@
           ]
         },
         {
-          "name": "Gyros Wrap",
-          "cal": "250 Cal"
+          "name": "Za'atar Chicken Quesadilla",
+          "cal": "210 Cal",
+          "dietary": [
+            "Coolfood Meal",
+            "Plant Forward",
+            "No Dairy",
+            "Eat Well"
+          ]
         },
         {
-          "name": "Broccoli Florets",
-          "cal": "30 Cal",
+          "name": "Asian Vegetable Medley",
+          "cal": "50 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -43,8 +49,8 @@
           ]
         },
         {
-          "name": "Turmeric Kale Fried Rice",
-          "cal": "140 Cal",
+          "name": "Roasted Potatoes",
+          "cal": "130 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -58,8 +64,8 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Chickpea Coconut Curry",
-          "cal": "130 Cal",
+          "name": "California Vegetable Medley",
+          "cal": "45 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -67,7 +73,7 @@
           ]
         },
         {
-          "name": "Basmati Rice",
+          "name": "Rosemary Potato Wedges",
           "cal": "110 Cal",
           "dietary": [
             "Vegan",
@@ -76,28 +82,38 @@
           ]
         },
         {
-          "name": "Falafel",
-          "cal": ""
+          "name": "Chana Masala",
+          "cal": "190 Cal",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
-          "name": "Fiesta Lentil Taco",
-          "cal": "150 Cal",
+          "name": "Lentil & Rice Stuffed Peppers",
+          "cal": "180 Cal",
           "dietary": [
-            "Vegan"
+            "Vegan",
+            "Coolfood Meal",
+            "Plant Forward",
+            "No Gluten",
+            "Eat Well"
           ],
-          "serving": "100 gram",
+          "serving": "155 gram",
           "servingOptions": [
-            "100 gram",
-            "95 gram"
+            "155 gram",
+            "170 gram"
           ],
           "servingCalories": [
             {
-              "serving": "95 gram",
-              "cal": "140 Cal"
+              "serving": "155 gram",
+              "cal": "180 Cal"
             },
             {
-              "serving": "100 gram",
-              "cal": "150 Cal"
+              "serving": "170 gram",
+              "cal": "190 Cal"
             }
           ]
         }
@@ -122,17 +138,6 @@
       "accent": "#ef4444"
     },
     {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
-    },
-    {
       "name": "Pizza",
       "items": [
         {
@@ -155,25 +160,7 @@
           "cal": "210 Cal"
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -279,7 +266,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -389,16 +376,31 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "Apple Crisp",
-          "cal": "160 Cal",
+          "name": "Date Square",
+          "cal": "170 Cal",
           "dietary": [
             "Vegetarian"
+          ]
+        },
+        {
+          "name": "Marble Brownie",
+          "cal": "230 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Vegan No Gluten Blondie",
+          "cal": "260 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
           ]
         },
         {
@@ -438,7 +440,7 @@
           ]
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Smoothie",
@@ -476,7 +478,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     }
   ]
 }
