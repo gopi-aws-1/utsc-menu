@@ -3,8 +3,8 @@
   "dateLabel": "Wed, Nov 11, 2026",
   "menuDate": "2026-11-11",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-11-11T07:11:00.424894-05:00",
-  "fetchedAtEpochMs": 1794399060424,
+  "fetchedAt": "2026-11-11T07:20:52.408025-05:00",
+  "fetchedAtEpochMs": 1794399652408,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -68,13 +68,11 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Chickpea Scramble",
-          "cal": "310 Cal",
+          "name": "Baked Beans",
+          "cal": "150 Cal",
           "dietary": [
             "Vegan",
-            "Coolfood Meal",
-            "No Gluten",
-            "Eat Well"
+            "No Gluten"
           ]
         },
         {
