@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Wed, Nov 11, 2026",
   "menuDate": "2026-11-11",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-11T16:21:15.004422-05:00",
-  "fetchedAtEpochMs": 1794432075004,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-11T16:31:06.594764-05:00",
+  "fetchedAtEpochMs": 1794432666594,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,23 +13,32 @@
       "name": "Home",
       "items": [
         {
-          "name": "Tourtière",
-          "cal": "240 Cal"
-        },
-        {
-          "name": "Penne Alfredo",
-          "cal": "260 Cal",
+          "name": "Beef Kefta with Harissa Yogurt",
+          "cal": "130 Cal",
           "dietary": [
-            "Coolfood Meal"
+            "No Gluten"
           ]
         },
         {
-          "name": "Canadian Bacon Grilled Cheese",
-          "cal": "220 Cal"
+          "name": "Chicken Cacciatore",
+          "cal": "110 Cal",
+          "dietary": [
+            "No Dairy",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
-          "name": "Roasted Vegetables",
-          "cal": "130 Cal",
+          "name": "Lemon Cream Baked Penne",
+          "cal": "220 Cal",
+          "dietary": [
+            "Coolfood Meal",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Roasted Cauliflower",
+          "cal": "90 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -37,12 +46,11 @@
           ]
         },
         {
-          "name": "Roasted Potatoes",
-          "cal": "130 Cal",
+          "name": "Egg Noodles",
+          "cal": "190 Cal",
           "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
+            "Vegetarian",
+            "No Dairy"
           ]
         }
       ],
@@ -52,45 +60,40 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Plant Power Tourtiere",
-          "cal": "190 Cal",
-          "dietary": [
-            "Vegetarian",
-            "Plant Forward",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "White Bean Ragout",
-          "cal": "110 Cal",
+          "name": "Cuban Black Bean Stew",
+          "cal": "90 Cal",
           "dietary": [
             "Vegan",
-            "Coolfood Meal",
+            "Plant Forward",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Plant Based Beef Fajita",
-          "cal": "280 Cal",
+          "name": "Za'atar Tempeh Wrap",
+          "cal": "260 Cal",
           "dietary": [
-            "Vegetarian",
+            "Vegan",
             "Coolfood Meal"
           ]
         },
         {
-          "name": "Mujadara",
-          "cal": "230 Cal",
+          "name": "Roasted Corn & Green Pepper",
+          "cal": "120 Cal",
           "dietary": [
             "Vegan",
-            "Coolfood Meal",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Pickled Chili Corn",
-          "cal": "120 Cal"
+          "name": "Brown Rice",
+          "cal": "120 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
         }
       ],
       "accent": "#f59e0b"
@@ -111,17 +114,6 @@
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
     },
     {
       "name": "Pizza",
@@ -153,25 +145,7 @@
           "cal": "190 Cal"
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -274,7 +248,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -380,7 +354,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Soup",
@@ -390,30 +364,35 @@
           "cal": ""
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "No Gluten Coffee Cake",
-          "cal": "150 Cal",
+          "name": "Focaccia",
+          "cal": "350 Cal",
           "dietary": [
-            "Vegan",
-            "No Gluten"
+            "Vegan"
           ]
         },
         {
-          "name": "Mixed Berry Oat Bar",
-          "cal": "190 Cal",
+          "name": "Vanilla Caramel Swirl Cake",
+          "cal": "80 Cal",
           "dietary": [
-            "Vegan",
-            "No Gluten"
+            "Vegetarian"
           ]
         },
         {
-          "name": "Tiger Brownie",
-          "cal": "130 Cal",
+          "name": "Cookie Brownie",
+          "cal": "220 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Oreo Brownie Bowl",
+          "cal": "340 Cal",
           "dietary": [
             "Vegetarian"
           ]
@@ -447,7 +426,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -485,7 +464,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
