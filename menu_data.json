@@ -3,8 +3,8 @@
   "dateLabel": "Wed, Nov 11, 2026",
   "menuDate": "2026-11-11",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-11T12:51:04.581374-05:00",
-  "fetchedAtEpochMs": 1794419464581,
+  "fetchedAt": "2026-11-11T13:01:11.439753-05:00",
+  "fetchedAtEpochMs": 1794420071439,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -18,7 +18,10 @@
         },
         {
           "name": "Penne Alfredo",
-          "cal": "260 Cal"
+          "cal": "260 Cal",
+          "dietary": [
+            "Coolfood Meal"
+          ]
         },
         {
           "name": "Canadian Bacon Grilled Cheese",
@@ -26,11 +29,21 @@
         },
         {
           "name": "Roasted Vegetables",
-          "cal": "130 Cal"
+          "cal": "130 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
           "name": "Roasted Potatoes",
-          "cal": "130 Cal"
+          "cal": "130 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
         }
       ],
       "accent": "#3b82f6"
@@ -40,19 +53,40 @@
       "items": [
         {
           "name": "Plant Power Tourtiere",
-          "cal": "190 Cal"
+          "cal": "190 Cal",
+          "dietary": [
+            "Vegetarian",
+            "Plant Forward",
+            "Eat Well"
+          ]
         },
         {
           "name": "White Bean Ragout",
-          "cal": "110 Cal"
+          "cal": "110 Cal",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
           "name": "Plant Based Beef Fajita",
-          "cal": "280 Cal"
+          "cal": "280 Cal",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal"
+          ]
         },
         {
           "name": "Mujadara",
-          "cal": "230 Cal"
+          "cal": "230 Cal",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
           "name": "Pickled Chili Corn",
@@ -66,7 +100,10 @@
       "items": [
         {
           "name": "Waffle",
-          "cal": "370 Cal"
+          "cal": "370 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Maple Syrup",
@@ -91,15 +128,25 @@
       "items": [
         {
           "name": "Cheese Pizza",
-          "cal": "150 Cal"
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Fajita Chicken Pizza",
-          "cal": "190 Cal"
+          "cal": "190 Cal",
+          "dietary": [
+            "Coolfood Meal"
+          ]
         },
         {
           "name": "Garden Vegetable Pizza",
-          "cal": "160 Cal"
+          "cal": "160 Cal",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal"
+          ]
         },
         {
           "name": "Pepperoni Pizza",
@@ -135,23 +182,40 @@
         },
         {
           "name": "Mediterranean Chickpea Wrap",
-          "cal": "320 Cal"
+          "cal": "320 Cal",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "Eat Well"
+          ]
         },
         {
           "name": "Baguette",
-          "cal": "330 Cal"
+          "cal": "330 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "White Bread",
-          "cal": "150 Cal"
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Whole Wheat Bread",
-          "cal": "150 Cal"
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Tortilla",
-          "cal": "310 Cal"
+          "cal": "310 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Cheddar Cheese",
@@ -333,31 +397,54 @@
       "items": [
         {
           "name": "No Gluten Coffee Cake",
-          "cal": "150 Cal"
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         },
         {
           "name": "Mixed Berry Oat Bar",
-          "cal": "190 Cal"
+          "cal": "190 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         },
         {
           "name": "Tiger Brownie",
-          "cal": "130 Cal"
+          "cal": "130 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Chocolate Chip Cookie",
-          "cal": "120 Cal"
+          "cal": "120 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Double Chocolate Cookie",
-          "cal": "160 Cal"
+          "cal": "160 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Oatmeal Raisin Cookie",
-          "cal": "120 Cal"
+          "cal": "120 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Sugar Cookie",
-          "cal": "110 Cal"
+          "cal": "110 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         }
       ],
       "accent": "#ef4444"
@@ -367,7 +454,11 @@
       "items": [
         {
           "name": "Soy Milk",
-          "cal": "10 Cal"
+          "cal": "10 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         },
         {
           "name": "Coconut Yogurt",
