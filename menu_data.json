@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Thu, Nov 12, 2026",
   "menuDate": "2026-11-12",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-12T16:20:57.313634-05:00",
-  "fetchedAtEpochMs": 1794518457313,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-12T16:31:06.344500-05:00",
+  "fetchedAtEpochMs": 1794519066344,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,20 +13,28 @@
       "name": "Home",
       "items": [
         {
-          "name": "BBQ Baked Chicken",
-          "cal": "160 Cal",
+          "name": "Maple Glazed Salmon",
+          "cal": "70 Cal",
           "dietary": [
             "No Dairy",
-            "No Gluten"
+            "No Gluten",
+            "Eat Well"
           ]
         },
         {
-          "name": "Italian Sausage Hot Dog",
-          "cal": "550 Cal"
+          "name": "Chili Cheese Fries",
+          "cal": "290 Cal"
         },
         {
-          "name": "Asian Vegetable Medley",
-          "cal": "50 Cal",
+          "name": "Sausage & Pepper Baked Rotini",
+          "cal": "290 Cal",
+          "dietary": [
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Green Beans Thoran",
+          "cal": "90 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -34,23 +42,12 @@
           ]
         },
         {
-          "name": "Gnocchi",
-          "cal": "320 Cal",
-          "dietary": [
-            "Vegan"
-          ]
-        },
-        {
-          "name": "Herb White Rice",
+          "name": "Cilantro Lime Rice",
           "cal": "130 Cal",
           "dietary": [
             "Vegan",
             "No Gluten"
           ]
-        },
-        {
-          "name": "Pesto Alfredo Sauce",
-          "cal": "150 Cal"
         }
       ],
       "accent": "#3b82f6"
@@ -59,8 +56,16 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Za'atar Tofu",
-          "cal": "70 Cal",
+          "name": "Kale Chickpea Pomodoro Rigatoni",
+          "cal": "260 Cal",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Zucchini & Tomato",
+          "cal": "45 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -68,30 +73,25 @@
           ]
         },
         {
-          "name": "Sweet & Sour Harvest Lentils",
-          "cal": "90 Cal",
+          "name": "BBQ Tofu Burger",
+          "cal": "410 Cal",
           "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Sumac & Balsamic Roasted Beets",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Jalapeno White Rice",
-          "cal": "140 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
+            "Vegan"
+          ],
+          "serving": "225 gram",
+          "servingOptions": [
+            "225 gram",
+            "235 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "225 gram",
+              "cal": "410 Cal"
+            },
+            {
+              "serving": "235 gram",
+              "cal": "430 Cal"
+            }
           ]
         }
       ],
@@ -113,44 +113,6 @@
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Pho/Ramen",
-      "items": [
-        {
-          "name": "Chicken Pho",
-          "cal": "120 Cal",
-          "dietary": [
-            "No Dairy",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Vegetable Pho",
-          "cal": "140 Cal",
-          "dietary": [
-            "Vegan",
-            "Plant Forward",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Five Spice Tofu",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#8b5cf6"
     },
     {
       "name": "Pizza",
@@ -178,25 +140,7 @@
           "cal": "190 Cal"
         }
       ],
-      "accent": "#ec4899"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#06b6d4"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -306,7 +250,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -400,7 +344,7 @@
           "cal": ""
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#ec4899"
     },
     {
       "name": "Soup",
@@ -410,18 +354,28 @@
           "cal": ""
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "No Gluten Lemon Coconut Bar",
-          "cal": "190 Cal",
+          "name": "Pineapple Upside Down Cupcake",
+          "cal": "230 Cal"
+        },
+        {
+          "name": "Haystack Brownie",
+          "cal": "130 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "WOW Butter Chocolate Fudge",
+          "cal": "300 Cal",
           "dietary": [
             "Vegan",
-            "No Gluten",
-            "Eat Well"
+            "No Gluten"
           ]
         },
         {
@@ -429,14 +383,6 @@
           "cal": "120 Cal",
           "dietary": [
             "Vegetarian"
-          ]
-        },
-        {
-          "name": "Double Chocolate Brownie Cookie",
-          "cal": "130 Cal",
-          "dietary": [
-            "Vegetarian",
-            "No Dairy"
           ]
         },
         {
@@ -461,7 +407,7 @@
           ]
         }
       ],
-      "accent": "#10b981"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -499,7 +445,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#8b5cf6"
+      "accent": "#f59e0b"
     }
   ]
 }
