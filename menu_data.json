@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Fri, Nov 13, 2026",
   "menuDate": "2026-11-13",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-13T16:21:38.851526-05:00",
-  "fetchedAtEpochMs": 1794604898851,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-13T16:31:00.662748-05:00",
+  "fetchedAtEpochMs": 1794605460662,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,23 +13,19 @@
       "name": "Home",
       "items": [
         {
-          "name": "Green Curry Pork",
-          "cal": "260 Cal",
+          "name": "Korean BBQ Chicken Thigh",
+          "cal": "340 Cal",
           "dietary": [
-            "No Gluten"
+            "No Dairy"
           ]
         },
         {
-          "name": "Penne Primavera Alfredo",
-          "cal": ""
+          "name": "Buffalo Cauliflower Macaroni & Cheese",
+          "cal": "400 Cal"
         },
         {
-          "name": "Donair Wrap",
-          "cal": "290 Cal"
-        },
-        {
-          "name": "Red Pepper & Bok Choy",
-          "cal": "60 Cal",
+          "name": "Chop Suey Stir Fry Vegetables",
+          "cal": "50 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -37,21 +33,21 @@
           ]
         },
         {
-          "name": "Jasmine Rice",
-          "cal": "130 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Potato Wedges",
+          "name": "Kimchi Fried Rice",
           "cal": "110 Cal",
           "dietary": [
-            "Vegan",
+            "Vegetarian",
+            "No Dairy",
             "No Gluten",
             "Eat Well"
+          ]
+        },
+        {
+          "name": "Nacho Chips",
+          "cal": "430 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
           ]
         }
       ],
@@ -61,35 +57,26 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Swiss Chard Baked Penne",
-          "cal": "230 Cal",
+          "name": "Vegetable Biriyani",
+          "cal": "160 Cal",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
+            "Plant Forward",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Mushroom Donair Wrap",
-          "cal": "290 Cal",
+          "name": "Tofu Katsu Bao Bun",
+          "cal": "160 Cal",
           "dietary": [
-            "Vegetarian",
             "Coolfood Meal"
           ]
         },
         {
-          "name": "Rapini",
-          "cal": "25 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Rosemary Potato Wedges",
-          "cal": "110 Cal",
+          "name": "Bhindi Fry Okra",
+          "cal": "190 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -117,44 +104,6 @@
       "accent": "#ef4444"
     },
     {
-      "name": "Pho/Ramen",
-      "items": [
-        {
-          "name": "Chicken Pho",
-          "cal": "120 Cal",
-          "dietary": [
-            "No Dairy",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Vegetable Pho",
-          "cal": "140 Cal",
-          "dietary": [
-            "Vegan",
-            "Plant Forward",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Five Spice Tofu",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#8b5cf6"
-    },
-    {
       "name": "Pizza",
       "items": [
         {
@@ -180,25 +129,7 @@
           "cal": "190 Cal"
         }
       ],
-      "accent": "#ec4899"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#06b6d4"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -305,7 +236,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -391,7 +322,7 @@
           "cal": ""
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#ec4899"
     },
     {
       "name": "Soup",
@@ -401,37 +332,22 @@
           "cal": ""
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "Cookie Brownie",
-          "cal": "220 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
-        },
-        {
-          "name": "Dream Bar",
-          "cal": "240 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
-        },
-        {
-          "name": "Banana Snickerdoodle Cookie",
-          "cal": "140 Cal",
+          "name": "Berry Crisp",
+          "cal": "170 Cal",
           "dietary": [
             "Vegan",
-            "No Gluten",
-            "Eat Well"
+            "No Gluten"
           ]
         },
         {
-          "name": "Chocolate Chip Cookie",
-          "cal": "120 Cal",
+          "name": "Mixed Berry Square",
+          "cal": "200 Cal",
           "dietary": [
             "Vegetarian"
           ]
@@ -442,9 +358,38 @@
           "dietary": [
             "Vegetarian"
           ]
+        },
+        {
+          "name": "Chocolate Chip Cookie",
+          "cal": "120 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Brownie",
+          "cal": "270 Cal",
+          "dietary": [
+            "Vegetarian"
+          ],
+          "serving": "65 gram",
+          "servingOptions": [
+            "65 gram",
+            "70 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "65 gram",
+              "cal": "270 Cal"
+            },
+            {
+              "serving": "70 gram",
+              "cal": "290 Cal"
+            }
+          ]
         }
       ],
-      "accent": "#10b981"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -482,7 +427,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#8b5cf6"
+      "accent": "#f59e0b"
     }
   ]
 }
