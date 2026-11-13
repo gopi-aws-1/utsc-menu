@@ -3,8 +3,8 @@
   "dateLabel": "Fri, Nov 13, 2026",
   "menuDate": "2026-11-13",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-11-13T06:30:57.807515-05:00",
-  "fetchedAtEpochMs": 1794569457807,
+  "fetchedAt": "2026-11-13T06:41:07.297237-05:00",
+  "fetchedAtEpochMs": 1794570067297,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -14,11 +14,23 @@
       "items": [
         {
           "name": "Hard Cooked Egg",
-          "cal": "80 Cal"
+          "cal": "80 Cal",
+          "dietary": [
+            "Vegetarian",
+            "No Dairy",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
           "name": "Scrambled Egg",
-          "cal": "140 Cal"
+          "cal": "140 Cal",
+          "dietary": [
+            "Vegetarian",
+            "No Dairy",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
           "name": "Chorizo Breakfast Wrap",
@@ -26,7 +38,11 @@
         },
         {
           "name": "Turkey Bacon",
-          "cal": "50 Cal"
+          "cal": "50 Cal",
+          "dietary": [
+            "No Dairy",
+            "No Gluten"
+          ]
         },
         {
           "name": "Pom Pom Potatoes (118 millilitre)",
@@ -53,15 +69,28 @@
       "items": [
         {
           "name": "Sweet Potato Chickpea Curry",
-          "cal": "170 Cal"
+          "cal": "170 Cal",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "Plant Forward",
+            "No Gluten"
+          ]
         },
         {
           "name": "White Rice",
-          "cal": "130 Cal"
+          "cal": "130 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         },
         {
           "name": "Maple Cinnamon Plant Based French Toast",
-          "cal": "140 Cal"
+          "cal": "140 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Plant-Based Patty",
@@ -75,7 +104,12 @@
       "items": [
         {
           "name": "Sauteed Mushrooms",
-          "cal": "50 Cal"
+          "cal": "50 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
           "name": "Egg",
@@ -147,7 +181,10 @@
       "items": [
         {
           "name": "Cream of Wheat",
-          "cal": "50 Cal"
+          "cal": "50 Cal",
+          "dietary": [
+            "Vegan"
+          ]
         },
         {
           "name": "Miso Soup",
@@ -161,15 +198,24 @@
       "items": [
         {
           "name": "Banana Muffin",
-          "cal": "70 Cal"
+          "cal": "70 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Carrot Muffin",
-          "cal": "60 Cal"
+          "cal": "60 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Chocolate Chunk Muffin",
-          "cal": "70 Cal"
+          "cal": "70 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         },
         {
           "name": "Croissant",
@@ -177,7 +223,10 @@
         },
         {
           "name": "Raspberry Crown",
-          "cal": "150 Cal"
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
         }
       ],
       "accent": "#ec4899"
