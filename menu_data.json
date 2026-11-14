@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Sat, Nov 14, 2026",
   "menuDate": "2026-11-14",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-14T16:21:36.364767-05:00",
-  "fetchedAtEpochMs": 1794691296364,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-14T16:30:55.733800-05:00",
+  "fetchedAtEpochMs": 1794691855733,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,28 +13,30 @@
       "name": "Home",
       "items": [
         {
-          "name": "Country Style Meatloaf",
-          "cal": "140 Cal",
+          "name": "Pork & Sweet Potato Stew",
+          "cal": "180 Cal",
           "dietary": [
-            "No Dairy"
-          ]
-        },
-        {
-          "name": "French Onion Baked Pasta",
-          "cal": "140 Cal",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
+            "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Spicy Crispy Chicken Snack Wrap",
-          "cal": "250 Cal"
+          "name": "Broccoli Cheese Orzo",
+          "cal": "350 Cal",
+          "dietary": [
+            "Coolfood Meal"
+          ]
         },
         {
-          "name": "Asian Vegetable Medley",
-          "cal": "50 Cal",
+          "name": "Korean Chicken Bao",
+          "cal": "170 Cal",
+          "dietary": [
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Winter Vegetable Medley",
+          "cal": "35 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -42,14 +44,10 @@
           ]
         },
         {
-          "name": "MTO PTN FRIES,SWEET POTATO PLANK CUT (8 OZ VOL)",
-          "cal": ""
-        },
-        {
-          "name": "Red Mashed Potatoes",
+          "name": "Jollof Rice",
           "cal": "130 Cal",
           "dietary": [
-            "Vegetarian",
+            "Vegan",
             "No Gluten",
             "Eat Well"
           ]
@@ -61,37 +59,28 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Sweet Chili Coconut Tofu",
-          "cal": "90 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
-        },
-        {
-          "name": "Cumin Roasted Cauliflower",
-          "cal": "30 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Chickpea Eggplant Curry",
-          "cal": "180 Cal",
+          "name": "Plant Based Gumbo",
+          "cal": "240 Cal",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Corn",
+          "cal": "100 Cal",
+          "dietary": [
+            "Vegan",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Jasmine Rice",
+          "name": "Seven Grain Medley",
           "cal": "130 Cal",
           "dietary": [
             "Vegan",
-            "No Gluten",
             "Eat Well"
           ]
         }
@@ -116,44 +105,6 @@
       "accent": "#ef4444"
     },
     {
-      "name": "Pho/Ramen",
-      "items": [
-        {
-          "name": "Chicken Pho",
-          "cal": "120 Cal",
-          "dietary": [
-            "No Dairy",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Vegetable Pho",
-          "cal": "140 Cal",
-          "dietary": [
-            "Vegan",
-            "Plant Forward",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Five Spice Tofu",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#8b5cf6"
-    },
-    {
       "name": "Pizza",
       "items": [
         {
@@ -176,25 +127,7 @@
           "cal": "190 Cal"
         }
       ],
-      "accent": "#ec4899"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#06b6d4"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -304,7 +237,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -390,7 +323,7 @@
           "cal": ""
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#ec4899"
     },
     {
       "name": "Soup",
@@ -400,21 +333,36 @@
           "cal": ""
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "Banana Cake",
-          "cal": "130 Cal"
+          "name": "Tiramisu",
+          "cal": "130 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         },
         {
-          "name": "Salted Caramel Brownie",
-          "cal": "230 Cal",
+          "name": "Blueberry Tart",
+          "cal": "100 Cal",
+          "dietary": [
+            "Vegan"
+          ]
+        },
+        {
+          "name": "Cream Cheese Brownie",
+          "cal": "260 Cal",
           "dietary": [
             "Vegetarian"
           ]
+        },
+        {
+          "name": "Oreo Rice Krispie Square",
+          "cal": "120 Cal"
         },
         {
           "name": "Chocolate Chip Cookie",
@@ -438,7 +386,7 @@
           ]
         }
       ],
-      "accent": "#10b981"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -476,7 +424,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#8b5cf6"
+      "accent": "#f59e0b"
     }
   ]
 }
