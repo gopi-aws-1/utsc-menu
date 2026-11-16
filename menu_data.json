@@ -3,8 +3,8 @@
   "dateLabel": "Mon, Nov 16, 2026",
   "menuDate": "2026-11-16",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-11-16T07:30:59.288070-05:00",
-  "fetchedAtEpochMs": 1794832259288,
+  "fetchedAt": "2026-11-16T07:50:58.156152-05:00",
+  "fetchedAtEpochMs": 1794833458156,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -33,8 +33,11 @@
           ]
         },
         {
-          "name": "Turkey Breakfast Sausage",
-          "cal": "30 Cal"
+          "name": "Breakfast Sausage",
+          "cal": "120 Cal",
+          "dietary": [
+            "No Dairy"
+          ]
         },
         {
           "name": "Hash Brown",
