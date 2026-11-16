@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Mon, Nov 16, 2026",
   "menuDate": "2026-11-16",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-16T16:21:20.055829-05:00",
-  "fetchedAtEpochMs": 1794864080055,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-16T16:31:08.225337-05:00",
+  "fetchedAtEpochMs": 1794864668225,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,23 +13,34 @@
       "name": "Home",
       "items": [
         {
-          "name": "Chicken Tikka Masala Bowl",
-          "cal": "220 Cal",
+          "name": "Herb Roasted Pork Loin",
+          "cal": "150 Cal",
           "dietary": [
-            "Coolfood Meal",
+            "No Dairy",
             "No Gluten"
           ]
         },
         {
-          "name": "Penne Primavera Rose",
-          "cal": "230 Cal",
+          "name": "Vegetable Fried Rice",
+          "cal": "190 Cal",
           "dietary": [
+            "Vegetarian",
+            "Coolfood Meal",
+            "No Dairy",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Kale Chickpea Pomodoro Rigatoni",
+          "cal": "260 Cal",
+          "dietary": [
+            "Vegan",
             "Coolfood Meal"
           ]
         },
         {
-          "name": "Curried Carrots",
-          "cal": "80 Cal",
+          "name": "Succotash",
+          "cal": "140 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -37,39 +48,21 @@
           ]
         },
         {
-          "name": "Potato Wedges",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Aromatic Basmati Rice",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Pulled Pork Sandwich",
-          "cal": "220 Cal",
-          "serving": "80 gram",
+          "name": "Crispy Chicken Caesar Wrap",
+          "cal": "470 Cal",
+          "serving": "180 gram",
           "servingOptions": [
-            "80 gram",
-            "110 gram"
+            "180 gram",
+            "125 gram"
           ],
           "servingCalories": [
             {
-              "serving": "80 gram",
-              "cal": "220 Cal"
+              "serving": "125 gram",
+              "cal": "320 Cal"
             },
             {
-              "serving": "110 gram",
-              "cal": "300 Cal"
+              "serving": "180 gram",
+              "cal": "470 Cal"
             }
           ]
         }
@@ -80,27 +73,33 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Chana Masala Bowl",
-          "cal": "200 Cal",
+          "name": "Za'atar Tempeh Wrap",
+          "cal": "260 Cal",
           "dietary": [
             "Vegan",
-            "Coolfood Meal",
-            "Plant Forward",
-            "No Gluten"
+            "Coolfood Meal"
           ]
         },
         {
-          "name": "Black Bean Taco",
-          "cal": "210 Cal",
+          "name": "Vegetable Medley",
+          "cal": "60 Cal",
           "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
+            "Vegan",
+            "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Baby Carrots",
-          "cal": "50 Cal",
+          "name": "Vegetable Biryani",
+          "cal": "80 Cal",
+          "dietary": [
+            "Vegetarian",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Quinoa & Chickpea Pilaf",
+          "cal": "160 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -124,12 +123,23 @@
       "accent": "#ef4444"
     },
     {
-      "name": "Sushi/Dumpling Bar",
+      "name": "Pho/Ramen",
       "items": [
         {
-          "name": "Maki Roll",
+          "name": "Chicken Broth",
           "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
+          "dietary": [
+            "No Dairy",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Vegetable Broth",
+          "cal": "60 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         }
       ],
       "accent": "#10b981"
@@ -166,16 +176,20 @@
       "name": "Pasta/Stir-Fry",
       "items": [
         {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
+          "name": "Chicken",
+          "cal": "50 Cal"
         },
         {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
+          "name": "Mixed Pepper",
+          "cal": "5 Cal"
         },
         {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
+          "name": "Red Onion",
+          "cal": "10 Cal"
+        },
+        {
+          "name": "Teriyaki Sauce",
+          "cal": "45 Cal"
         }
       ],
       "accent": "#ec4899"
@@ -391,6 +405,13 @@
       "name": "Bakery",
       "items": [
         {
+          "name": "Butter Tart Bar",
+          "cal": "220 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
           "name": "Chocolate Chip Rice Krispie Square",
           "cal": "100 Cal"
         },
@@ -399,14 +420,6 @@
           "cal": "200 Cal",
           "dietary": [
             "No Dairy"
-          ]
-        },
-        {
-          "name": "WOW Butter Chocolate Fudge",
-          "cal": "300 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
           ]
         },
         {
