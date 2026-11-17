@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Tue, Nov 17, 2026",
   "menuDate": "2026-11-17",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-17T16:20:59.045941-05:00",
-  "fetchedAtEpochMs": 1794950459045,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-17T16:31:35.699721-05:00",
+  "fetchedAtEpochMs": 1794951095699,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,41 +13,33 @@
       "name": "Home",
       "items": [
         {
-          "name": "Roasted Basa",
-          "cal": "70 Cal",
+          "name": "Jerk Chicken",
+          "cal": "170 Cal",
           "dietary": [
             "No Dairy",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Penne Primavera Rose",
+          "cal": "240 Cal",
+          "dietary": [
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Caribbean Coconut Rice",
+          "cal": "160 Cal",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Vegetable Fried Rice",
-          "cal": "180 Cal",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
-            "No Dairy",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Penne Alfredo",
-          "cal": "230 Cal",
-          "dietary": [
-            "Coolfood Meal"
-          ]
-        },
-        {
-          "name": "Korean Chicken Bao",
-          "cal": "170 Cal",
-          "dietary": [
-            "Coolfood Meal"
-          ]
-        },
-        {
-          "name": "Broccoli Florets",
-          "cal": "30 Cal",
+          "name": "Roasted Carrots",
+          "cal": "100 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -55,8 +47,28 @@
           ]
         },
         {
-          "name": "Teriyaki Sauce",
-          "cal": "90 Cal"
+          "name": "Butter Chicken Poutine",
+          "cal": "350 Cal",
+          "serving": "205 gram",
+          "servingOptions": [
+            "205 gram",
+            "180 gram",
+            "190 gram"
+          ],
+          "servingCalories": [
+            {
+              "serving": "180 gram",
+              "cal": "310 Cal"
+            },
+            {
+              "serving": "190 gram",
+              "cal": "330 Cal"
+            },
+            {
+              "serving": "205 gram",
+              "cal": "350 Cal"
+            }
+          ]
         }
       ],
       "accent": "#3b82f6"
@@ -65,18 +77,18 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Cuban Black Bean Stew",
-          "cal": "90 Cal",
+          "name": "Chickpea Curry",
+          "cal": "150 Cal",
           "dietary": [
-            "Vegan",
-            "Plant Forward",
+            "Vegetarian",
+            "Coolfood Meal",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Rice Noodle Pomodoro",
-          "cal": "240 Cal",
+          "name": "Quinoa Stuffed Peppers",
+          "cal": "200 Cal",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
@@ -84,17 +96,16 @@
           ]
         },
         {
-          "name": "Falafel Bao",
-          "cal": "160 Cal",
+          "name": "Asian Noodle Stir Fry",
+          "cal": "45 Cal",
           "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
-            "No Dairy"
+            "Vegan",
+            "No Gluten"
           ]
         },
         {
-          "name": "Rosemary Potato Wedges",
-          "cal": "110 Cal",
+          "name": "Asian Vegetable Medley",
+          "cal": "50 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -122,12 +133,23 @@
       "accent": "#ef4444"
     },
     {
-      "name": "Sushi/Dumpling Bar",
+      "name": "Pho/Ramen",
       "items": [
         {
-          "name": "Maki Roll",
+          "name": "Chicken Broth",
           "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
+          "dietary": [
+            "No Dairy",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Vegetable Broth",
+          "cal": "60 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         }
       ],
       "accent": "#10b981"
@@ -164,16 +186,20 @@
       "name": "Pasta/Stir-Fry",
       "items": [
         {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
+          "name": "Chicken",
+          "cal": "50 Cal"
         },
         {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
+          "name": "Mixed Pepper",
+          "cal": "5 Cal"
         },
         {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
+          "name": "Red Onion",
+          "cal": "10 Cal"
+        },
+        {
+          "name": "Teriyaki Sauce",
+          "cal": "45 Cal"
         }
       ],
       "accent": "#ec4899"
@@ -407,15 +433,8 @@
       "name": "Bakery",
       "items": [
         {
-          "name": "Confetti Rice Krispie Square",
-          "cal": "90 Cal"
-        },
-        {
-          "name": "Raspberry Coconut Bar",
-          "cal": "240 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "name": "Vanilla Cupcake",
+          "cal": "310 Cal"
         },
         {
           "name": "Salted Caramel Brownie",
