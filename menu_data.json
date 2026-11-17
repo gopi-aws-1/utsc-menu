@@ -3,8 +3,8 @@
   "dateLabel": "Tue, Nov 17, 2026",
   "menuDate": "2026-11-17",
   "mealPeriod": "Dinner",
-  "fetchedAt": "2026-11-17T17:01:24.538429-05:00",
-  "fetchedAtEpochMs": 1794952884538,
+  "fetchedAt": "2026-11-17T17:10:59.733731-05:00",
+  "fetchedAtEpochMs": 1794953459733,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -77,6 +77,14 @@
       "name": "Vegan",
       "items": [
         {
+          "name": "Teriyaki Plant Based Meatballs",
+          "cal": "210 Cal",
+          "dietary": [
+            "Vegan",
+            "Plant Forward"
+          ]
+        },
+        {
           "name": "Chickpea Curry",
           "cal": "150 Cal",
           "dietary": [
@@ -84,15 +92,6 @@
             "Coolfood Meal",
             "No Gluten",
             "Eat Well"
-          ]
-        },
-        {
-          "name": "Quinoa Stuffed Peppers",
-          "cal": "200 Cal",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "No Gluten"
           ]
         },
         {
