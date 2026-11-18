@@ -3,8 +3,8 @@
   "dateLabel": "Wed, Nov 18, 2026",
   "menuDate": "2026-11-18",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-18T11:11:02.279261-05:00",
-  "fetchedAtEpochMs": 1795018262279,
+  "fetchedAt": "2026-11-18T11:21:03.017491-05:00",
+  "fetchedAtEpochMs": 1795018863017,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -96,6 +96,15 @@
           "cal": "45 Cal",
           "dietary": [
             "Vegan",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "California Vegetable Medley",
+          "cal": "45 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
             "Eat Well"
           ]
         }
