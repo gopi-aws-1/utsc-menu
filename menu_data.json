@@ -3,8 +3,8 @@
   "dateLabel": "Wed, Nov 18, 2026",
   "menuDate": "2026-11-18",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-11-18T07:20:55.879112-05:00",
-  "fetchedAtEpochMs": 1795004455879,
+  "fetchedAt": "2026-11-18T07:30:59.258133-05:00",
+  "fetchedAtEpochMs": 1795005059258,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -50,8 +50,11 @@
           ]
         },
         {
-          "name": "Turkey Breakfast Sausage",
-          "cal": "30 Cal"
+          "name": "Breakfast Sausage",
+          "cal": "120 Cal",
+          "dietary": [
+            "No Dairy"
+          ]
         },
         {
           "name": "Home Fried Potatoes",
@@ -67,6 +70,16 @@
     {
       "name": "Vegan",
       "items": [
+        {
+          "name": "Mushroom Caramelized Onion Polenta",
+          "cal": "160 Cal",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
         {
           "name": "Baked Beans",
           "cal": "150 Cal",
@@ -95,10 +108,6 @@
         {
           "name": "Banana Oatmeal Muffin",
           "cal": ""
-        },
-        {
-          "name": "Vegan Sausage",
-          "cal": "50 Cal"
         }
       ],
       "accent": "#f59e0b"
