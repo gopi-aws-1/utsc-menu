@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Wed, Nov 18, 2026",
   "menuDate": "2026-11-18",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-18T16:24:19.189467-05:00",
-  "fetchedAtEpochMs": 1795037059189,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-18T16:31:09.876995-05:00",
+  "fetchedAtEpochMs": 1795037469876,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,38 +13,27 @@
       "name": "Home",
       "items": [
         {
-          "name": "Pork Stroganoff",
-          "cal": "220 Cal"
+          "name": "Swedish Meatballs",
+          "cal": "230 Cal"
         },
         {
-          "name": "Macaroni & Cheese",
-          "cal": "280 Cal",
+          "name": "Turkey Bolognese Spaghetti",
+          "cal": "290 Cal",
+          "dietary": [
+            "Coolfood Meal",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Grilled Cheese Sandwich",
+          "cal": "170 Cal",
           "dietary": [
             "Vegetarian"
           ]
         },
         {
-          "name": "Spanakopita Pasta Bake",
-          "cal": "270 Cal",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal"
-          ]
-        },
-        {
-          "name": "Mumbai Beef Burrito",
-          "cal": "260 Cal",
-          "dietary": [
-            "No Dairy"
-          ]
-        },
-        {
-          "name": "Turkey Honey Mustard Ranch Wrap",
-          "cal": "260 Cal"
-        },
-        {
-          "name": "Roasted Corn & Green Pepper",
-          "cal": "120 Cal",
+          "name": "Sunrise Vegetable Medley",
+          "cal": "50 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -52,18 +41,10 @@
           ]
         },
         {
-          "name": "Herb White Rice",
-          "cal": "130 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Potato Wedges",
+          "name": "Mashed Potato & Parsnips",
           "cal": "110 Cal",
           "dietary": [
-            "Vegan",
+            "Vegetarian",
             "No Gluten",
             "Eat Well"
           ]
@@ -75,16 +56,8 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Teriyaki Plant Based Meatballs",
-          "cal": "210 Cal",
-          "dietary": [
-            "Vegan",
-            "Plant Forward"
-          ]
-        },
-        {
-          "name": "Curry Turmeric Potato & Chickpea Burrito",
-          "cal": "230 Cal",
+          "name": "Eggplant Lentil Moussaka",
+          "cal": "80 Cal",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
@@ -92,16 +65,27 @@
           ]
         },
         {
-          "name": "Green Beans & Shiitake Mushrooms",
-          "cal": "45 Cal",
+          "name": "Broccoli Florets",
+          "cal": "30 Cal",
           "dietary": [
             "Vegan",
+            "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "California Vegetable Medley",
-          "cal": "45 Cal",
+          "name": "Chickpea Eggplant Curry",
+          "cal": "180 Cal",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Lemon Paprika Potatoes",
+          "cal": "130 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -129,12 +113,23 @@
       "accent": "#ef4444"
     },
     {
-      "name": "Sushi/Dumpling Bar",
+      "name": "Pho/Ramen",
       "items": [
         {
-          "name": "Maki Roll",
+          "name": "Chicken Broth",
           "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
+          "dietary": [
+            "No Dairy",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Vegetable Broth",
+          "cal": "60 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         }
       ],
       "accent": "#10b981"
@@ -172,16 +167,20 @@
       "name": "Pasta/Stir-Fry",
       "items": [
         {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
+          "name": "Chicken",
+          "cal": "50 Cal"
         },
         {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
+          "name": "Mixed Pepper",
+          "cal": "5 Cal"
         },
         {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
+          "name": "Red Onion",
+          "cal": "10 Cal"
+        },
+        {
+          "name": "Teriyaki Sauce",
+          "cal": "45 Cal"
         }
       ],
       "accent": "#ec4899"
@@ -393,8 +392,16 @@
       "name": "Bakery",
       "items": [
         {
-          "name": "Coffee Cake",
-          "cal": "170 Cal",
+          "name": "Tiramisu",
+          "cal": "130 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Apple Crumble Bar",
+          "cal": "180 Cal",
           "dietary": [
             "Vegetarian"
           ]
