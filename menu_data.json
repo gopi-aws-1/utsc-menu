@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Thu, Nov 19, 2026",
   "menuDate": "2026-11-19",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-19T16:20:59.822520-05:00",
-  "fetchedAtEpochMs": 1795123259822,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-19T16:30:54.760909-05:00",
+  "fetchedAtEpochMs": 1795123854760,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,40 +13,33 @@
       "name": "Home",
       "items": [
         {
-          "name": "Teriyaki Chicken Stir Fry",
-          "cal": "220 Cal",
+          "name": "Chicken Breast with Rotisserie Sauce",
+          "cal": "70 Cal",
           "dietary": [
-            "Coolfood Meal",
             "No Dairy",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Vegetable Fried Rice",
-          "cal": "190 Cal",
+          "name": "Lemon Cream Baked Penne",
+          "cal": "220 Cal",
           "dietary": [
-            "Vegetarian",
             "Coolfood Meal",
-            "No Dairy",
             "Eat Well"
           ]
         },
         {
-          "name": "Tomato & Feta Baked Pasta",
-          "cal": "350 Cal",
+          "name": "Chicken Fajita",
+          "cal": "290 Cal",
           "dietary": [
-            "Vegetarian",
-            "Coolfood Meal"
+            "Coolfood Meal",
+            "Eat Well"
           ]
         },
         {
-          "name": "Cheeseburger Burger",
-          "cal": "190 Cal"
-        },
-        {
-          "name": "Sunrise Vegetable Medley",
-          "cal": "50 Cal",
+          "name": "Green & Yellow Zucchini",
+          "cal": "40 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -54,11 +47,11 @@
           ]
         },
         {
-          "name": "Ginger Scallion Chow Mein Noodles",
-          "cal": "140 Cal",
+          "name": "Za'atar Roasted Potatoes",
+          "cal": "110 Cal",
           "dietary": [
-            "Vegetarian",
-            "No Dairy",
+            "Vegan",
+            "No Gluten",
             "Eat Well"
           ]
         }
@@ -69,8 +62,8 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Chana Masala Bowl",
-          "cal": "220 Cal",
+          "name": "Chickpea Coconut Curry",
+          "cal": "270 Cal",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
@@ -79,35 +72,28 @@
           ]
         },
         {
-          "name": "California Vegetable Medley",
-          "cal": "45 Cal",
+          "name": "Eggplant Coconut Curry",
+          "cal": "60 Cal",
           "dietary": [
             "Vegan",
+            "Coolfood Meal",
+            "Plant Forward",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Basmati Rice",
-          "cal": "110 Cal",
+          "name": "Plant Based Sausage Rapini Shells",
+          "cal": "310 Cal",
           "dietary": [
             "Vegan",
-            "No Gluten",
+            "Coolfood Meal",
             "Eat Well"
           ]
         },
         {
-          "name": "Ginger Quinoa Pilaf",
-          "cal": "170 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Vegetable Bean Chili",
-          "cal": "80 Cal",
+          "name": "Quinoa Stuffed Peppers",
+          "cal": "200 Cal",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
@@ -135,12 +121,23 @@
       "accent": "#ef4444"
     },
     {
-      "name": "Sushi/Dumpling Bar",
+      "name": "Pho/Ramen",
       "items": [
         {
-          "name": "Maki Roll",
+          "name": "Chicken Broth",
           "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
+          "dietary": [
+            "No Dairy",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Vegetable Broth",
+          "cal": "60 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         }
       ],
       "accent": "#10b981"
@@ -177,16 +174,20 @@
       "name": "Pasta/Stir-Fry",
       "items": [
         {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
+          "name": "Chicken",
+          "cal": "50 Cal"
         },
         {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
+          "name": "Mixed Pepper",
+          "cal": "5 Cal"
         },
         {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
+          "name": "Red Onion",
+          "cal": "10 Cal"
+        },
+        {
+          "name": "Teriyaki Sauce",
+          "cal": "45 Cal"
         }
       ],
       "accent": "#ec4899"
@@ -403,18 +404,15 @@
       "name": "Bakery",
       "items": [
         {
+          "name": "Carrot Cake",
+          "cal": "210 Cal"
+        },
+        {
           "name": "Banana Cream Pie",
           "cal": "140 Cal",
           "dietary": [
             "Vegan",
             "No Gluten"
-          ]
-        },
-        {
-          "name": "Cherry Tart",
-          "cal": "100 Cal",
-          "dietary": [
-            "Vegan"
           ]
         },
         {
@@ -424,6 +422,10 @@
             "Vegetarian",
             "No Dairy"
           ]
+        },
+        {
+          "name": "Rice Krispie Square",
+          "cal": "80 Cal"
         },
         {
           "name": "Chocolate Chip Cookie",
