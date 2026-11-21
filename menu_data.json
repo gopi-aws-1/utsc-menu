@@ -3,8 +3,8 @@
   "dateLabel": "Sat, Nov 21, 2026",
   "menuDate": "2026-11-21",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-11-20T22:01:02.757578-05:00",
-  "fetchedAtEpochMs": 1795230062757,
+  "fetchedAt": "2026-11-20T22:11:03.950756-05:00",
+  "fetchedAtEpochMs": 1795230663950,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -14,23 +14,11 @@
       "items": [
         {
           "name": "Hard Cooked Egg",
-          "cal": "80 Cal",
-          "dietary": [
-            "Vegetarian",
-            "No Dairy",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "80 Cal"
         },
         {
           "name": "Scrambled Egg",
-          "cal": "140 Cal",
-          "dietary": [
-            "Vegetarian",
-            "No Dairy",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "140 Cal"
         },
         {
           "name": "Southwest Black Bean Frittata",
@@ -38,18 +26,11 @@
         },
         {
           "name": "Caprese Egg Breakfast Sandwich",
-          "cal": "320 Cal",
-          "dietary": [
-            "Coolfood Meal",
-            "Eat Well"
-          ]
+          "cal": "320 Cal"
         },
         {
           "name": "Breakfast Sausage",
-          "cal": "120 Cal",
-          "dietary": [
-            "No Dairy"
-          ]
+          "cal": "120 Cal"
         },
         {
           "name": "Potato Wedges (118 millilitre)",
@@ -62,11 +43,6 @@
         {
           "name": "Potato Wedges",
           "cal": "150 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ],
           "serving": "118 millilitre",
           "servingOptions": [
             "118 millilitre",
@@ -81,31 +57,15 @@
       "items": [
         {
           "name": "Tofu Bhurji Scramble",
-          "cal": "90 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "90 Cal"
         },
         {
           "name": "Burmese Eggplant Curry",
-          "cal": "80 Cal",
-          "dietary": [
-            "Coolfood Meal",
-            "No Dairy",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "80 Cal"
         },
         {
           "name": "Wild Rice",
-          "cal": "120 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "120 Cal"
         },
         {
           "name": "Plant-Based Patty",
@@ -145,11 +105,7 @@
       "items": [
         {
           "name": "Spinach Kale Mix",
-          "cal": "",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
+          "cal": ""
         },
         {
           "name": "Plain Greek Yogurt",
@@ -191,17 +147,11 @@
       "items": [
         {
           "name": "Blueberry Muffin",
-          "cal": "60 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "60 Cal"
         },
         {
           "name": "Oatmeal Apple Muffin",
-          "cal": "60 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "60 Cal"
         },
         {
           "name": "Raisin Bran Muffin",
@@ -209,10 +159,7 @@
         },
         {
           "name": "Apple Coronet",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "150 Cal"
         },
         {
           "name": "Croissant",
