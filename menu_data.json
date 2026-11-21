@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "dateLabel": "Fri, Nov 20, 2026",
-  "menuDate": "2026-11-20",
-  "mealPeriod": "Dinner",
-  "fetchedAt": "2026-11-20T21:50:58.330784-05:00",
-  "fetchedAtEpochMs": 1795229458330,
+  "dateLabel": "Sat, Nov 21, 2026",
+  "menuDate": "2026-11-21",
+  "mealPeriod": "Breakfast",
+  "fetchedAt": "2026-11-20T22:01:02.757578-05:00",
+  "fetchedAtEpochMs": 1795230062757,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,52 +13,64 @@
       "name": "Home",
       "items": [
         {
-          "name": "Ginger Roasted Salmon",
-          "cal": "120 Cal",
+          "name": "Hard Cooked Egg",
+          "cal": "80 Cal",
           "dietary": [
+            "Vegetarian",
             "No Dairy",
             "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Eggplant Baked Orzo",
-          "cal": "170 Cal",
+          "name": "Scrambled Egg",
+          "cal": "140 Cal",
           "dietary": [
             "Vegetarian",
-            "Coolfood Meal"
+            "No Dairy",
+            "No Gluten",
+            "Eat Well"
           ]
         },
         {
-          "name": "Grilled Cheese Sandwich",
-          "cal": "170 Cal",
+          "name": "Southwest Black Bean Frittata",
+          "cal": ""
+        },
+        {
+          "name": "Caprese Egg Breakfast Sandwich",
+          "cal": "320 Cal",
           "dietary": [
-            "Vegetarian"
+            "Coolfood Meal",
+            "Eat Well"
           ]
         },
         {
-          "name": "Pork Belly Bao Bun",
-          "cal": "220 Cal",
+          "name": "Breakfast Sausage",
+          "cal": "120 Cal",
           "dietary": [
             "No Dairy"
           ]
         },
         {
-          "name": "Winter Vegetable Medley",
-          "cal": "35 Cal",
+          "name": "Potato Wedges (118 millilitre)",
+          "cal": "150 Cal"
+        },
+        {
+          "name": "Potato Wedges (89 millilitre)",
+          "cal": "110 Cal"
+        },
+        {
+          "name": "Potato Wedges",
+          "cal": "150 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
             "Eat Well"
-          ]
-        },
-        {
-          "name": "Veggie Fried Rice",
-          "cal": "130 Cal",
-          "dietary": [
-            "Vegetarian",
-            "No Dairy",
-            "Eat Well"
+          ],
+          "serving": "118 millilitre",
+          "servingOptions": [
+            "118 millilitre",
+            "89 millilitre"
           ]
         }
       ],
@@ -77,376 +89,193 @@
           ]
         },
         {
-          "name": "Lentil Tikka Taco",
-          "cal": "120 Cal",
+          "name": "Burmese Eggplant Curry",
+          "cal": "80 Cal",
           "dietary": [
-            "Vegetarian",
             "Coolfood Meal",
+            "No Dairy",
+            "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Miso Glazed Carrots",
-          "cal": "140 Cal",
+          "name": "Wild Rice",
+          "cal": "120 Cal",
           "dietary": [
-            "Vegetarian",
-            "No Dairy",
-            "No Gluten"
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
           ]
         },
         {
-          "name": "Garlic Fried Rice",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
+          "name": "Plant-Based Patty",
+          "cal": "230 Cal"
         }
       ],
       "accent": "#f59e0b"
     },
     {
-      "name": "All Day Breakfast",
+      "name": "Omelete",
       "items": [
         {
-          "name": "Waffle",
-          "cal": "370 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "name": "Egg",
+          "cal": "180 Cal"
         },
         {
-          "name": "Maple Syrup",
-          "cal": "50 Cal"
+          "name": "Ham",
+          "cal": "30 Cal"
+        },
+        {
+          "name": "Baby Spinach (10 gram)",
+          "cal": "0 Cal"
+        },
+        {
+          "name": "Three Cheese Blend",
+          "cal": "90 Cal"
+        },
+        {
+          "name": "Baby Spinach (237 millilitre)",
+          "cal": "5 Cal"
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Pho/Ramen",
-      "items": [
-        {
-          "name": "Chicken Broth",
-          "cal": "15 Cal",
-          "dietary": [
-            "No Dairy",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Vegetable Broth",
-          "cal": "60 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
-        }
-      ],
-      "accent": "#10b981"
-    },
-    {
-      "name": "Pizza",
-      "items": [
-        {
-          "name": "Bacon Cheeseburger Pizza",
-          "cal": "210 Cal"
-        },
-        {
-          "name": "Bee Sting Pizza",
-          "cal": "190 Cal"
-        },
-        {
-          "name": "Cheese Pizza",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
-        },
-        {
-          "name": "Grilled Eggplant Pizza",
-          "cal": "170 Cal",
-          "dietary": [
-            "Vegetarian",
-            "Coolfood Meal"
-          ]
-        }
-      ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Chicken",
-          "cal": "50 Cal"
-        },
-        {
-          "name": "Mixed Pepper",
-          "cal": "5 Cal"
-        },
-        {
-          "name": "Red Onion",
-          "cal": "10 Cal"
-        },
-        {
-          "name": "Teriyaki Sauce",
-          "cal": "45 Cal"
-        }
-      ],
-      "accent": "#ec4899"
-    },
-    {
-      "name": "Deli",
-      "items": [
-        {
-          "name": "Plant Based Meatball Sub",
-          "cal": "190 Cal",
-          "dietary": [
-            "Coolfood Meal",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Jerk Chicken Wrap",
-          "cal": "250 Cal",
-          "dietary": [
-            "Coolfood Meal",
-            "No Dairy"
-          ]
-        },
-        {
-          "name": "Baguette",
-          "cal": "330 Cal",
-          "dietary": [
-            "Vegan"
-          ]
-        },
-        {
-          "name": "White Bread",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegan"
-          ]
-        },
-        {
-          "name": "Whole Wheat Bread",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegan"
-          ]
-        },
-        {
-          "name": "Tortilla",
-          "cal": "310 Cal",
-          "dietary": [
-            "Vegan"
-          ]
-        },
-        {
-          "name": "Cheddar Cheese",
-          "cal": ""
-        },
-        {
-          "name": "Chicken Salad",
-          "cal": ""
-        },
-        {
-          "name": "Swiss Cheese",
-          "cal": ""
-        },
-        {
-          "name": "Tuna",
-          "cal": ""
-        },
-        {
-          "name": "Cucumber",
-          "cal": ""
-        },
-        {
-          "name": "Iceberg Lettuce",
-          "cal": "10 Cal"
-        },
-        {
-          "name": "Red Onions",
-          "cal": ""
-        },
-        {
-          "name": "Tomato",
-          "cal": ""
-        },
-        {
-          "name": "Hummus",
-          "cal": ""
-        },
-        {
-          "name": "Mayo",
-          "cal": ""
-        },
-        {
-          "name": "Sriracha Mayo",
-          "cal": ""
-        }
-      ],
-      "accent": "#06b6d4"
     },
     {
       "name": "Salad Bar",
       "items": [
         {
-          "name": "Black Beans",
-          "cal": ""
-        },
-        {
-          "name": "Chickpeas",
-          "cal": ""
-        },
-        {
-          "name": "Feta Cheese",
-          "cal": ""
-        },
-        {
-          "name": "Hard Cooked Eggs",
-          "cal": ""
-        },
-        {
-          "name": "Kidney Beans",
-          "cal": ""
-        },
-        {
-          "name": "Pumpkin Seeds",
-          "cal": ""
-        },
-        {
-          "name": "Sunflower Seeds",
-          "cal": ""
-        },
-        {
-          "name": "Tofu",
-          "cal": ""
-        },
-        {
-          "name": "Croutons",
-          "cal": ""
-        },
-        {
-          "name": "Beets",
-          "cal": ""
-        },
-        {
-          "name": "Corn",
-          "cal": ""
-        },
-        {
-          "name": "Iceberg Lettuce",
-          "cal": "10 Cal"
-        },
-        {
-          "name": "Middle Eastern Couscous Salad",
-          "cal": ""
-        },
-        {
-          "name": "Romaine Lettuce",
-          "cal": "10 Cal"
-        },
-        {
-          "name": "Spring Mix",
-          "cal": "0 Cal"
-        },
-        {
-          "name": "Taco Lentil Salad",
-          "cal": ""
-        },
-        {
-          "name": "Tomato",
-          "cal": ""
-        },
-        {
-          "name": "Radish",
-          "cal": "0 Cal"
-        },
-        {
-          "name": "Calorie Wise Ranch Dressing",
-          "cal": ""
-        },
-        {
-          "name": "Greek Feta Dressing",
-          "cal": "190 Cal"
-        },
-        {
-          "name": "Zesty Italian Dressing",
-          "cal": ""
-        }
-      ],
-      "accent": "#3b82f6"
-    },
-    {
-      "name": "Bakery",
-      "items": [
-        {
-          "name": "Sweet & Salty Rice Krispie Square",
-          "cal": "100 Cal"
-        },
-        {
-          "name": "Chocolate Chip Cookie",
-          "cal": "120 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
-        },
-        {
-          "name": "Oatmeal Raisin Cookie",
-          "cal": "120 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
-        },
-        {
-          "name": "Sugar Cookie",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
-        }
-      ],
-      "accent": "#f59e0b"
-    },
-    {
-      "name": "Smoothie",
-      "items": [
-        {
-          "name": "Soy Milk",
-          "cal": "10 Cal",
+          "name": "Spinach Kale Mix",
+          "cal": "",
           "dietary": [
             "Vegan",
             "No Gluten"
           ]
         },
         {
-          "name": "Coconut Yogurt",
-          "cal": "35 Cal"
-        },
-        {
-          "name": "Plain Yogurt",
+          "name": "Plain Greek Yogurt",
           "cal": ""
         },
         {
-          "name": "Vanilla Greek Yogurt",
+          "name": "Strawberry Yogurt",
+          "cal": "490 Cal"
+        },
+        {
+          "name": "Vanilla Yogurt",
+          "cal": "100 Cal"
+        },
+        {
+          "name": "Granola",
           "cal": ""
         },
         {
-          "name": "Beets",
-          "cal": "5 Cal"
+          "name": "Fruit Salad",
+          "cal": ""
         },
         {
-          "name": "Celery",
-          "cal": "0 Cal"
+          "name": "Grapefruit",
+          "cal": ""
         },
         {
-          "name": "Cucumber",
-          "cal": "0 Cal"
+          "name": "Mandarin Oranges",
+          "cal": ""
+        },
+        {
+          "name": "Mixed Berries",
+          "cal": ""
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#10b981"
+    },
+    {
+      "name": "Bakery",
+      "items": [
+        {
+          "name": "Blueberry Muffin",
+          "cal": "60 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Oatmeal Apple Muffin",
+          "cal": "60 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Raisin Bran Muffin",
+          "cal": "60 Cal"
+        },
+        {
+          "name": "Apple Coronet",
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Croissant",
+          "cal": "110 Cal"
+        }
+      ],
+      "accent": "#8b5cf6"
+    },
+    {
+      "name": "Smoothie",
+      "items": [
+        {
+          "name": "Apple",
+          "cal": ""
+        },
+        {
+          "name": "Mango",
+          "cal": ""
+        },
+        {
+          "name": "Mixed Berries",
+          "cal": ""
+        },
+        {
+          "name": "Orange",
+          "cal": ""
+        },
+        {
+          "name": "Peaches",
+          "cal": ""
+        },
+        {
+          "name": "Pineapple",
+          "cal": ""
+        }
+      ],
+      "accent": "#ec4899"
+    },
+    {
+      "name": "Smoothie Bar",
+      "items": [
+        {
+          "name": "Apple",
+          "cal": ""
+        },
+        {
+          "name": "Mango",
+          "cal": ""
+        },
+        {
+          "name": "Mixed Berries",
+          "cal": ""
+        },
+        {
+          "name": "Peaches",
+          "cal": ""
+        },
+        {
+          "name": "Pineapple",
+          "cal": ""
+        }
+      ],
+      "accent": "#06b6d4"
     }
   ]
 }
