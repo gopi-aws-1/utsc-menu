@@ -3,8 +3,8 @@
   "dateLabel": "Sat, Nov 21, 2026",
   "menuDate": "2026-11-21",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-11-21T05:20:53.356612-05:00",
-  "fetchedAtEpochMs": 1795256453356,
+  "fetchedAt": "2026-11-21T05:31:02.783083-05:00",
+  "fetchedAtEpochMs": 1795257062783,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -34,7 +34,12 @@
         },
         {
           "name": "Southwest Black Bean Frittata",
-          "cal": ""
+          "cal": "170 Cal",
+          "dietary": [
+            "Vegetarian",
+            "No Gluten",
+            "Eat Well"
+          ]
         },
         {
           "name": "Caprese Egg Breakfast Sandwich",
