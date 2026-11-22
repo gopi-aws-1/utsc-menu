@@ -3,8 +3,8 @@
   "dateLabel": "Sun, Nov 22, 2026",
   "menuDate": "2026-11-22",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-11-22T09:11:03.488283-05:00",
-  "fetchedAtEpochMs": 1795356663488,
+  "fetchedAt": "2026-11-22T09:20:58.027411-05:00",
+  "fetchedAtEpochMs": 1795357258027,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -70,6 +70,23 @@
       "name": "Vegan",
       "items": [
         {
+          "name": "Baked Beans",
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
+        {
+          "name": "Za'atar Chickpeas",
+          "cal": "170 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
           "name": "Lentil Dahl",
           "cal": "160 Cal",
           "dietary": [
@@ -87,8 +104,8 @@
           ]
         },
         {
-          "name": "Za'atar Chickpeas",
-          "cal": "170 Cal",
+          "name": "Basmati Rice",
+          "cal": "110 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
