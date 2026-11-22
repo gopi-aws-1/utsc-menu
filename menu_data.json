@@ -3,8 +3,8 @@
   "dateLabel": "Sun, Nov 22, 2026",
   "menuDate": "2026-11-22",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-11-22T10:01:04.746821-05:00",
-  "fetchedAtEpochMs": 1795359664746,
+  "fetchedAt": "2026-11-22T10:10:55.055098-05:00",
+  "fetchedAtEpochMs": 1795360255055,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -14,23 +14,11 @@
       "items": [
         {
           "name": "Hard Cooked Egg",
-          "cal": "80 Cal",
-          "dietary": [
-            "Vegetarian",
-            "No Dairy",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "80 Cal"
         },
         {
           "name": "Scrambled Egg",
-          "cal": "140 Cal",
-          "dietary": [
-            "Vegetarian",
-            "No Dairy",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "140 Cal"
         },
         {
           "name": "Bacon",
@@ -38,11 +26,7 @@
         },
         {
           "name": "Home Fried Potatoes",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
+          "cal": "150 Cal"
         },
         {
           "name": "Bacon & Egg Breakfast Burrito",
@@ -71,64 +55,31 @@
       "items": [
         {
           "name": "Baked Beans",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
+          "cal": "150 Cal"
         },
         {
           "name": "Za'atar Chickpeas",
-          "cal": "170 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "170 Cal"
         },
         {
           "name": "Lentil Dahl",
-          "cal": "160 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
-          ]
+          "cal": "160 Cal"
         },
         {
           "name": "Brown Rice",
-          "cal": "120 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "120 Cal"
         },
         {
           "name": "Basmati Rice",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "110 Cal"
         },
         {
           "name": "Mixed Berry Baked Oatmeal",
-          "cal": "120 Cal",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "Eat Well"
-          ]
+          "cal": "120 Cal"
         },
         {
           "name": "Western Tofu Frittata",
           "cal": "120 Cal",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "Eat Well"
-          ],
           "serving": "90 gram",
           "servingOptions": [
             "90 gram",
@@ -153,12 +104,7 @@
       "items": [
         {
           "name": "Sauteed Mushrooms",
-          "cal": "50 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
+          "cal": "50 Cal"
         },
         {
           "name": "Egg",
@@ -252,31 +198,19 @@
       "items": [
         {
           "name": "Banana Muffin",
-          "cal": "70 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "70 Cal"
         },
         {
           "name": "Carrot Muffin",
-          "cal": "60 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "60 Cal"
         },
         {
           "name": "Chocolate Chunk Muffin",
-          "cal": "70 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "70 Cal"
         },
         {
           "name": "Cinnamon Swirl Danish",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegetarian"
-          ]
+          "cal": "150 Cal"
         },
         {
           "name": "Croissant",
