@@ -3,8 +3,8 @@
   "dateLabel": "Mon, Nov 23, 2026",
   "menuDate": "2026-11-23",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-11-23T07:10:58.010512-05:00",
-  "fetchedAtEpochMs": 1795435858010,
+  "fetchedAt": "2026-11-23T07:21:00.447518-05:00",
+  "fetchedAtEpochMs": 1795436460447,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -88,6 +88,14 @@
     {
       "name": "Vegan",
       "items": [
+        {
+          "name": "Baked Beans",
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
         {
           "name": "Lentil Dahl",
           "cal": "160 Cal",
