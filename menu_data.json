@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Tue, Nov 24, 2026",
   "menuDate": "2026-11-24",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-24T16:20:55.844474-05:00",
-  "fetchedAtEpochMs": 1795555255844,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-24T16:31:02.091958-05:00",
+  "fetchedAtEpochMs": 1795555862091,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,30 +13,36 @@
       "name": "Home",
       "items": [
         {
-          "name": "Vegetable Fried Rice",
-          "cal": "190 Cal",
+          "name": "Cajun Cornmeal Crusted Tilapia",
+          "cal": "130 Cal",
           "dietary": [
-            "Vegetarian",
-            "Coolfood Meal",
             "No Dairy",
+            "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Southern Pork Grilled Cheese",
+          "name": "Paprikash Chicken Stew",
+          "cal": "160 Cal"
+        },
+        {
+          "name": "Chipotle Corn Macaroni & Cheese",
+          "cal": "350 Cal",
+          "dietary": [
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Turkey Kimchi Reuben",
           "cal": "250 Cal"
         },
         {
-          "name": "Penne Marinara",
-          "cal": "210 Cal",
-          "dietary": [
-            "Coolfood Meal",
-            "Eat Well"
-          ]
+          "name": "Meatball Sub",
+          "cal": "230 Cal"
         },
         {
-          "name": "Italian Vegetable Medley",
-          "cal": "45 Cal",
+          "name": "Vegetable Medley",
+          "cal": "60 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -44,29 +50,19 @@
           ]
         },
         {
-          "name": "Spicy Crispy Chicken Snack Wrap",
-          "cal": "250 Cal"
+          "name": "Turmeric Basmatic Rice",
+          "cal": "",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
         },
         {
-          "name": "Shepherd's Pie",
-          "cal": "240 Cal",
+          "name": "Potato Chips",
+          "cal": "100 Cal",
           "dietary": [
+            "Vegan",
             "No Gluten"
-          ],
-          "serving": "205 gram",
-          "servingOptions": [
-            "205 gram",
-            "180 gram"
-          ],
-          "servingCalories": [
-            {
-              "serving": "180 gram",
-              "cal": "210 Cal"
-            },
-            {
-              "serving": "205 gram",
-              "cal": "240 Cal"
-            }
           ]
         }
       ],
@@ -76,31 +72,30 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Tofu & Eggplant Stew",
-          "cal": "100 Cal",
+          "name": "Caribbean Chickpea Curry",
+          "cal": "160 Cal",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "Five Spice Roasted Carrots",
+          "cal": "90 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten",
+            "Eat Well"
+          ]
+        },
+        {
+          "name": "White Rice",
+          "cal": "130 Cal",
+          "dietary": [
+            "Vegan",
             "No Gluten"
-          ]
-        },
-        {
-          "name": "White Bean Ragout",
-          "cal": "110 Cal",
-          "dietary": [
-            "Vegan",
-            "Coolfood Meal",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Chickpea Basmati Pilaf",
-          "cal": "140 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
           ]
         }
       ],
@@ -129,17 +124,6 @@
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
     },
     {
       "name": "Pizza",
@@ -171,25 +155,7 @@
           ]
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -298,7 +264,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -388,7 +354,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Soup",
@@ -398,21 +364,16 @@
           "cal": ""
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
       "items": [
         {
-          "name": "Confetti Rice Krispie Square",
-          "cal": "90 Cal"
-        },
-        {
-          "name": "Lemon Square",
-          "cal": "150 Cal",
+          "name": "Date Square",
+          "cal": "170 Cal",
           "dietary": [
-            "Vegetarian",
-            "Eat Well"
+            "Vegetarian"
           ]
         },
         {
@@ -420,14 +381,6 @@
           "cal": "230 Cal",
           "dietary": [
             "Vegetarian"
-          ]
-        },
-        {
-          "name": "Vegan No Gluten Blondie",
-          "cal": "260 Cal",
-          "dietary": [
-            "Vegan",
-            "No Gluten"
           ]
         },
         {
@@ -459,7 +412,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -497,7 +450,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
