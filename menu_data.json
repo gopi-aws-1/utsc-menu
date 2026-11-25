@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "dateLabel": "Wed, Nov 25, 2026",
   "menuDate": "2026-11-25",
-  "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-25T16:21:21.937047-05:00",
-  "fetchedAtEpochMs": 1795641681937,
+  "mealPeriod": "Dinner",
+  "fetchedAt": "2026-11-25T16:31:03.538404-05:00",
+  "fetchedAtEpochMs": 1795642263538,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -13,59 +13,41 @@
       "name": "Home",
       "items": [
         {
-          "name": "Cajun Turkey Breast",
-          "cal": "120 Cal",
+          "name": "Honey Mustard Pork Loin",
+          "cal": "160 Cal",
           "dietary": [
             "No Dairy",
-            "No Gluten",
-            "Eat Well"
+            "No Gluten"
           ]
         },
         {
-          "name": "Primavera Rose Penne",
-          "cal": "240 Cal",
+          "name": "Penne Marinara",
+          "cal": "210 Cal",
           "dietary": [
             "Coolfood Meal",
             "Eat Well"
           ]
         },
         {
-          "name": "Fiesta Carnitas Taco",
-          "cal": "190 Cal",
+          "name": "Meatball Sub",
+          "cal": "230 Cal"
+        },
+        {
+          "name": "BLT Sandwich",
+          "cal": "150 Cal",
           "dietary": [
             "No Dairy"
           ]
         },
         {
-          "name": "Pork Belly Bao Bun",
-          "cal": "220 Cal",
-          "dietary": [
-            "No Dairy"
-          ]
+          "name": "Honey & Togarashi Roasted Parsnips",
+          "cal": "140 Cal"
         },
         {
-          "name": "Green Beans",
-          "cal": "40 Cal",
+          "name": "Yukon Gold & Sweet Potato Mash",
+          "cal": "130 Cal",
           "dietary": [
-            "Vegan",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Zucchini Rice Casserole",
-          "cal": "120 Cal",
-          "dietary": [
-            "Plant Forward",
-            "No Gluten",
-            "Eat Well"
-          ]
-        },
-        {
-          "name": "Roasted Balsamic Mini Potatoes",
-          "cal": "160 Cal",
-          "dietary": [
-            "Vegan",
+            "Vegetarian",
             "No Gluten",
             "Eat Well"
           ]
@@ -77,18 +59,33 @@
       "name": "Vegan",
       "items": [
         {
-          "name": "Mushroom Mapo Tofu",
-          "cal": "100 Cal",
+          "name": "Teriyaki Tofu Stir Fry",
+          "cal": "170 Cal",
+          "dietary": [
+            "Vegan",
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Plant Based Macaroni & Cheese",
+          "cal": "400 Cal",
           "dietary": [
             "Vegan",
             "Coolfood Meal",
-            "No Gluten",
             "Eat Well"
           ]
         },
         {
-          "name": "Green Beans",
-          "cal": "35 Cal",
+          "name": "Veggie Fajita Burrito",
+          "cal": "260 Cal",
+          "dietary": [
+            "Vegetarian",
+            "Coolfood Meal"
+          ]
+        },
+        {
+          "name": "Curried Peas & Carrots",
+          "cal": "70 Cal",
           "dietary": [
             "Vegan",
             "No Gluten",
@@ -96,33 +93,12 @@
           ]
         },
         {
-          "name": "Cilantro Lime Rice",
-          "cal": "130 Cal",
+          "name": "Roasted Butternut Squash",
+          "cal": "70 Cal",
           "dietary": [
             "Vegan",
-            "No Gluten"
-          ]
-        },
-        {
-          "name": "Fiesta Lentil Taco",
-          "cal": "150 Cal",
-          "dietary": [
-            "Vegan"
-          ],
-          "serving": "100 gram",
-          "servingOptions": [
-            "100 gram",
-            "95 gram"
-          ],
-          "servingCalories": [
-            {
-              "serving": "95 gram",
-              "cal": "140 Cal"
-            },
-            {
-              "serving": "100 gram",
-              "cal": "150 Cal"
-            }
+            "No Gluten",
+            "Eat Well"
           ]
         }
       ],
@@ -144,17 +120,6 @@
         }
       ],
       "accent": "#ef4444"
-    },
-    {
-      "name": "Sushi/Dumpling Bar",
-      "items": [
-        {
-          "name": "Maki Roll",
-          "cal": "15 Cal",
-          "ingredients": "Roll, Maki, Crab, Avocado, Cucumber"
-        }
-      ],
-      "accent": "#10b981"
     },
     {
       "name": "Pizza",
@@ -186,25 +151,7 @@
           "cal": "190 Cal"
         }
       ],
-      "accent": "#8b5cf6"
-    },
-    {
-      "name": "Pasta/Stir-Fry",
-      "items": [
-        {
-          "name": "Marinara Sauce",
-          "cal": "40 Cal"
-        },
-        {
-          "name": "Pesto Sauce",
-          "cal": "420 Cal"
-        },
-        {
-          "name": "Alfredo Sauce",
-          "cal": "100 Cal"
-        }
-      ],
-      "accent": "#ec4899"
+      "accent": "#10b981"
     },
     {
       "name": "Deli",
@@ -310,7 +257,7 @@
           "cal": ""
         }
       ],
-      "accent": "#06b6d4"
+      "accent": "#8b5cf6"
     },
     {
       "name": "Salad Bar",
@@ -408,7 +355,7 @@
           "cal": ""
         }
       ],
-      "accent": "#3b82f6"
+      "accent": "#ec4899"
     },
     {
       "name": "Soup",
@@ -418,7 +365,7 @@
           "cal": ""
         }
       ],
-      "accent": "#f59e0b"
+      "accent": "#06b6d4"
     },
     {
       "name": "Bakery",
@@ -432,15 +379,15 @@
           ]
         },
         {
-          "name": "Maple Butter Tart",
-          "cal": "130 Cal",
+          "name": "Cookie Brownie",
+          "cal": "220 Cal",
           "dietary": [
             "Vegetarian"
           ]
         },
         {
-          "name": "Cookie Brownie",
-          "cal": "220 Cal",
+          "name": "Oreo Brownie Bowl",
+          "cal": "340 Cal",
           "dietary": [
             "Vegetarian"
           ]
@@ -471,7 +418,7 @@
           ]
         }
       ],
-      "accent": "#ef4444"
+      "accent": "#3b82f6"
     },
     {
       "name": "Smoothie",
@@ -505,7 +452,7 @@
           "cal": "0 Cal"
         }
       ],
-      "accent": "#10b981"
+      "accent": "#f59e0b"
     }
   ]
 }
