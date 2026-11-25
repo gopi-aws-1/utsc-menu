@@ -3,8 +3,8 @@
   "dateLabel": "Wed, Nov 25, 2026",
   "menuDate": "2026-11-25",
   "mealPeriod": "Lunch",
-  "fetchedAt": "2026-11-25T15:11:12.285499-05:00",
-  "fetchedAtEpochMs": 1795637472285,
+  "fetchedAt": "2026-11-25T15:21:28.916030-05:00",
+  "fetchedAtEpochMs": 1795638088916,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -32,6 +32,13 @@
         {
           "name": "Fiesta Carnitas Taco",
           "cal": "190 Cal",
+          "dietary": [
+            "No Dairy"
+          ]
+        },
+        {
+          "name": "Pork Belly Bao Bun",
+          "cal": "220 Cal",
           "dietary": [
             "No Dairy"
           ]
