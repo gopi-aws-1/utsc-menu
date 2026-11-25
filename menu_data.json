@@ -3,8 +3,8 @@
   "dateLabel": "Wed, Nov 25, 2026",
   "menuDate": "2026-11-25",
   "mealPeriod": "Breakfast",
-  "fetchedAt": "2026-11-25T09:21:28.960170-05:00",
-  "fetchedAtEpochMs": 1795616488960,
+  "fetchedAt": "2026-11-25T09:31:00.810509-05:00",
+  "fetchedAtEpochMs": 1795617060810,
   "verifiedSource": true,
   "locationName": "Harmony Commons Dining Hall",
   "sourceUrl": "https://torontosc.mydininghub.ca/en/location/harmony-commons-dining-hall",
@@ -70,6 +70,14 @@
           ]
         },
         {
+          "name": "Baked Beans",
+          "cal": "150 Cal",
+          "dietary": [
+            "Vegan",
+            "No Gluten"
+          ]
+        },
+        {
           "name": "Jasmine Rice",
           "cal": "130 Cal",
           "dietary": [
@@ -86,6 +94,10 @@
             "Coolfood Meal",
             "Eat Well"
           ]
+        },
+        {
+          "name": "Plant-Based Patty",
+          "cal": "230 Cal"
         }
       ],
       "accent": "#f59e0b"
